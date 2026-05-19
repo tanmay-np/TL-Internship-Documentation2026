@@ -1,548 +1,659 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay | Internship Documentation</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            scroll-behavior:smooth;
-        }
-
-        body{
-            font-family:'Poppins',sans-serif;
-            background:#020617;
-            color:white;
-            overflow-x:hidden;
-        }
-
-        /* NAVBAR */
-
-        nav{
-            position:sticky;
-            top:0;
-            z-index:1000;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 8%;
-            background:rgba(15,23,42,0.9);
-            backdrop-filter:blur(10px);
-            border-bottom:1px solid #1e293b;
-        }
-
-        .logo{
-            font-size:28px;
-            font-weight:700;
-            color:#60a5fa;
-        }
-
-        nav ul{
-            display:flex;
-            gap:30px;
-            list-style:none;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            transition:0.3s;
-        }
-
-        nav a:hover{
-            color:#60a5fa;
-        }
-
-        /* HERO */
-
-        .hero{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            padding:80px 8%;
-            gap:60px;
-            flex-wrap:wrap;
-        }
-
-        .hero-text{
-            flex:1;
-            min-width:300px;
-        }
-
-        .hero-text h1{
-            font-size:70px;
-            line-height:1.1;
-            margin-bottom:20px;
-        }
-
-        .hero-text span{
-            color:#60a5fa;
-        }
-
-        .hero-text p{
-            color:#cbd5e1;
-            line-height:1.8;
-            margin-bottom:30px;
-            font-size:18px;
-        }
-
-        .hero-buttons{
-            display:flex;
-            gap:20px;
-            flex-wrap:wrap;
-        }
-
-        .btn{
-            padding:14px 28px;
-            border-radius:12px;
-            text-decoration:none;
-            transition:0.3s;
-            font-weight:500;
-        }
-
-        .primary-btn{
-            background:#2563eb;
-            color:white;
-        }
-
-        .primary-btn:hover{
-            background:#1d4ed8;
-            transform:translateY(-5px);
-        }
-
-        .secondary-btn{
-            border:1px solid #60a5fa;
-            color:#60a5fa;
-        }
-
-        .secondary-btn:hover{
-            background:#60a5fa;
-            color:black;
-        }
-
-        .hero-image{
-            flex:1;
-            min-width:280px;
-            display:flex;
-            justify-content:center;
-        }
-
-        .hero-image img{
-            width:350px;
-            height:350px;
-            object-fit:cover;
-            border-radius:30px;
-            border:4px solid #2563eb;
-            box-shadow:0 0 40px rgba(37,99,235,0.4);
-        }
-
-        /* SECTIONS */
-
-        section{
-            padding:80px 8%;
-        }
-
-        .section-title{
-            text-align:center;
-            font-size:42px;
-            margin-bottom:50px;
-            color:#60a5fa;
-        }
-
-        /* ABOUT */
-
-        .about-card{
-            background:#0f172a;
-            padding:40px;
-            border-radius:30px;
-            border:1px solid #1e293b;
-            line-height:1.9;
-            color:#cbd5e1;
-        }
-
-        /* SKILLS */
-
-        .skills-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:25px;
-        }
-
-        .skill-card{
-            background:#0f172a;
-            padding:30px;
-            border-radius:20px;
-            text-align:center;
-            border:1px solid #1e293b;
-            transition:0.3s;
-        }
-
-        .skill-card:hover{
-            transform:translateY(-10px);
-            border-color:#60a5fa;
-        }
-
-        .skill-card h3{
-            margin-bottom:15px;
-            color:#93c5fd;
-        }
-
-        .skill-card p{
-            color:#cbd5e1;
-        }
-
-        /* INTERESTS */
-
-        .interests{
-            display:flex;
-            flex-wrap:wrap;
-            gap:20px;
-            justify-content:center;
-        }
-
-        .interests span{
-            background:#1e293b;
-            padding:14px 22px;
-            border-radius:30px;
-            color:#93c5fd;
-            transition:0.3s;
-        }
-
-        .interests span:hover{
-            background:#2563eb;
-            color:white;
-        }
-
-        /* DOCUMENTATION */
-
-        .docs-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:30px;
-        }
-
-        .doc-card{
-            background:#0f172a;
-            padding:30px;
-            border-radius:25px;
-            border:1px solid #1e293b;
-            transition:0.3s;
-        }
-
-        .doc-card:hover{
-            transform:translateY(-10px);
-            border-color:#60a5fa;
-        }
-
-        .doc-card h3{
-            color:#60a5fa;
-            margin-bottom:20px;
-        }
-
-        .task{
-            background:#111827;
-            padding:15px;
-            border-radius:12px;
-            margin-bottom:15px;
-            color:#e2e8f0;
-        }
-
-        /* ORGANIZATION */
-
-        .org-card{
-            background:#0f172a;
-            padding:40px;
-            border-radius:30px;
-            border:1px solid #1e293b;
-            display:flex;
-            align-items:center;
-            gap:40px;
-            flex-wrap:wrap;
-        }
-
-        .org-card img{
-            width:140px;
-            background:white;
-            padding:15px;
-            border-radius:20px;
-        }
-
-        .org-card h3{
-            color:#60a5fa;
-            margin-bottom:15px;
-        }
-
-        .org-card p{
-            color:#cbd5e1;
-            line-height:1.8;
-        }
-
-        /* FOOTER */
-
-        footer{
-            text-align:center;
-            padding:40px;
-            color:#94a3b8;
-        }
-
-        /* MOBILE */
-
-        @media(max-width:768px){
-
-            nav{
-                flex-direction:column;
-                gap:20px;
-            }
-
-            nav ul{
-                flex-wrap:wrap;
-                justify-content:center;
-            }
-
-            .hero{
-                text-align:center;
-                padding-top:120px;
-            }
-
-            .hero-text h1{
-                font-size:45px;
-            }
-
-            .hero-buttons{
-                justify-content:center;
-            }
-
-            .hero-image img{
-                width:280px;
-                height:280px;
-            }
-
-            .section-title{
-                font-size:32px;
-            }
-
-            .org-card{
-                text-align:center;
-                justify-content:center;
-            }
-
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tanmay Pendbhaje | TL Internship 2026 | Sanjivani University</title>
+  <!-- Google Fonts + Smooth Scroll -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0c10;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* modern dark theme with TL blue accent */
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --secondary: #8b5cf6;
+      --dark-card: #11131a;
+      --border-dim: #1e293b;
+      --text-muted: #94a3b8;
+      --gradient-hero: linear-gradient(135deg, #0a0c10 0%, #0f172a 100%);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header / navbar - sticky with blur */
+    .navbar {
+      backdrop-filter: blur(16px);
+      background: rgba(10, 12, 16, 0.85);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+      padding: 0.9rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* LOGO AREA: clickable link to Sanjivani University */
+    .logo-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .logo-link:hover {
+      opacity: 0.85;
+    }
+    .tl-logo-img {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 0 6px var(--primary-glow));
+      transition: transform 0.2s;
+    }
+    .logo-link:hover .tl-logo-img {
+      transform: scale(1.02);
+    }
+    .logo-text h2 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.2px;
+      background: linear-gradient(to right, #ffffff, #a5f3fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo-text p {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: #cbd5e6;
+      text-decoration: none;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+      text-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    /* hero section */
+    .hero {
+      padding: 4rem 0 3rem;
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+    .gradient-text {
+      background: linear-gradient(120deg, #60a5fa, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 1.2rem 0 1.8rem;
+    }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      border: 1px solid var(--border-dim);
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-3px);
+    }
+    .btn-outline {
+      border-color: #334155;
+      color: #e2e8f0;
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-frame {
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      padding: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(59, 130, 246, 0.4);
+    }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #11131a;
+    }
+
+    /* sections */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 4px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .about-card, .domain-card, .daily-card {
+      background: var(--dark-card);
+      border-radius: 1.5rem;
+      padding: 1.8rem;
+      border: 1px solid #1e293b;
+      transition: all 0.3s ease;
+    }
+    .about-card:hover, .domain-card:hover, .daily-card:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    .skills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+    .skill-tag {
+      background: #1e293b;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+    .skill-tag:hover {
+      background: var(--primary);
+      color: #0a0c10;
+    }
+    .interests-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .interest-item {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid #334155;
+      border-radius: 40px;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* daily documentation cards */
+    .daily-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+    .daily-card {
+      padding: 1.5rem;
+    }
+    .day-badge {
+      display: inline-block;
+      background: #0f172a;
+      border-left: 4px solid var(--primary);
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .doc-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .doc-excerpt {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+    }
+    .doc-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: 0.2s;
+    }
+    .doc-link:hover {
+      gap: 0.6rem;
+      color: #60a5fa;
+    }
+
+    /* timeline & progress (simple internship tracker) */
+    .internship-tracker {
+      background: var(--dark-card);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid #1e293b;
+    }
+    .progress-stats {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1.8rem 0;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .progress-bar-bg {
+      background: #1e293b;
+      border-radius: 30px;
+      height: 8px;
+      margin-top: 0.8rem;
+    }
+    .progress-fill {
+      width: 68%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      height: 8px;
+      border-radius: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border-dim);
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero .container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .section-title:after {
+        left: 20%;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .hero, .about-card, .domain-card, .daily-card, .internship-tracker {
+      animation: fadeUp 0.6s ease forwards;
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-
-    <nav>
-
-        <div class="logo">Tanmay</div>
-
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Domains</a></li>
-            <li><a href="#docs">Docs</a></li>
-        </ul>
-
-    </nav>
-
-    <!-- HERO -->
-
-    <div class="hero">
-
-        <div class="hero-text">
-
-            <h1>Hello, I'm <span>Tanmay N Pendbhaje</span></h1>
-
-            <p>
-                Engineering student passionate about robotics,
-                CAD design, product development, and modern technology.
-                This website documents my internship learning journey.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="daily-docs/day1.md" class="btn primary-btn">
-                    View Documentation
-                </a>
-
-                <a href="https://linkedin.com" target="_blank" class="btn secondary-btn">
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="hero-image">
-            <img src="assets/tnp-profile.jpeg" alt="Profile Photo">
-        </div>
-
+<nav class="navbar">
+  <div class="container nav-inner">
+    <!-- Logo with clickable link to Sanjivani University (TL branding) -->
+    <a href="https://sanjivani.edu.in/" target="_blank" class="logo-link" rel="noopener noreferrer">
+      <img src="assets/tl-logo.png" alt="Tinkerers' Lab Sanjivani" class="tl-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/52x52/1e293b/3b82f6?text=TL';">
+      <div class="logo-text">
+        <h2>Tinkerers' Lab</h2>
+        <p>Sanjivani University</p>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#domains">Domains</a>
+      <a href="#documentation">Docs</a>
+      <a href="#progress">Tracker</a>
     </div>
+  </div>
+</nav>
 
-    <!-- ABOUT -->
+<main>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-badge">🔧 TL Internship 2026 • Sanjivani University</span>
+        <h1>Tanmay Nilesh <span class="gradient-text">Pendbhaje</span></h1>
+        <p class="hero-desc">Mechanical Engineering (B.Tech) • Documenting my internship journey at Tinkerers' Lab — daily progress, technical deep-dives, and real-world building.</p>
+        <div class="btn-group">
+          <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" class="btn btn-primary">🔗 LinkedIn Profile</a>
+          <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" target="_blank" class="btn btn-outline">🐙 GitHub Repository</a>
+          <a href="#documentation" class="btn btn-outline">📘 Daily Logs</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="profile-frame">
+          <img src="assets/tnp-profile.jpeg" alt="Tanmay Pendbhaje" class="profile-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/111827/3b82f6?text=TN'">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="about">
-
-        <h2 class="section-title">About Me</h2>
-
+  <!-- About + Interests (focus: internship, with interests as a side note) -->
+  <section id="about">
+    <div class="container">
+      <div class="grid-2col">
         <div class="about-card">
-
-            <p>
-                I am a passionate engineering student interested in robotics,
-                product development, CAD modelling, web development,
-                and modern technologies. I enjoy building projects,
-                learning new technical skills, and documenting my progress.
-            </p>
-
+          <h3>📌 TL Internship Focus</h3>
+          <p>At <strong>Tinkerers' Lab, Sanjivani University</strong>, I'm documenting my hands-on learning in product development, mechanical prototyping, and collaborative engineering. Daily documentation includes technical insights, build logs, and design iterations.</p>
+          <p style="margin-top: 1rem;">🚀 <strong>Current goal:</strong> Build a robust internship portfolio, contribute to lab projects, and improve my design & documentation workflow.</p>
         </div>
-
-    </section>
-
-    <!-- DOMAINS -->
-
-    <section id="skills">
-
-        <h2 class="section-title">Internship Domains</h2>
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-                <h3>Product Development</h3>
-                <p>Building innovative product solutions.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Mechanical Design</h3>
-                <p>Designing mechanical systems.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>Robotics</h3>
-                <p>Learning robotics workflows.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>3D Modelling</h3>
-                <p>Creating CAD and 3D models.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>SolidWorks CAD</h3>
-                <p>CAD designing and modelling.</p>
-            </div>
-
-            <div class="skill-card">
-                <h3>ANSYS Simulation</h3>
-                <p>Engineering simulation learning.</p>
-            </div>
-
+        <div class="about-card">
+          <h3>🧠 Interests & Exploration</h3>
+          <div class="interests-list">
+            <span class="interest-item">🤖 Robotics</span>
+            <span class="interest-item">📐 CAD Modelling</span>
+            <span class="interest-item">🏭 Product Development</span>
+            <span class="interest-item">⚙️ Mechanical Design</span>
+            <span class="interest-item">🌐 Web Dev</span>
+            <span class="interest-item">🐙 GitHub</span>
+            <span class="interest-item">🧠 AI & Tech</span>
+            <span class="interest-item">📡 ROS2</span>
+          </div>
+          <div class="skills-flex" style="margin-top: 1.5rem;">
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">CSWA (Interest)</span>
+            <span class="skill-tag">Python basics</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">Git workflows</span>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
-
-    <!-- INTERESTS -->
-
-    <section>
-
-        <h2 class="section-title">My Interests</h2>
-
-        <div class="interests">
-
-            <span>Robotics</span>
-            <span>Web Development</span>
-            <span>Mechanical Design</span>
-            <span>AI & Technology</span>
-            <span>GitHub</span>
-            <span>CAD Design</span>
-
+  <!-- Internship Domains (only TL relevant, clean) -->
+  <section id="domains">
+    <div class="container">
+      <h2 class="section-title">⚡ Internship Pillars</h2>
+      <div class="grid-2col">
+        <div class="domain-card">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🛠️</div>
+          <h3>Design & Prototyping</h3>
+          <p>Mechanical design iterations, rapid prototyping at Tinkerers' Lab, and translating ideas into real components.</p>
         </div>
-
-    </section>
-
-    <!-- DOCUMENTATION -->
-
-    <section id="docs">
-
-        <h2 class="section-title">Daily Documentation</h2>
-
-        <div class="docs-grid">
-
-            <div class="doc-card">
-
-                <h3>Day 1</h3>
-
-                <div class="task">
-                    ✅ Internship orientation completed
-                </div>
-
-                <div class="task">
-                    ✅ Setup internship repository
-                </div>
-
-                <div class="task">
-                    ✅ Created portfolio website
-                </div>
-
-                <div class="task">
-                    ✅ Learned GitHub workflow
-                </div>
-
-                <a href="./daily-docs/day1.md" class="btn primary-btn">
-                    View Documentation
-                </a>
-
-            </div>
-
+        <div class="domain-card">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">📘</div>
+          <h3>Documentation & Workflow</h3>
+          <p>Daily markdown reports, version control with Git, and maintaining structured internship logs.</p>
         </div>
-
-    </section>
-
-    <!-- ORGANIZATION -->
-
-    <section>
-
-        <h2 class="section-title">Organization</h2>
-
-        <div class="org-card">
-
-            <img src="assets/tl-logo.png" alt="Tinkerers Lab Logo">
-
-            <div>
-
-                <h3>Tinkerers' Lab</h3>
-
-                <p>
-                    Internship focused on innovation,
-                    robotics, engineering learning,
-                    product development, and practical technical exposure.
-                </p>
-
-            </div>
-
+        <div class="domain-card">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🤝</div>
+          <h3>Collaborative Projects</h3>
+          <p>Working with lab peers, contributing to team-based engineering challenges, and learning from mentors.</p>
         </div>
+        <div class="domain-card">
+          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌱</div>
+          <h3>Skill Building</h3>
+          <p>CAD, hands-on manufacturing awareness, and integrating modern tools into the product development cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- Daily Documentation Section (reads day*.md from daily-docs) -->
+  <section id="documentation">
+    <div class="container">
+      <h2 class="section-title">📆 Daily Documentation</h2>
+      <p style="margin-bottom: 2rem; color: var(--text-muted);">Every day of my internship → detailed markdown files covering progress, technical insights, and reflections.</p>
+      <div class="daily-grid" id="dailyDocsContainer">
+        <!-- dynamic cards injected via JS -->
+      </div>
+      <div style="margin-top: 2.2rem; text-align: center;">
+        <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026/tree/main/daily-docs" target="_blank" class="btn btn-outline">📁 Browse all Markdown logs →</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
+  <!-- Internship Progress Tracker (clean, focused on internship commitment) -->
+  <section id="progress">
+    <div class="container">
+      <h2 class="section-title">📈 Internship Tracker</h2>
+      <div class="internship-tracker">
+        <div class="progress-stats">
+          <div class="stat">
+            <div class="stat-number" id="daysCount">0</div>
+            <div>Days Documented</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">✅</div>
+            <div>Daily Commits</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">📌</div>
+            <div>GitHub Pages</div>
+          </div>
+        </div>
+        <p style="margin-top: 0.8rem; text-align: center; color: var(--text-muted);">Consistency tracker: each markdown file reflects a day of active internship learning.</p>
+        <div class="progress-bar-bg">
+          <div class="progress-fill"></div>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.85rem; text-align: center;">⚡ 68% of internship sprint completed — building documentation habit</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <footer>
-        © 2026 Tanmay | Internship Documentation
-    </footer>
+<footer>
+  <p>© 2026 Tanmay Nilesh Pendbhaje — Tinkerers' Lab Internship | Sanjivani University, Kopargaon</p>
+  <p style="margin-top: 0.4rem;">📘 daily documentation • hands-on engineering • open source portfolio</p>
+</footer>
 
+<script>
+  // Daily docs loader: scan daily-docs/day1.md ... day15.md and create cards dynamically
+  const docsContainer = document.getElementById('dailyDocsContainer');
+  const daysCountSpan = document.getElementById('daysCount');
+
+  async function checkAndLoadDocs() {
+    const maxDays = 20;      // show up to day 20, but only existing docs + placeholder for upcoming days
+    let existingCount = 0;
+    const docsData = [];
+
+    for (let i = 1; i <= maxDays; i++) {
+      const fileUrl = `daily-docs/day${i}.md`;
+      try {
+        const response = await fetch(fileUrl, { method: 'HEAD', cache: 'no-store' });
+        if (response.ok) {
+          // fetch content to get title + excerpt
+          const contentRes = await fetch(fileUrl);
+          const content = await contentRes.text();
+          const lines = content.split(/\r?\n/);
+          let title = `Day ${i} Update`;
+          let excerpt = "Internship log: documented learnings, experiments, and project milestones.";
+          for (let line of lines) {
+            if (line.trim().startsWith('# ')) {
+              title = line.replace('# ', '').trim();
+              break;
+            }
+          }
+          for (let line of lines) {
+            if (line.trim().length > 15 && !line.startsWith('#') && line.trim() !== '') {
+              excerpt = line.trim().substring(0, 110);
+              break;
+            }
+          }
+          docsData.push({ day: i, exists: true, title, excerpt, url: fileUrl });
+          existingCount++;
+        } else {
+          docsData.push({ day: i, exists: false, title: `Day ${i}`, excerpt: "Add daily-docs/day" + i + ".md to log your progress.", url: null });
+        }
+      } catch(e) {
+        docsData.push({ day: i, exists: false, title: `Day ${i}`, excerpt: "Create markdown file in daily-docs/ folder.", url: null });
+      }
+    }
+
+    // update days counter
+    if (daysCountSpan) daysCountSpan.innerText = existingCount;
+
+    // render first 12 days for clean UI, plus extra if needed
+    const renderLimit = Math.min(12, Math.max(existingCount + 2, 6));
+    docsContainer.innerHTML = '';
+    for (let i = 0; i < renderLimit; i++) {
+      const doc = docsData[i];
+      if (!doc) continue;
+      const card = document.createElement('div');
+      card.className = 'daily-card';
+      if (doc.exists) {
+        card.innerHTML = `
+          <div class="day-badge">📅 Day ${doc.day}</div>
+          <div class="doc-title">${escapeHtml(doc.title)}</div>
+          <div class="doc-excerpt">${escapeHtml(doc.excerpt)}</div>
+          <a href="${doc.url}" target="_blank" class="doc-link">📖 Read full entry →</a>
+        `;
+      } else {
+        card.innerHTML = `
+          <div class="day-badge">📅 Day ${doc.day}</div>
+          <div class="doc-title">${escapeHtml(doc.title)}</div>
+          <div class="doc-excerpt">📝 ${escapeHtml(doc.excerpt)}</div>
+          <span style="color:#475569; font-size:0.85rem;">➕ Add .md file to appear here</span>
+        `;
+      }
+      docsContainer.appendChild(card);
+    }
+    // if no docs exist at all, add a friendly guide card
+    if (existingCount === 0) {
+      const guideCard = document.createElement('div');
+      guideCard.className = 'daily-card';
+      guideCard.innerHTML = `
+        <div class="day-badge">📘 Getting Started</div>
+        <div class="doc-title">Your first daily documentation</div>
+        <div class="doc-excerpt">Create day1.md inside /daily-docs folder. Write your internship progress, learnings, or any technical observation. This card will auto-display the title and preview.</div>
+        <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" target="_blank" class="doc-link">✨ Create your first log →</a>
+      `;
+      docsContainer.appendChild(guideCard);
+      if (daysCountSpan) daysCountSpan.innerText = "Start";
+    }
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  checkAndLoadDocs().catch(err => {
+    console.warn("Doc loader fallback", err);
+    docsContainer.innerHTML = `<div class="daily-card"><div class="day-badge">✨ TL Internship</div><div class="doc-title">Documentation hub ready</div><div class="doc-excerpt">Add your markdown files inside daily-docs/ (day1.md, day2.md ...). The website automatically displays them. Start documenting your journey today!</div><a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" class="doc-link">📘 Repository guide</a></div>`;
+    if (daysCountSpan) daysCountSpan.innerText = "1+";
+  });
+</script>
 </body>
-
 </html>
