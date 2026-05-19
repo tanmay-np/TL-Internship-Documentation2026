@@ -1,81 +1,63 @@
 # Day 1 Documentation
 
-## Objective
-Setup internship portfolio website and GitHub workflow.
+## Internship Orientation
+
+- Attended internship orientation session
+- Understood internship workflow and project expectations
+- Learned about documentation structure and submission process
 
 ---
 
-## Tools Used
-- Ubuntu 22.04
-- VS Code
+## Repository Setup
+
+- Created internship documentation repository on GitHub
+- Initialized project structure
+- Added README.md and documentation folders
+
+---
+
+## Portfolio Website Development
+
+### Tasks Completed
+
+- Created responsive internship website
+- Designed homepage using HTML and CSS
+- Added Internship Domains section
+- Added Daily Documentation section
+- Improved UI with modern dark theme
+
+---
+
+## GitHub Workflow Learning
+
+Learned:
+
+- Git initialization
+- Adding files using `git add`
+- Creating commits using `git commit`
+- Pushing code using `git push`
+
+---
+
+## Website Deployment
+
+- Successfully deployed website using GitHub Pages
+- Verified live deployment
+- Tested responsiveness on desktop and mobile
+
+---
+
+## Technologies Used
+
+- HTML5
+- CSS3
 - Git
 - GitHub
-- HTML
-- CSS
-
----
-
-## Steps Performed
-
-### 1. Created GitHub Repository
-Created internship documentation repository on GitHub.
-
-### 2. Setup Development Environment
-Installed and configured:
+- GitHub Pages
 - VS Code
-- Git
-
-### 3. Created Project Folder
-Created internship project workspace in Ubuntu.
-
-### 4. Developed Portfolio Website
-Created responsive internship portfolio website using HTML and CSS.
-
-Features added:
-- About section
-- Skills section
-- Internship domain section
-- Documentation section
-- GitHub profile link
-
-### 5. GitHub Integration
-Performed Git workflow:
-- git init
-- git add
-- git commit
-- git push
-
-### 6. GitHub Pages Deployment
-Successfully hosted portfolio website using GitHub Pages.
-
----
-
-## Workflow
-
-GitHub Repository Creation
-        ↓
-VS Code Setup
-        ↓
-Portfolio Website Development
-        ↓
-Git Initialization
-        ↓
-GitHub Push
-        ↓
-GitHub Pages Hosting
-        ↓
-Website Live
-
----
-
-## Learnings
-- Learned Git and GitHub basics
-- Learned Git workflow
-- Learned website deployment
-- Learned VS Code workflow
-- Learned HTML/CSS basics
 
 ---
 
 ## Outcome
-Successfully developed and hosted internship portfolio website online.
+
+Completed setup of internship documentation system and deployed the first version of the internship website successfully.
