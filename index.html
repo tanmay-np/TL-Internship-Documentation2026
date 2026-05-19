@@ -1,319 +1,305 @@
-# Modern Internship Portfolio Website
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanmay Pendbhaje | Internship Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Internship Documentation</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        body{
-            font-family:'Poppins',sans-serif;
-            background:#0d1117;
-            color:white;
-            line-height:1.7;
-        }
+<style>
 
-        html{
-            scroll-behavior:smooth;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .container{
-            width:90%;
-            max-width:1200px;
-            margin:auto;
-        }
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:white;
+}
 
-        header{
-            min-height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            background:linear-gradient(135deg,#0d1117,#161b22,#1f2937);
-            padding:40px 20px;
-        }
+/* NAVBAR */
 
-        .hero h1{
-            font-size:4rem;
-            margin-bottom:15px;
-            color:#58a6ff;
-        }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#0f172a;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid #1e293b;
+}
 
-        .hero p{
-            font-size:1.2rem;
-            color:#c9d1d9;
-            max-width:800px;
-            margin:auto;
-        }
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#60a5fa;
+}
 
-        .btn{
-            display:inline-block;
-            margin-top:30px;
-            padding:14px 30px;
-            background:#238636;
-            color:white;
-            text-decoration:none;
-            border-radius:10px;
-            font-weight:600;
-            transition:0.3s;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
 
-        .btn:hover{
-            transform:translateY(-3px);
-            background:#2ea043;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
 
-        section{
-            padding:80px 0;
-        }
+nav a:hover{
+    color:#60a5fa;
+}
 
-        .section-title{
-            text-align:center;
-            font-size:2.5rem;
-            margin-bottom:50px;
-            color:#58a6ff;
-        }
+/* HERO */
 
-        .about-box,
-        .domain-box,
-        .contact-box,
-        .doc-box{
-            background:#161b22;
-            padding:35px;
-            border-radius:18px;
-            box-shadow:0 0 20px rgba(0,0,0,0.3);
-        }
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
 
-        .skills-grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-        }
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+    background:linear-gradient(to right,#60a5fa,#2563eb);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
-        .skill-card{
-            background:#161b22;
-            padding:25px;
-            border-radius:18px;
-            text-align:center;
-            transition:0.3s;
-            border:1px solid #30363d;
-        }
+.hero p{
+    color:#cbd5e1;
+    font-size:18px;
+}
 
-        .skill-card:hover{
-            transform:translateY(-8px);
-            border-color:#58a6ff;
-        }
+/* SECTION */
 
-        .skill-card h3{
-            margin-top:10px;
-            color:#58a6ff;
-        }
+section{
+    padding:60px 8%;
+}
 
-        .domains{
-            display:flex;
-            flex-wrap:wrap;
-            gap:15px;
-            justify-content:center;
-        }
+.section-title{
+    font-size:40px;
+    margin-bottom:40px;
+    color:#60a5fa;
+    text-align:center;
+}
 
-        .domain-tag{
-            background:#21262d;
-            padding:12px 18px;
-            border-radius:30px;
-            border:1px solid #30363d;
-        }
+/* DOMAIN CARDS */
 
-        ul{
-            margin-left:20px;
-            margin-top:15px;
-        }
+.domains-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
 
-        li{
-            margin-bottom:12px;
-            color:#c9d1d9;
-        }
+.domain-card{
+    background:#0f172a;
+    padding:30px;
+    border-radius:20px;
+    border:1px solid #1e293b;
+    transition:0.3s;
+    text-align:center;
+}
 
-        .contact-box p{
-            margin-bottom:15px;
-            font-size:1.05rem;
-        }
+.domain-card:hover{
+    transform:translateY(-8px);
+    border-color:#60a5fa;
+}
 
-        a{
-            color:#58a6ff;
-            text-decoration:none;
-        }
+.domain-card h3{
+    margin-bottom:15px;
+    color:#93c5fd;
+}
 
-        footer{
-            text-align:center;
-            padding:30px;
-            background:#010409;
-            color:#8b949e;
-            border-top:1px solid #21262d;
-        }
+/* DAY CARDS */
 
-        @media(max-width:768px){
-            .hero h1{
-                font-size:2.5rem;
-            }
+.days-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
 
-            .hero p{
-                font-size:1rem;
-            }
+.day-card{
+    background:#0f172a;
+    padding:25px;
+    border-radius:25px;
+    border:1px solid #1e293b;
+    transition:0.3s;
+}
 
-            .section-title{
-                font-size:2rem;
-            }
-        }
-    </style>
+.day-card:hover{
+    transform:translateY(-8px);
+    border-color:#60a5fa;
+}
+
+.day-card h3{
+    color:#60a5fa;
+    margin-bottom:20px;
+}
+
+.task{
+    background:#111827;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:15px;
+    color:#e2e8f0;
+}
+
+.view-btn{
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    padding:12px;
+    background:#2563eb;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.view-btn:hover{
+    background:#1d4ed8;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
+}
+
+</style>
 </head>
-
 <body>
 
-    <header>
-        <div class="hero container">
-            <h1>Tanmay Nilesh Pendbhaje</h1>
+<!-- NAVBAR -->
 
-            <p>
-                First-Year Mechanical Engineering Student | Summer Intern at
-                Sanjivani University Tinkerers' Lab | Robotics & Product Development Enthusiast
-            </p>
+<nav>
 
-            <a class="btn" href="https://github.com/tanmay-np" target="_blank">
-                Visit My GitHub
-            </a>
+    <div class="logo">TL Internship</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Domains</a></li>
+        <li><a href="#">Daily Docs</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+    <h1>Internship Documentation</h1>
+    <p>My learning journey during the internship.</p>
+</div>
+
+<!-- DOMAINS -->
+
+<section>
+
+    <h2 class="section-title">Internship Domains</h2>
+
+    <div class="domains-grid">
+
+        <div class="domain-card">
+            <h3>Product Development</h3>
+            <p>Building innovative product solutions.</p>
         </div>
-    </header>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-
-            <div class="about-box">
-                <p>
-                    I am a passionate first-year Mechanical Engineering student with a strong
-                    interest in Robotics, Product Development, CAD Design, and Engineering Innovation.
-                    I enjoy solving real-world engineering problems and continuously improving my
-                    technical and practical skills.
-                </p>
-
-                <br>
-
-                <p>
-                    Currently, I am learning SolidWorks for 3D modelling, ANSYS for simulation,
-                    and ROS2 for robotics systems integration. My goal is to build strong fundamentals
-                    in mechanical systems, robotics, and intelligent product design.
-                </p>
-            </div>
+        <div class="domain-card">
+            <h3>Mechanical Design</h3>
+            <p>Designing mechanical systems.</p>
         </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Mechanical Design</h3>
-                    <p>Understanding of engineering design fundamentals and product concepts.</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>SolidWorks</h3>
-                    <p>3D modelling and CAD design learning for mechanical components.</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>Robotics</h3>
-                    <p>Learning robotics fundamentals, systems, and automation concepts.</p>
-                </div>
-
-                <div class="skill-card">
-                    <h3>ROS2</h3>
-                    <p>Exploring robotics middleware and communication systems.</p>
-                </div>
-            </div>
+        <div class="domain-card">
+            <h3>Robotics</h3>
+            <p>Learning robotics workflows.</p>
         </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">Internship Domains</h2>
-
-            <div class="domain-box">
-                <div class="domains">
-                    <div class="domain-tag">Product Development</div>
-                    <div class="domain-tag">Mechanical Design</div>
-                    <div class="domain-tag">Robotics</div>
-                    <div class="domain-tag">3D Modelling</div>
-                    <div class="domain-tag">SolidWorks CAD</div>
-                    <div class="domain-tag">ANSYS Simulation</div>
-                    <div class="domain-tag">ROS2 Systems</div>
-                </div>
-            </div>
+        <div class="domain-card">
+            <h3>3D Modelling</h3>
+            <p>Creating CAD and 3D models.</p>
         </div>
-    </section>
 
-    <section class="documentation">
-    <h2>Daily Documentation</h2>
-
-    <div class="doc-card">
-        <ul>
-            <li>Day 1 : Internship orientation completed.</li>
-            <li>Setup internship documentation repository.</li>
-            <li>Created portfolio website using HTML and CSS.</li>
-            <li>Learned GitHub workflow and project structure.</li>
-            <li>Successfully hosted portfolio website online.</li>
-        </ul>
     </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">Weekly Documentation</h2>
+</section>
 
-            <div class="doc-box">
-                <ul>
-                    <li>
-                        Week 1 - Successfully completed GitHub setup, VS Code workflow,
-                        internship portfolio creation, and began learning web development basics.
-                    </li>
-                </ul>
+<!-- DAILY DOCS -->
+
+<section>
+
+    <h2 class="section-title">Daily Documentation</h2>
+
+    <div class="days-container">
+
+        <div class="day-card">
+
+            <h3>Day 1</h3>
+
+            <div class="task">
+                ✅ Internship orientation completed
             </div>
-        </div>
-    </section>
 
-    <section>
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-
-            <div class="contact-box">
-                
-
-                <p>
-                    <strong>GitHub:</strong>
-                    <a href="https://github.com/tanmay-np" target="_blank">
-                        github.com/tanmay-np
-                    </a>
-                </p>
+            <div class="task">
+                ✅ Setup internship repository
             </div>
-        </div>
-    </section>
 
-    <footer>
-        <p>© 2026 Tanmay Pendbhaje | Internship Portfolio</p>
-    </footer>
+            <div class="task">
+                ✅ Created portfolio website
+            </div>
+
+            <div class="task">
+                ✅ Learned GitHub workflow
+            </div>
+
+            <a href="daily-docs/day1.md" class="view-btn">
+                View Documentation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Internship Documentation
+</footer>
 
 </body>
 </html>
