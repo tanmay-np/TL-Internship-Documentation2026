@@ -1,659 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tanmay Pendbhaje | TL Internship 2026 | Sanjivani University</title>
-  <!-- Google Fonts + Smooth Scroll -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0a0c10;
-      color: #eef2ff;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    /* modern dark theme with TL blue accent */
     :root {
-      --primary: #3b82f6;
-      --primary-dark: #2563eb;
-      --primary-glow: rgba(59, 130, 246, 0.35);
-      --secondary: #8b5cf6;
-      --dark-card: #11131a;
-      --border-dim: #1e293b;
-      --text-muted: #94a3b8;
-      --gradient-hero: linear-gradient(135deg, #0a0c10 0%, #0f172a 100%);
+      --bg: #0f172a;
+      --bg-light: #1e293b;
+      --card: #111827;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #3b82f6;
+      --accent-glow: #60a5fa;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, var(--bg), #020617); color: var(--text); line-height:1.6 }
+    a { color: inherit; text-decoration: none }
 
-    /* header / navbar - sticky with blur */
-    .navbar {
-      backdrop-filter: blur(16px);
-      background: rgba(10, 12, 16, 0.85);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(59, 130, 246, 0.25);
-      padding: 0.9rem 0;
-    }
+    .container { width: min(1200px, 92%); margin: auto }
+    header { position: sticky; top:0; background: rgba(15,23,42,0.95); border-bottom:1px solid var(--border); backdrop-filter: blur(8px); z-index: 100; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:18px 0; flex-wrap: wrap; gap: 1rem; }
+    .logo { font-weight:800; letter-spacing:1px; font-size: 1.2rem; background: linear-gradient(135deg, #fff, #60a5fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display:flex; gap:25px; flex-wrap:wrap }
+    .nav-links a { color:var(--muted); font-weight: 500; transition: 0.2s; }
+    .nav-links a:hover { color:var(--accent) }
 
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
+    .hero { min-height: 70vh; display:flex; align-items:center; padding:60px 0 }
+    .hero-grid { display:grid; grid-template-columns: 1.2fr 0.8fr; gap:40px; align-items:center }
+    .hero-text h4 { color:#ffffff; font-size: clamp(1.5rem,3vw,2rem); margin-bottom:12px; font-weight:600 }
+    .hero-text h1 { color:var(--accent); font-size: clamp(2.5rem,6vw,4rem); line-height:1.1; margin-bottom:16px; opacity:0; transform: translateX(-30px); animation: slideRight 1s ease forwards 0.3s }
+    .hero-text p { color:var(--muted); max-width:600px; margin-bottom:24px }
 
-    /* LOGO AREA: clickable link to Sanjivani University */
-    .logo-link {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      transition: opacity 0.2s ease;
-      cursor: pointer;
+    @keyframes slideRight {
+      to { opacity:1; transform: translateX(0); }
     }
-    .logo-link:hover {
-      opacity: 0.85;
-    }
-    .tl-logo-img {
-      height: 48px;
-      width: auto;
-      filter: drop-shadow(0 0 6px var(--primary-glow));
-      transition: transform 0.2s;
-    }
-    .logo-link:hover .tl-logo-img {
-      transform: scale(1.02);
-    }
-    .logo-text h2 {
-      font-weight: 700;
-      font-size: 1.25rem;
-      letter-spacing: -0.2px;
-      background: linear-gradient(to right, #ffffff, #a5f3fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .logo-text p {
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      font-weight: 500;
-    }
-    .nav-links a {
-      color: #cbd5e6;
-      text-decoration: none;
-      transition: 0.2s;
-      font-size: 0.95rem;
-    }
-    .nav-links a:hover {
-      color: var(--primary);
-      text-shadow: 0 0 8px var(--primary-glow);
-    }
-
-    /* hero section */
-    .hero {
-      padding: 4rem 0 3rem;
-      background: var(--gradient-hero);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero .container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-    .hero-content {
-      flex: 1.2;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.15);
-      border: 1px solid rgba(59, 130, 246, 0.5);
-      border-radius: 40px;
-      padding: 0.3rem 1.2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      backdrop-filter: blur(4px);
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.6rem);
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-    .gradient-text {
-      background: linear-gradient(120deg, #60a5fa, #c084fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 550px;
-      margin: 1.2rem 0 1.8rem;
-    }
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      border: 1px solid var(--border-dim);
-      padding: 0.7rem 1.6rem;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
+    .btn-group { display:flex; gap:12px; flex-wrap: wrap; }
+    .btn { padding:12px 24px; border-radius:999px; font-weight:600; transition: 0.2s; display: inline-block; }
     .btn-primary {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: white;
-      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+      background: linear-gradient(135deg, var(--accent), var(--accent-glow));
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.3);
     }
-    .btn-primary:hover {
-      background: #2563eb;
-      transform: translateY(-3px);
-    }
-    .btn-outline {
-      border-color: #334155;
-      color: #e2e8f0;
-    }
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-3px);
-    }
-    .hero-image {
-      flex: 0.8;
-      display: flex;
-      justify-content: center;
-    }
-    .profile-frame {
-      background: linear-gradient(145deg, #1e293b, #0f172a);
-      padding: 0.5rem;
-      border-radius: 50%;
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(59, 130, 246, 0.4);
-    }
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #11131a;
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(59,130,246,0.4); }
+    .btn-outline { border:1px solid var(--border); background: rgba(255,255,255,0.03); }
+    .btn-outline:hover { border-color: var(--accent); background: rgba(59,130,246,0.1); }
+
+    .profile-circle { width:280px; height:280px; border-radius:50%; overflow:hidden; border:4px solid var(--accent); box-shadow:0 0 30px rgba(59,130,246,0.3); background:#1e293b; animation: float 5s ease-in-out infinite; margin: 0 auto; }
+    .profile-circle img { width:100%; height:100%; object-fit:cover; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
     }
 
-    /* sections */
-    section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--border-dim);
-    }
-    .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2.2rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 4px;
-    }
+    section { padding:70px 0 }
+    .section-title { font-size:2rem; margin-bottom:10px; color:var(--accent); }
+    .section-subtitle { color:var(--muted); margin-bottom:24px }
 
-    .grid-2col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .about-card, .domain-card, .daily-card {
-      background: var(--dark-card);
-      border-radius: 1.5rem;
-      padding: 1.8rem;
-      border: 1px solid #1e293b;
-      transition: all 0.3s ease;
-    }
-    .about-card:hover, .domain-card:hover, .daily-card:hover {
-      border-color: rgba(59, 130, 246, 0.5);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px -15px rgba(0, 0, 0, 0.5);
-    }
-
-    .skills-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 1.2rem;
-    }
-    .skill-tag {
-      background: #1e293b;
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 500;
+    /* Weeks UI styles */
+    .week-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:25px; margin-top:16px }
+    .section-heading-with-logo { display:flex; align-items:center; gap:15px; flex-wrap:wrap; margin-bottom:8px }
+    .section-logo-circle { width:60px; height:60px; border-radius:50%; border:1px solid var(--border); overflow:hidden; display:flex; align-items:center; justify-content:center; background:rgba(255,255,255,0.05); }
+    .section-logo-circle img { width:80%; height:80%; object-fit:contain; }
+    
+    .week-card { background: rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:20px; padding:22px; transition: 0.2s; }
+    .week-card:hover { border-color: rgba(59,130,246,0.4); transform: translateY(-3px); }
+    .week-card h3 { margin-bottom:15px; color:var(--accent); font-size: 1.5rem; }
+    
+    .week-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:15px; }
+    .day-btn { 
+      background: rgba(59,130,246,0.15); 
+      border:1px solid rgba(59,130,246,0.3); 
+      color:var(--text); 
+      padding:8px 14px; 
+      border-radius:10px; 
+      cursor: pointer; 
+      font-weight:600; 
       transition: 0.2s;
-    }
-    .skill-tag:hover {
-      background: var(--primary);
-      color: #0a0c10;
-    }
-    .interests-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-    .interest-item {
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid #334155;
-      border-radius: 40px;
-      padding: 0.4rem 1.2rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* daily documentation cards */
-    .daily-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-    .daily-card {
-      padding: 1.5rem;
-    }
-    .day-badge {
       display: inline-block;
-      background: #0f172a;
-      border-left: 4px solid var(--primary);
-      padding: 0.2rem 1rem;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      margin-bottom: 1rem;
+      text-align: center;
     }
-    .doc-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    .doc-excerpt {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-      line-height: 1.4;
-    }
-    .doc-link {
-      color: var(--primary);
-      text-decoration: none;
+    .day-btn:hover { background: var(--accent); color: #0f172a; transform: translateY(-2px); }
+    
+    /* Style for links that open new page */
+    .day-link {
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.3);
+      padding: 8px 14px;
+      border-radius: 10px;
       font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
       transition: 0.2s;
-    }
-    .doc-link:hover {
-      gap: 0.6rem;
-      color: #60a5fa;
-    }
-
-    /* timeline & progress (simple internship tracker) */
-    .internship-tracker {
-      background: var(--dark-card);
-      border-radius: 1.5rem;
-      padding: 2rem;
-      border: 1px solid #1e293b;
-    }
-    .progress-stats {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 1.8rem 0;
-    }
-    .stat {
+      display: inline-block;
       text-align: center;
+      cursor: pointer;
+      color: var(--text);
+      text-decoration: none;
     }
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-    .progress-bar-bg {
-      background: #1e293b;
-      border-radius: 30px;
-      height: 8px;
-      margin-top: 0.8rem;
-    }
-    .progress-fill {
-      width: 68%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      height: 8px;
-      border-radius: 30px;
+    .day-link:hover {
+      background: var(--accent);
+      color: #0f172a;
+      transform: translateY(-2px);
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      border-top: 1px solid var(--border-dim);
-    }
+    .about-card, .project-card, .skill-card, .contact-card { background: rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:25px; }
+    
+    .projects-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-top:20px; }
+    .skills-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:20px; }
+    .tag-list { display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .tag { background: rgba(59,130,246,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; }
 
-    @media (max-width: 768px) {
-      .nav-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero .container {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .btn-group {
-        justify-content: center;
-      }
-      .section-title:after {
-        left: 20%;
-      }
-      .container {
-        padding: 0 1.2rem;
-      }
-    }
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px);}
-      100% { opacity: 1; transform: translateY(0);}
-    }
-    .hero, .about-card, .domain-card, .daily-card, .internship-tracker {
-      animation: fadeUp 0.6s ease forwards;
+    footer { border-top:1px solid var(--border); padding:25px 0; text-align:center; color:var(--muted) }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-text p { margin-left: auto; margin-right: auto; }
+      .btn-group { justify-content: center; }
+      .profile-circle { width: 200px; height: 200px; }
+      .week-list { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="container nav-inner">
-    <!-- Logo with clickable link to Sanjivani University (TL branding) -->
-    <a href="https://sanjivani.edu.in/" target="_blank" class="logo-link" rel="noopener noreferrer">
-      <img src="assets/tl-logo.png" alt="Tinkerers' Lab Sanjivani" class="tl-logo-img" onerror="this.onerror=null; this.src='https://placehold.co/52x52/1e293b/3b82f6?text=TL';">
-      <div class="logo-text">
-        <h2>Tinkerers' Lab</h2>
-        <p>Sanjivani University</p>
-      </div>
-    </a>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#domains">Domains</a>
-      <a href="#documentation">Docs</a>
-      <a href="#progress">Tracker</a>
-    </div>
-  </div>
-</nav>
-
-<main>
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+  <header>
     <div class="container">
-      <div class="hero-content">
-        <span class="hero-badge">🔧 TL Internship 2026 • Sanjivani University</span>
-        <h1>Tanmay Nilesh <span class="gradient-text">Pendbhaje</span></h1>
-        <p class="hero-desc">Mechanical Engineering (B.Tech) • Documenting my internship journey at Tinkerers' Lab — daily progress, technical deep-dives, and real-world building.</p>
-        <div class="btn-group">
-          <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" class="btn btn-primary">🔗 LinkedIn Profile</a>
-          <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" target="_blank" class="btn btn-outline">🐙 GitHub Repository</a>
-          <a href="#documentation" class="btn btn-outline">📘 Daily Logs</a>
+      <nav>
+        <div class="logo">🔧 Tinkerers' Lab • Tanmay Pendbhaje</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#weeks">Calendar</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h4>Hello, I am</h4>
+          <h1>Tanmay Nilesh Pendbhaje</h1>
+          <p>B.Tech Mechanical Engineering (Pre-admitted) • Tinkerers' Lab Intern, Sanjivani University. Documenting my internship journey day by day — hands-on learning, technical insights, and project development.</p>
+          <div class="btn-group">
+            <a href="#weeks" class="btn btn-primary">📅 View Daily Calendar</a>
+            <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" class="btn btn-outline">🔗 LinkedIn</a>
+            <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" target="_blank" class="btn btn-outline">🐙 GitHub</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-circle">
+            <img src="assets/tnp-profile.jpeg" alt="Tanmay Pendbhaje" onerror="this.onerror=null; this.src='https://placehold.co/280x280/1e293b/3b82f6?text=TP'">
+          </div>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="profile-frame">
-          <img src="assets/tnp-profile.jpeg" alt="Tanmay Pendbhaje" class="profile-img" onerror="this.onerror=null; this.src='https://placehold.co/200x200/111827/3b82f6?text=TN'">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About + Interests (focus: internship, with interests as a side note) -->
-  <section id="about">
-    <div class="container">
-      <div class="grid-2col">
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Mechanical Engineering student passionate about design, robotics, and documentation.</p>
         <div class="about-card">
-          <h3>📌 TL Internship Focus</h3>
-          <p>At <strong>Tinkerers' Lab, Sanjivani University</strong>, I'm documenting my hands-on learning in product development, mechanical prototyping, and collaborative engineering. Daily documentation includes technical insights, build logs, and design iterations.</p>
-          <p style="margin-top: 1rem;">🚀 <strong>Current goal:</strong> Build a robust internship portfolio, contribute to lab projects, and improve my design & documentation workflow.</p>
-        </div>
-        <div class="about-card">
-          <h3>🧠 Interests & Exploration</h3>
-          <div class="interests-list">
-            <span class="interest-item">🤖 Robotics</span>
-            <span class="interest-item">📐 CAD Modelling</span>
-            <span class="interest-item">🏭 Product Development</span>
-            <span class="interest-item">⚙️ Mechanical Design</span>
-            <span class="interest-item">🌐 Web Dev</span>
-            <span class="interest-item">🐙 GitHub</span>
-            <span class="interest-item">🧠 AI & Tech</span>
-            <span class="interest-item">📡 ROS2</span>
-          </div>
-          <div class="skills-flex" style="margin-top: 1.5rem;">
-            <span class="skill-tag">SolidWorks</span>
-            <span class="skill-tag">CSWA (Interest)</span>
-            <span class="skill-tag">Python basics</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">Git workflows</span>
+          <p>I am a pre-admitted B.Tech Mechanical Engineering student at <strong>Sanjivani University, Kopargaon</strong>. Currently documenting my internship journey at <strong>Tinkerers' Lab</strong> — where I explore product development, CAD modelling, and hands-on engineering. This website serves as my daily documentation portfolio.</p>
+          <div class="tag-list" style="margin-top: 18px;">
+            <span class="tag">⚙️ SolidWorks</span>
+            <span class="tag">🤖 ROS2 (Learning)</span>
+            <span class="tag">📐 Mechanical Design</span>
+            <span class="tag">🌐 Web Dev</span>
+            <span class="tag">🐙 Git/GitHub</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Internship Domains (only TL relevant, clean) -->
-  <section id="domains">
+    <!-- Weeks / Daily Calendar Section - Day buttons open separate pages -->
+    <section id="weeks">
+      <div class="container">
+        <div class="section-heading-with-logo">
+          <h2 class="section-title">📆 Internship Calendar</h2>
+          <div class="section-logo-circle">
+            <img src="assets/tl-logo.png" alt="TL Logo" onerror="this.onerror=null; this.src='https://placehold.co/60x60/3b82f6/ffffff?text=TL'">
+          </div>
+        </div>
+        <p class="section-subtitle">Click on any day button to open the detailed documentation page for that day.</p>
+
+        <div class="week-list">
+          <!-- Week 1 -->
+          <div class="week-card">
+            <h3>📌 Week 1</h3>
+            <div class="week-tabs">
+              <a href="day1.html" target="_blank" class="day-link">Day 1</a>
+              <a href="day2.html" target="_blank" class="day-link">Day 2</a>
+              <a href="day3.html" target="_blank" class="day-link">Day 3</a>
+              <a href="day4.html" target="_blank" class="day-link">Day 4</a>
+              <a href="day5.html" target="_blank" class="day-link">Day 5</a>
+              <a href="day6.html" target="_blank" class="day-link">Day 6</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">📖 Week 1: Onboarding, setup, and initial documentation.</p>
+          </div>
+
+          <!-- Week 2 -->
+          <div class="week-card">
+            <h3>📌 Week 2</h3>
+            <div class="week-tabs">
+              <a href="day7.html" target="_blank" class="day-link">Day 7</a>
+              <a href="day8.html" target="_blank" class="day-link">Day 8</a>
+              <a href="day9.html" target="_blank" class="day-link">Day 9</a>
+              <a href="day10.html" target="_blank" class="day-link">Day 10</a>
+              <a href="day11.html" target="_blank" class="day-link">Day 11</a>
+              <a href="day12.html" target="_blank" class="day-link">Day 12</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">🔧 Week 2: SolidWorks practice and CAD fundamentals.</p>
+          </div>
+
+          <!-- Week 3 -->
+          <div class="week-card">
+            <h3>📌 Week 3</h3>
+            <div class="week-tabs">
+              <a href="day13.html" target="_blank" class="day-link">Day 13</a>
+              <a href="day14.html" target="_blank" class="day-link">Day 14</a>
+              <a href="day15.html" target="_blank" class="day-link">Day 15</a>
+              <a href="day16.html" target="_blank" class="day-link">Day 16</a>
+              <a href="day17.html" target="_blank" class="day-link">Day 17</a>
+              <a href="day18.html" target="_blank" class="day-link">Day 18</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">🤖 Week 3: ROS2 basics and Python nodes.</p>
+          </div>
+
+          <!-- Week 4 -->
+          <div class="week-card">
+            <h3>📌 Week 4</h3>
+            <div class="week-tabs">
+              <a href="day19.html" target="_blank" class="day-link">Day 19</a>
+              <a href="day20.html" target="_blank" class="day-link">Day 20</a>
+              <a href="day21.html" target="_blank" class="day-link">Day 21</a>
+              <a href="day22.html" target="_blank" class="day-link">Day 22</a>
+              <a href="day23.html" target="_blank" class="day-link">Day 23</a>
+              <a href="day24.html" target="_blank" class="day-link">Day 24</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">📝 Week 4: Project work and technical documentation.</p>
+          </div>
+
+          <!-- Week 5 -->
+          <div class="week-card">
+            <h3>📌 Week 5</h3>
+            <div class="week-tabs">
+              <a href="day25.html" target="_blank" class="day-link">Day 25</a>
+              <a href="day26.html" target="_blank" class="day-link">Day 26</a>
+              <a href="day27.html" target="_blank" class="day-link">Day 27</a>
+              <a href="day28.html" target="_blank" class="day-link">Day 28</a>
+              <a href="day29.html" target="_blank" class="day-link">Day 29</a>
+              <a href="day30.html" target="_blank" class="day-link">Day 30</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">🚀 Week 5: Advanced topics and portfolio finalization.</p>
+          </div>
+
+          <!-- Week 6 -->
+          <div class="week-card">
+            <h3>📌 Week 6</h3>
+            <div class="week-tabs">
+              <a href="day31.html" target="_blank" class="day-link">Day 31</a>
+              <a href="day32.html" target="_blank" class="day-link">Day 32</a>
+              <a href="day33.html" target="_blank" class="day-link">Day 33</a>
+              <a href="day34.html" target="_blank" class="day-link">Day 34</a>
+              <a href="day35.html" target="_blank" class="day-link">Day 35</a>
+              <a href="day36.html" target="_blank" class="day-link">Day 36</a>
+            </div>
+            <p style="color: var(--muted); font-size: 0.85rem; margin-top: 12px;">🎯 Week 6: Final review and internship wrap-up.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">🔬 Projects</h2>
+        <p class="section-subtitle">Internship projects and hands-on work at Tinkerers' Lab.</p>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>📐 CAD Modelling Projects</h3>
+            <p>SolidWorks designs, mechanical components, and assembly drawings created during internship.</p>
+            <div class="tag-list"><span class="tag">SolidWorks</span><span class="tag">3D Modelling</span></div>
+          </div>
+          <div class="project-card">
+            <h3>🤖 Robotics Documentation</h3>
+            <p>ROS2 implementation, node programming, and robot simulation documentation.</p>
+            <div class="tag-list"><span class="tag">ROS2</span><span class="tag">Python</span></div>
+          </div>
+          <div class="project-card">
+            <h3>🌐 Portfolio Website</h3>
+            <p>This daily documentation website — HTML/CSS, GitHub Pages, responsive design.</p>
+            <div class="tag-list"><span class="tag">HTML/CSS</span><span class="tag">GitHub Pages</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">⚙️ Skills & Tools</h2>
+        <p class="section-subtitle">Technologies I'm learning and using during this internship.</p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>📐 Design & CAD</h3>
+            <div class="tag-list">
+              <span class="tag">SolidWorks</span>
+              <span class="tag">Fusion 360</span>
+              <span class="tag">Mechanical Drawing</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>🤖 Robotics & Programming</h3>
+            <div class="tag-list">
+              <span class="tag">ROS2</span>
+              <span class="tag">Python</span>
+              <span class="tag">Node Programming</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>🌐 Web & Tools</h3>
+            <div class="tag-list">
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">Git & GitHub</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">📫 Contact</h2>
+        <p class="section-subtitle">Connect with me for collaboration or opportunities.</p>
+        <div class="contact-card">
+          <p><strong>Name:</strong> Tanmay Nilesh Pendbhaje</p>
+          <p><strong>Email:</strong> tanmay.pendbhaje@sanjivani.edu.in</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" style="color: var(--accent);">linkedin.com/in/tanmay-pendbhaje</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/tanmay-np" target="_blank" style="color: var(--accent);">github.com/tanmay-np</a></p>
+          <p><strong>University:</strong> Sanjivani University, Kopargaon</p>
+          <p><strong>Lab:</strong> Tinkerers' Lab</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
     <div class="container">
-      <h2 class="section-title">⚡ Internship Pillars</h2>
-      <div class="grid-2col">
-        <div class="domain-card">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🛠️</div>
-          <h3>Design & Prototyping</h3>
-          <p>Mechanical design iterations, rapid prototyping at Tinkerers' Lab, and translating ideas into real components.</p>
-        </div>
-        <div class="domain-card">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">📘</div>
-          <h3>Documentation & Workflow</h3>
-          <p>Daily markdown reports, version control with Git, and maintaining structured internship logs.</p>
-        </div>
-        <div class="domain-card">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🤝</div>
-          <h3>Collaborative Projects</h3>
-          <p>Working with lab peers, contributing to team-based engineering challenges, and learning from mentors.</p>
-        </div>
-        <div class="domain-card">
-          <div style="font-size: 2rem; margin-bottom: 0.8rem;">🌱</div>
-          <h3>Skill Building</h3>
-          <p>CAD, hands-on manufacturing awareness, and integrating modern tools into the product development cycle.</p>
-        </div>
-      </div>
+      <p>© 2026 Tanmay Nilesh Pendbhaje | Tinkerers' Lab Internship | Sanjivani University</p>
+      <p style="margin-top: 8px; font-size: 0.8rem;">📅 Daily documentation • Building in public • TL Internship 2026</p>
     </div>
-  </section>
-
-  <!-- Daily Documentation Section (reads day*.md from daily-docs) -->
-  <section id="documentation">
-    <div class="container">
-      <h2 class="section-title">📆 Daily Documentation</h2>
-      <p style="margin-bottom: 2rem; color: var(--text-muted);">Every day of my internship → detailed markdown files covering progress, technical insights, and reflections.</p>
-      <div class="daily-grid" id="dailyDocsContainer">
-        <!-- dynamic cards injected via JS -->
-      </div>
-      <div style="margin-top: 2.2rem; text-align: center;">
-        <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026/tree/main/daily-docs" target="_blank" class="btn btn-outline">📁 Browse all Markdown logs →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Internship Progress Tracker (clean, focused on internship commitment) -->
-  <section id="progress">
-    <div class="container">
-      <h2 class="section-title">📈 Internship Tracker</h2>
-      <div class="internship-tracker">
-        <div class="progress-stats">
-          <div class="stat">
-            <div class="stat-number" id="daysCount">0</div>
-            <div>Days Documented</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">✅</div>
-            <div>Daily Commits</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">📌</div>
-            <div>GitHub Pages</div>
-          </div>
-        </div>
-        <p style="margin-top: 0.8rem; text-align: center; color: var(--text-muted);">Consistency tracker: each markdown file reflects a day of active internship learning.</p>
-        <div class="progress-bar-bg">
-          <div class="progress-fill"></div>
-        </div>
-        <p style="margin-top: 1rem; font-size: 0.85rem; text-align: center;">⚡ 68% of internship sprint completed — building documentation habit</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© 2026 Tanmay Nilesh Pendbhaje — Tinkerers' Lab Internship | Sanjivani University, Kopargaon</p>
-  <p style="margin-top: 0.4rem;">📘 daily documentation • hands-on engineering • open source portfolio</p>
-</footer>
-
-<script>
-  // Daily docs loader: scan daily-docs/day1.md ... day15.md and create cards dynamically
-  const docsContainer = document.getElementById('dailyDocsContainer');
-  const daysCountSpan = document.getElementById('daysCount');
-
-  async function checkAndLoadDocs() {
-    const maxDays = 20;      // show up to day 20, but only existing docs + placeholder for upcoming days
-    let existingCount = 0;
-    const docsData = [];
-
-    for (let i = 1; i <= maxDays; i++) {
-      const fileUrl = `daily-docs/day${i}.md`;
-      try {
-        const response = await fetch(fileUrl, { method: 'HEAD', cache: 'no-store' });
-        if (response.ok) {
-          // fetch content to get title + excerpt
-          const contentRes = await fetch(fileUrl);
-          const content = await contentRes.text();
-          const lines = content.split(/\r?\n/);
-          let title = `Day ${i} Update`;
-          let excerpt = "Internship log: documented learnings, experiments, and project milestones.";
-          for (let line of lines) {
-            if (line.trim().startsWith('# ')) {
-              title = line.replace('# ', '').trim();
-              break;
-            }
-          }
-          for (let line of lines) {
-            if (line.trim().length > 15 && !line.startsWith('#') && line.trim() !== '') {
-              excerpt = line.trim().substring(0, 110);
-              break;
-            }
-          }
-          docsData.push({ day: i, exists: true, title, excerpt, url: fileUrl });
-          existingCount++;
-        } else {
-          docsData.push({ day: i, exists: false, title: `Day ${i}`, excerpt: "Add daily-docs/day" + i + ".md to log your progress.", url: null });
-        }
-      } catch(e) {
-        docsData.push({ day: i, exists: false, title: `Day ${i}`, excerpt: "Create markdown file in daily-docs/ folder.", url: null });
-      }
-    }
-
-    // update days counter
-    if (daysCountSpan) daysCountSpan.innerText = existingCount;
-
-    // render first 12 days for clean UI, plus extra if needed
-    const renderLimit = Math.min(12, Math.max(existingCount + 2, 6));
-    docsContainer.innerHTML = '';
-    for (let i = 0; i < renderLimit; i++) {
-      const doc = docsData[i];
-      if (!doc) continue;
-      const card = document.createElement('div');
-      card.className = 'daily-card';
-      if (doc.exists) {
-        card.innerHTML = `
-          <div class="day-badge">📅 Day ${doc.day}</div>
-          <div class="doc-title">${escapeHtml(doc.title)}</div>
-          <div class="doc-excerpt">${escapeHtml(doc.excerpt)}</div>
-          <a href="${doc.url}" target="_blank" class="doc-link">📖 Read full entry →</a>
-        `;
-      } else {
-        card.innerHTML = `
-          <div class="day-badge">📅 Day ${doc.day}</div>
-          <div class="doc-title">${escapeHtml(doc.title)}</div>
-          <div class="doc-excerpt">📝 ${escapeHtml(doc.excerpt)}</div>
-          <span style="color:#475569; font-size:0.85rem;">➕ Add .md file to appear here</span>
-        `;
-      }
-      docsContainer.appendChild(card);
-    }
-    // if no docs exist at all, add a friendly guide card
-    if (existingCount === 0) {
-      const guideCard = document.createElement('div');
-      guideCard.className = 'daily-card';
-      guideCard.innerHTML = `
-        <div class="day-badge">📘 Getting Started</div>
-        <div class="doc-title">Your first daily documentation</div>
-        <div class="doc-excerpt">Create day1.md inside /daily-docs folder. Write your internship progress, learnings, or any technical observation. This card will auto-display the title and preview.</div>
-        <a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" target="_blank" class="doc-link">✨ Create your first log →</a>
-      `;
-      docsContainer.appendChild(guideCard);
-      if (daysCountSpan) daysCountSpan.innerText = "Start";
-    }
-  }
-
-  function escapeHtml(str) {
-    return str.replace(/[&<>]/g, function(m) {
-      if (m === '&') return '&amp;';
-      if (m === '<') return '&lt;';
-      if (m === '>') return '&gt;';
-      return m;
-    });
-  }
-
-  checkAndLoadDocs().catch(err => {
-    console.warn("Doc loader fallback", err);
-    docsContainer.innerHTML = `<div class="daily-card"><div class="day-badge">✨ TL Internship</div><div class="doc-title">Documentation hub ready</div><div class="doc-excerpt">Add your markdown files inside daily-docs/ (day1.md, day2.md ...). The website automatically displays them. Start documenting your journey today!</div><a href="https://github.com/tanmay-np/TL-Internship-Documentation2026" class="doc-link">📘 Repository guide</a></div>`;
-    if (daysCountSpan) daysCountSpan.innerText = "1+";
-  });
-</script>
+  </footer>
 </body>
 </html>
