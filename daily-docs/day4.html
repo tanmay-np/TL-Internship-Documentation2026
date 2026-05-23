@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Day 4 | Tanmay's TL Internship</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:#0f172a;
+      color:#f8fafc;
+      line-height:1.6;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:2rem;
+    }
+
+    .back-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#2563eb;
+      color:white;
+      padding:10px 18px;
+      border-radius:10px;
+      margin-bottom:2rem;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .back-btn:hover{
+      background:#1d4ed8;
+      transform:translateY(-2px);
+    }
+
+    h1{
+      color:#60a5fa;
+      margin-bottom:1.5rem;
+      font-size:2.2rem;
+    }
+
+    h2{
+      color:#3b82f6;
+      margin-top:2rem;
+      margin-bottom:1rem;
+    }
+
+    h3{
+      color:#60a5fa;
+      margin-bottom:1rem;
+    }
+
+    .content{
+      background:#1e293b;
+      padding:2rem;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .task-list{
+      margin-left:1.5rem;
+      margin-top:1rem;
+    }
+
+    .task-list li{
+      margin:10px 0;
+      color:#e2e8f0;
+    }
+
+    .highlight{
+      color:#60a5fa;
+      font-weight:bold;
+    }
+
+    .screenshot-section{
+      margin-top:3rem;
+    }
+
+    .screenshot-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:1.5rem;
+      margin-top:1rem;
+    }
+
+    .screenshot-card{
+      background:#0f172a;
+      border:1px solid #334155;
+      border-radius:16px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .screenshot-card:hover{
+      transform:translateY(-5px);
+      border-color:#3b82f6;
+    }
+
+    .screenshot-card img{
+      width:100%;
+      display:block;
+    }
+
+    .screenshot-card p{
+      padding:1rem;
+      color:#cbd5e1;
+      font-size:0.95rem;
+      text-align:center;
+    }
+
+    .footer-note{
+      margin-top:2rem;
+      color:#94a3b8;
+      text-align:center;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:1.8rem;
+      }
+      .container{
+        padding:1rem;
+      }
+      .content{
+        padding:1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <a href="../index.html#weeks" class="back-btn">← Back to Calendar</a>
+
+    <h1>🎨 Day 4: Logo Design using Inkscape</h1>
+
+    <div class="content">
+
+      <h2>✅ Today's Focus:</h2>
+
+      <ul class="task-list">
+        <li>Installed and set up <span class="highlight">Inkscape</span> (vector graphics software)</li>
+        <li>Learned basic Inkscape tools: Shapes, Paths, Text, Fill, and Stroke</li>
+        <li>Designed a custom <span class="highlight">Tinkerers' Lab logo</span> for my portfolio</li>
+        <li>Exported the logo in PNG format for web use</li>
+        <li>Added the new logo to my main website</li>
+      </ul>
+
+      <h2>🎯 Logo Design Process:</h2>
+
+      <ul class="task-list">
+        <li><strong>Research:</strong> Looked at TL branding and modern tech logos</li>
+        <li><strong>Sketch:</strong> Created rough concept on paper first</li>
+        <li><strong>Vector Creation:</strong> Used Inkscape's shape and path tools</li>
+        <li><strong>Color Palette:</strong> Chosen blue/cyan gradient matching TL theme</li>
+        <li><strong>Typography:</strong> Added "Tinkerers' Lab" text with clean font</li>
+        <li><strong>Export:</strong> Saved as PNG and SVG formats</li>
+      </ul>
+
+      <h2>📝 Key Learnings:</h2>
+
+      <ul class="task-list">
+        <li>Understanding <strong>vector graphics</strong> vs raster images</li>
+        <li>Using <strong>Bezier curves and paths</strong> for custom shapes</li>
+        <li>Working with <strong>layers</strong> to organize design elements</li>
+        <li>Applying <strong>gradients and transparency</strong> effects</li>
+        <li>Exporting graphics for <strong>web optimization</strong></li>
+        <li>Importance of <strong>branding and visual identity</strong></li>
+      </ul>
+
+      <h2>📝 Notes:</h2>
+      <p>
+        Today I learned Inkscape and designed my first professional logo for the 
+        Tinkerers' Lab portfolio. Vector graphics are scalable without losing quality,
+        which is perfect for logos. I exported the logo and added it to my website's
+        header and hero section. This logo now represents my internship branding!
+      </p>
+
+      <!-- Screenshots Section -->
+      <div class="screenshot-section">
+        <h2>📸 Logo Design Screenshots</h2>
+        <div class="screenshot-grid">
+          <div class="screenshot-card">
+            <img src="../screenshots/inkscape-logo-design.png" alt="Inkscape Logo Design Process" onerror="this.src='https://placehold.co/400x250/334155/60a5fa?text=Inkscape+Design+Screenshot'">
+            <p>Designing the TL Logo in Inkscape</p>
+          </div>
+          <div class="screenshot-card">
+            <img src="../screenshots/final-logo.png" alt="Final Tinkerers Lab Logo" onerror="this.src='https://placehold.co/400x250/3b82f6/ffffff?text=TL+Final+Logo'">
+            <p>Final Tinkerers' Lab Logo</p>
+          </div>
+        </div>
+        <p class="footer-note">
+          Logo created with Inkscape | TL Internship Documentation
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
