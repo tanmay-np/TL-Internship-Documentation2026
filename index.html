@@ -2,336 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Tanmay Pendbhaje | TL Internship 2026</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanmay Pendbhaje | TL Internship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #050816;
-      color: #F8FAFC;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0B1120; }
-    ::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 10px; }
-
-    #particlesCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      opacity: 0.4;
-    }
-
-    .container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .glass-card {
-      background: rgba(11, 17, 32, 0.55);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(59, 130, 246, 0.25);
-      border-radius: 28px;
-      transition: all 0.3s ease;
-    }
-    .glass-card:hover {
-      border-color: rgba(59, 130, 246, 0.6);
-      box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
-      transform: translateY(-4px);
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5, 8, 22, 0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 1rem 0;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-img {
-      height: 42px;
-      width: auto;
-      filter: drop-shadow(0 0 6px #3B82F6);
-    }
-    .logo-text {
-      font-weight: 700;
-      font-size: 1.2rem;
-      background: linear-gradient(135deg, #fff, #60A5FA);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links a {
-      color: #94A3B8;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #050816; color: #F8FAFC; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .glass { background: rgba(11, 17, 32, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(59,130,246,0.3); border-radius: 28px; }
+    
+    .navbar { position: sticky; top: 0; background: rgba(5,8,22,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(59,130,246,0.3); padding: 1rem 0; z-index: 100; }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .logo-area { display: flex; align-items: center; gap: 12px; }
+    .logo-img { height: 42px; }
+    .logo-text { font-weight: 700; background: linear-gradient(135deg, #fff, #60A5FA); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #94A3B8; text-decoration: none; transition: 0.2s; }
     .nav-links a:hover { color: #3B82F6; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.25s ease;
-      border: 1px solid rgba(59,130,246,0.3);
-      background: rgba(5,8,22,0.6);
-      color: white;
-    }
-    .btn-primary {
-      background: linear-gradient(95deg, #3B82F6, #60A5FA);
-      border: none;
-      box-shadow: 0 8px 20px rgba(59,130,246,0.3);
-    }
-    .btn-primary:hover { transform: translateY(-3px); }
-    .btn-outline:hover { border-color: #3B82F6; background: rgba(59,130,246,0.1); transform: translateY(-3px); }
-
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 4rem 0;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(59,130,246,0.15);
-      border-left: 3px solid #3B82F6;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #FFFFFF, #60A5FA);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 1rem;
-    }
-    .hero-tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-    }
-    .hero-tag {
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(59,130,246,0.3);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-    }
-    .profile-img {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #3B82F6;
-      box-shadow: 0 0 40px rgba(59,130,246,0.5);
-      animation: floatGlow 5s infinite ease-in-out;
-    }
-    @keyframes floatGlow {
-      0%,100%{ transform: translateY(0px); }
-      50%{ transform: translateY(-12px); }
-    }
-
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid rgba(59,130,246,0.1);
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      position: relative;
-      display: inline-block;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: #3B82F6;
-      border-radius: 4px;
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .stat-card {
-      text-align: center;
-      padding: 1.8rem;
-    }
-    .stat-number {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #60A5FA;
-    }
-
-    /* Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .timeline-item {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-    }
-    .timeline-dot {
-      width: 14px;
-      height: 14px;
-      background: #3B82F6;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #3B82F6;
-      margin-top: 0.5rem;
-    }
-    .timeline-content {
-      flex: 1;
-      background: rgba(11, 17, 32, 0.5);
-      padding: 1.2rem 1.5rem;
-      border-radius: 20px;
-    }
-
-    /* Skills Chips */
-    .skills-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 2rem;
-    }
-    .skill-chip {
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(59,130,246,0.25);
-      padding: 8px 18px;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      transition: 0.2s;
-    }
-    .skill-chip:hover {
-      background: #3B82F6;
-      transform: translateY(-2px);
-    }
-
-    /* Week Card */
-    .week-card {
-      padding: 2rem;
-    }
-    .week-card h3 {
-      font-size: 1.8rem;
-      color: #60A5FA;
-      margin-bottom: 1rem;
-    }
-    .week-tabs {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-    .day-link {
-      background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.3);
-      padding: 10px 22px;
-      border-radius: 40px;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      transition: 0.2s;
-      display: inline-block;
-    }
-    .day-link:hover {
-      background: #3B82F6;
-      transform: translateY(-3px);
-    }
-
-    .contact-card {
-      padding: 2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .social-icons a {
-      font-size: 1.6rem;
-      margin: 0 0.8rem;
-      color: #94A3B8;
-      transition: 0.2s;
-    }
+    
+    .hero { min-height: 85vh; display: flex; align-items: center; padding: 4rem 0; }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; align-items: center; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); background: linear-gradient(135deg, #FFFFFF, #60A5FA); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
+    .profile-img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 3px solid #3B82F6; box-shadow: 0 0 40px rgba(59,130,246,0.5); animation: float 5s infinite; }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-12px); } }
+    
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.2s; }
+    .btn-primary { background: linear-gradient(95deg, #3B82F6, #60A5FA); color: white; }
+    .btn-outline { border: 1px solid rgba(59,130,246,0.3); color: white; background: rgba(5,8,22,0.6); }
+    .btn-primary:hover, .btn-outline:hover { transform: translateY(-3px); }
+    
+    section { padding: 5rem 0; border-bottom: 1px solid rgba(59,130,246,0.1); }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; display: inline-block; }
+    .section-title:after { content: ''; display: block; width: 60%; height: 3px; background: #3B82F6; margin-top: 8px; }
+    
+    .timeline { display: flex; flex-direction: column; gap: 1rem; }
+    .timeline-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .timeline-dot { width: 12px; height: 12px; background: #3B82F6; border-radius: 50%; margin-top: 0.6rem; }
+    .timeline-content { background: rgba(11,17,32,0.5); padding: 1rem 1.5rem; border-radius: 20px; flex: 1; }
+    
+    .skills-wrapper { display: flex; flex-wrap: wrap; gap: 12px; padding: 2rem; }
+    .skill-chip { background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.25); padding: 8px 18px; border-radius: 40px; transition: 0.2s; }
+    .skill-chip:hover { background: #3B82F6; transform: translateY(-2px); }
+    
+    .week-card { padding: 2rem; text-align: center; }
+    .week-card h3 { color: #60A5FA; font-size: 1.8rem; margin-bottom: 1rem; }
+    .week-tabs { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0; }
+    .day-link { background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); padding: 10px 22px; border-radius: 40px; text-decoration: none; color: white; font-weight: 600; transition: 0.2s; display: inline-block; }
+    .day-link:hover { background: #3B82F6; transform: translateY(-3px); }
+    
+    .contact-card { padding: 2rem; max-width: 500px; margin: 0 auto; text-align: center; }
+    .social-icons a { font-size: 1.5rem; margin: 0 0.5rem; color: #94A3B8; }
     .social-icons a:hover { color: #3B82F6; }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #64748B;
-    }
-
+    footer { text-align: center; padding: 2rem; color: #64748B; }
+    
     @media (max-width: 860px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .container { padding: 0 1.2rem; }
       .profile-img { width: 200px; height: 200px; }
-      .hero-tags { justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-<canvas id="particlesCanvas"></canvas>
-
 <nav class="navbar">
   <div class="container nav-container">
     <div class="logo-area">
-      <img src="assets/tl-logo.png" alt="TL Logo" class="logo-img" onerror="this.src='https://placehold.co/48x48/3b82f6/white?text=TL'">
+      <img src="assets/tl-logo.png" class="logo-img" alt="TL" onerror="this.src='https://placehold.co/48x48/3b82f6/white?text=TL'">
       <span class="logo-text">Tinkerers' Lab</span>
     </div>
     <div class="nav-links">
@@ -344,20 +80,18 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <div class="hero-badge">SANJIVANI UNIVERSITY • TINKERERS' LAB</div>
+      <div class="hero-badge" style="display: inline-block; background: rgba(59,130,246,0.15); padding: 0.3rem 1rem; border-radius: 40px; margin-bottom: 1rem;">SANJIVANI UNIVERSITY • TINKERERS' LAB</div>
       <h1>Tanmay Nilesh Pendbhaje</h1>
       <p style="color: #94A3B8;">First Year Mechanical Engineering • Tinkerers' Lab Intern</p>
-      <div class="hero-tags">
-        <span class="hero-tag">🌐 Web Development</span>
-        <span class="hero-tag">📐 CAD Design</span>
-        <span class="hero-tag">🖨️ 3D Printing</span>
-        <span class="hero-tag">🐙 Git/GitHub</span>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin: 1rem 0;">
+        <span style="background: rgba(59,130,246,0.12); padding: 4px 12px; border-radius: 20px;">🌐 Web Dev</span>
+        <span style="background: rgba(59,130,246,0.12); padding: 4px 12px; border-radius: 20px;">📐 CAD</span>
+        <span style="background: rgba(59,130,246,0.12); padding: 4px 12px; border-radius: 20px;">🖨️ 3D Printing</span>
       </div>
-      <p style="margin: 1.2rem 0 2rem 0;">Documenting my daily internship journey at Tinkerers' Lab — from SolidWorks to laser cutting, from web development to 3D printing.</p>
+      <p style="margin: 1rem 0;">Documenting my daily internship journey at Tinkerers' Lab — from SolidWorks to laser cutting, web dev to 3D printing.</p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
         <a href="#weeks" class="btn btn-primary"><i class="fas fa-calendar-week"></i> Daily Logs</a>
         <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -365,24 +99,11 @@
       </div>
     </div>
     <div>
-      <img src="assets/tnp-profile.jpeg" alt="Tanmay" class="profile-img" onerror="this.src='https://placehold.co/280x280/0B1120/3B82F6?text=TP'">
+      <img src="assets/tnp-profile.jpeg" class="profile-img" alt="Tanmay" onerror="this.src='https://placehold.co/280x280/0B1120/3B82F6?text=TP'">
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section>
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-card glass-card"><div class="stat-number">8</div><div>Days Completed</div></div>
-      <div class="stat-card glass-card"><div class="stat-number">5+</div><div>Projects</div></div>
-      <div class="stat-card glass-card"><div class="stat-number">24+</div><div>GitHub Commits</div></div>
-      <div class="stat-card glass-card"><div class="stat-number">6</div><div>Skills</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY TIMELINE -->
 <section id="journey">
   <div class="container">
     <h2 class="section-title">🚀 Internship Journey</h2>
@@ -396,28 +117,34 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <h2 class="section-title">⚡ Tech Stack</h2>
-    <div class="glass-card">
+    <div class="glass">
       <div class="skills-wrapper">
-        <span class="skill-chip">HTML5</span><span class="skill-chip">CSS3</span><span class="skill-chip">JavaScript</span>
-        <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span>
-        <span class="skill-chip">Ubuntu</span><span class="skill-chip">Inkscape</span><span class="skill-chip">SolidWorks</span>
-        <span class="skill-chip">Documentation</span><span class="skill-chip">3D Printing</span><span class="skill-chip">Laser Cutting</span>
+        <span class="skill-chip">HTML5</span>
+        <span class="skill-chip">CSS3</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">Git</span>
+        <span class="skill-chip">GitHub</span>
+        <span class="skill-chip">VS Code</span>
+        <span class="skill-chip">Ubuntu</span>
+        <span class="skill-chip">Inkscape</span>
+        <span class="skill-chip">SolidWorks</span>
+        <span class="skill-chip">Documentation</span>
+        <span class="skill-chip">3D Printing</span>
+        <span class="skill-chip">Laser Cutting</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WEEK 1 CALENDAR -->
 <section id="weeks">
   <div class="container">
     <h2 class="section-title">📆 Week 1 Documentation</h2>
-    <div class="week-card glass-card">
+    <div class="week-card glass">
       <h3>📌 Week 1 — Foundation</h3>
-      <p style="color: #94A3B8;">GitHub • Portfolio • SolidWorks • Inkscape • 3D Printing</p>
+      <p style="color: #94A3B8; margin-bottom: 1rem;">GitHub • Portfolio • SolidWorks • Inkscape • 3D Printing</p>
       <div class="week-tabs">
         <a href="week1/day1_documentation/day1.html" target="_blank" class="day-link">Day 1</a>
         <a href="week1/day2_documentation/day2.html" target="_blank" class="day-link">Day 2</a>
@@ -429,19 +156,18 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <h2 class="section-title" style="text-align: center;">📫 Contact</h2>
-    <div class="contact-card glass-card">
+    <h2 class="section-title">📫 Contact</h2>
+    <div class="contact-card glass">
       <p><strong>Tanmay Nilesh Pendbhaje</strong></p>
       <p><i class="fas fa-envelope"></i> tanmay.pendbhaje@sanjivani.edu.in</p>
-      <p><i class="fab fa-linkedin"></i> <a href="#" style="color:#60A5FA;">linkedin.com/in/tanmay-pendbhaje</a></p>
-      <p><i class="fab fa-github"></i> <a href="#" style="color:#60A5FA;">github.com/tanmay-np</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" style="color: #60A5FA;">linkedin.com/in/tanmay-pendbhaje</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/tanmay-np" target="_blank" style="color: #60A5FA;">github.com/tanmay-np</a></p>
       <p><i class="fas fa-university"></i> Sanjivani University, Kopargaon | Tinkerers' Lab</p>
       <div class="social-icons">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/tanmay-np" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
   </div>
@@ -451,51 +177,5 @@
   <p>© 2026 Tanmay Nilesh Pendbhaje | Tinkerers' Lab Internship | Built with HTML, CSS & Passion</p>
 </footer>
 
-<script>
-  const canvas = document.getElementById('particlesCanvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  
-  function createParticles() {
-    particles = [];
-    for(let i = 0; i < 70; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2 + 1,
-        speedX: (Math.random() - 0.5) * 0.3,
-        speedY: (Math.random() - 0.5) * 0.2
-      });
-    }
-  }
-  
-  function drawParticles() {
-    if(!ctx) return;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(59, 130, 246, 0.3)';
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fill();
-      p.x += p.speedX;
-      p.y += p.speedY;
-      if(p.x < 0) p.x = canvas.width;
-      if(p.x > canvas.width) p.x = 0;
-      if(p.y < 0) p.y = canvas.height;
-      if(p.y > canvas.height) p.y = 0;
-    });
-    requestAnimationFrame(drawParticles);
-  }
-  
-  window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
-  resizeCanvas();
-  createParticles();
-  drawParticles();
-</script>
 </body>
 </html>
