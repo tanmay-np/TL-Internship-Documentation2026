@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Tanmay Pendbhaje | TL Internship 2026 | Sanjivani University</title>
+  <title>Tanmay Pendbhaje | TL Internship 2026</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -25,13 +25,6 @@
     ::-webkit-scrollbar-track { background: #0B1120; }
     ::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 10px; }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* particles canvas */
     #particlesCanvas {
       position: fixed;
       top: 0;
@@ -43,12 +36,30 @@
       opacity: 0.4;
     }
 
-    /* navbar */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .glass-card {
+      background: rgba(11, 17, 32, 0.55);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      border-radius: 28px;
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+      transform: translateY(-4px);
+    }
+
     .navbar {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(5, 8, 22, 0.9);
+      background: rgba(5, 8, 22, 0.95);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(59, 130, 246, 0.3);
       padding: 1rem 0;
@@ -90,11 +101,10 @@
     }
     .nav-links a:hover { color: #3B82F6; }
 
-    /* buttons */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       padding: 12px 28px;
       border-radius: 40px;
       font-weight: 600;
@@ -102,7 +112,6 @@
       transition: 0.25s ease;
       border: 1px solid rgba(59,130,246,0.3);
       background: rgba(5,8,22,0.6);
-      backdrop-filter: blur(4px);
       color: white;
     }
     .btn-primary {
@@ -111,9 +120,8 @@
       box-shadow: 0 8px 20px rgba(59,130,246,0.3);
     }
     .btn-primary:hover { transform: translateY(-3px); }
-    .btn-outline:hover { border-color: #3B82F6; background: rgba(59,130,246,0.1); }
+    .btn-outline:hover { border-color: #3B82F6; background: rgba(59,130,246,0.1); transform: translateY(-3px); }
 
-    /* hero */
     .hero {
       min-height: 85vh;
       display: flex;
@@ -132,7 +140,7 @@
       border-left: 3px solid #3B82F6;
       padding: 0.3rem 1rem;
       border-radius: 40px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       margin-bottom: 1.5rem;
     }
     .hero h1 {
@@ -144,10 +152,18 @@
       color: transparent;
       margin-bottom: 1rem;
     }
-    .profile-wrapper {
-      position: relative;
+    .hero-tags {
       display: flex;
-      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+    }
+    .hero-tag {
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
     }
     .profile-img {
       width: 280px;
@@ -155,7 +171,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #3B82F6;
-      box-shadow: 0 0 40px rgba(59,130,246,0.4);
+      box-shadow: 0 0 40px rgba(59,130,246,0.5);
       animation: floatGlow 5s infinite ease-in-out;
     }
     @keyframes floatGlow {
@@ -163,31 +179,94 @@
       50%{ transform: translateY(-12px); }
     }
 
-    /* sections */
     section {
       padding: 5rem 0;
+      border-bottom: 1px solid rgba(59,130,246,0.1);
     }
     .section-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: #3B82F6;
+      border-radius: 4px;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1.8rem;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
       color: #60A5FA;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      background: #3B82F6;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #3B82F6;
+      margin-top: 0.5rem;
+    }
+    .timeline-content {
+      flex: 1;
+      background: rgba(11, 17, 32, 0.5);
+      padding: 1.2rem 1.5rem;
+      border-radius: 20px;
+    }
+
+    /* Skills Chips */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 2rem;
+    }
+    .skill-chip {
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.25);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+    .skill-chip:hover {
+      background: #3B82F6;
+      transform: translateY(-2px);
     }
 
     /* Week Card */
     .week-card {
-      background: rgba(11, 17, 32, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      border-radius: 32px;
       padding: 2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      transition: 0.3s;
-    }
-    .week-card:hover {
-      border-color: #3B82F6;
-      box-shadow: 0 0 30px rgba(59,130,246,0.2);
     }
     .week-card h3 {
       font-size: 1.8rem;
@@ -203,7 +282,7 @@
     .day-link {
       background: rgba(59,130,246,0.15);
       border: 1px solid rgba(59,130,246,0.3);
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 40px;
       text-decoration: none;
       color: white;
@@ -213,26 +292,18 @@
     }
     .day-link:hover {
       background: #3B82F6;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    /* Contact Card */
     .contact-card {
-      background: rgba(11, 17, 32, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      border-radius: 32px;
       padding: 2rem;
       max-width: 600px;
       margin: 0 auto;
       text-align: center;
     }
-    .contact-card p {
-      margin: 0.8rem 0;
-    }
     .social-icons a {
-      font-size: 1.5rem;
-      margin: 0 0.5rem;
+      font-size: 1.6rem;
+      margin: 0 0.8rem;
       color: #94A3B8;
       transition: 0.2s;
     }
@@ -242,14 +313,14 @@
       text-align: center;
       padding: 2rem;
       color: #64748B;
-      border-top: 1px solid rgba(59,130,246,0.2);
     }
 
     @media (max-width: 860px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .container { padding: 0 1.2rem; }
-      .nav-links { gap: 1rem; }
       .profile-img { width: 200px; height: 200px; }
+      .hero-tags { justify-content: center; }
     }
   </style>
 </head>
@@ -265,41 +336,88 @@
     </div>
     <div class="nav-links">
       <a href="#home">Home</a>
+      <a href="#journey">Journey</a>
+      <a href="#skills">Skills</a>
       <a href="#weeks">Calendar</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="container hero-grid">
     <div>
-      <div class="hero-badge">
-        <img src="assets/TL_Intern_logo.png" alt="logo" style="height: 18px; display: inline-block; margin-right: 6px;" onerror="this.style.display='none'"> 
-        SANJIVANI UNIVERSITY • TINKERERS' LAB
-      </div>
+      <div class="hero-badge">SANJIVANI UNIVERSITY • TINKERERS' LAB</div>
       <h1>Tanmay Nilesh Pendbhaje</h1>
-      <p style="color:#94A3B8; font-size:1.1rem;">First Year Mechanical Engineering Student • Tinkerers' Lab Intern</p>
-      <p style="margin: 1.2rem 0 2rem 0; max-width: 500px;">Web Development & Documentation — tracking my Tinkerers' Lab internship journey with daily insights and hands-on learning.</p>
+      <p style="color: #94A3B8;">First Year Mechanical Engineering • Tinkerers' Lab Intern</p>
+      <div class="hero-tags">
+        <span class="hero-tag">🌐 Web Development</span>
+        <span class="hero-tag">📐 CAD Design</span>
+        <span class="hero-tag">🖨️ 3D Printing</span>
+        <span class="hero-tag">🐙 Git/GitHub</span>
+      </div>
+      <p style="margin: 1.2rem 0 2rem 0;">Documenting my daily internship journey at Tinkerers' Lab — from SolidWorks to laser cutting, from web development to 3D printing.</p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="#weeks" class="btn btn-primary"><i class="fas fa-calendar-week"></i> View Daily Calendar</a>
+        <a href="#weeks" class="btn btn-primary"><i class="fas fa-calendar-week"></i> Daily Logs</a>
         <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/tanmay-np" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
       </div>
     </div>
-    <div class="profile-wrapper">
-      <img src="assets/tnp-profile.jpeg" alt="Tanmay Profile" class="profile-img" onerror="this.src='https://placehold.co/280x280/0B1120/3B82F6?text=TP'">
+    <div>
+      <img src="assets/tnp-profile.jpeg" alt="Tanmay" class="profile-img" onerror="this.src='https://placehold.co/280x280/0B1120/3B82F6?text=TP'">
     </div>
   </div>
 </section>
 
-<!-- WEEK 1 SECTION - Only one box -->
+<!-- STATS -->
+<section>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card glass-card"><div class="stat-number">8</div><div>Days Completed</div></div>
+      <div class="stat-card glass-card"><div class="stat-number">5+</div><div>Projects</div></div>
+      <div class="stat-card glass-card"><div class="stat-number">24+</div><div>GitHub Commits</div></div>
+      <div class="stat-card glass-card"><div class="stat-number">6</div><div>Skills</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY TIMELINE -->
+<section id="journey">
+  <div class="container">
+    <h2 class="section-title">🚀 Internship Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><strong>📅 Day 1-2:</strong> GitHub setup, VS Code, Portfolio creation</div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><strong>📅 Day 3:</strong> SolidWorks 2026 - 3D Modelling (Extrude, Cut, Mirror, Fillet)</div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><strong>📅 Day 4:</strong> Inkscape Logo Design - Vector Graphics & Branding</div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><strong>📅 Day 5:</strong> 3D Printing - Bambu Lab Printers & Bambu Studio</div></div>
+      <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><strong>📅 Day 6-7:</strong> Laser Cutting (SIL Laser Cutter) & Phone Stand Design</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title">⚡ Tech Stack</h2>
+    <div class="glass-card">
+      <div class="skills-wrapper">
+        <span class="skill-chip">HTML5</span><span class="skill-chip">CSS3</span><span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">Git</span><span class="skill-chip">GitHub</span><span class="skill-chip">VS Code</span>
+        <span class="skill-chip">Ubuntu</span><span class="skill-chip">Inkscape</span><span class="skill-chip">SolidWorks</span>
+        <span class="skill-chip">Documentation</span><span class="skill-chip">3D Printing</span><span class="skill-chip">Laser Cutting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK 1 CALENDAR -->
 <section id="weeks">
   <div class="container">
-    <h2 class="section-title">📆 Internship Calendar</h2>
-    <div class="week-card">
-      <h3>📌 Week 1</h3>
+    <h2 class="section-title">📆 Week 1 Documentation</h2>
+    <div class="week-card glass-card">
+      <h3>📌 Week 1 — Foundation</h3>
+      <p style="color: #94A3B8;">GitHub • Portfolio • SolidWorks • Inkscape • 3D Printing</p>
       <div class="week-tabs">
         <a href="week1/day1_documentation/day1.html" target="_blank" class="day-link">Day 1</a>
         <a href="week1/day2_documentation/day2.html" target="_blank" class="day-link">Day 2</a>
@@ -307,24 +425,23 @@
         <a href="week1/day4_documentation/day4.html" target="_blank" class="day-link">Day 4</a>
         <a href="week1/day5_documentation/day5.html" target="_blank" class="day-link">Day 5</a>
       </div>
-      <p style="color: #94A3B8; margin-top: 1rem;">📖 Week 1: GitHub setup, portfolio creation, SolidWorks basics, Inkscape logo design, and 3D printing introduction.</p>
     </div>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <h2 class="section-title" style="text-align: center;">📫 Contact</h2>
-    <div class="contact-card">
+    <div class="contact-card glass-card">
       <p><strong>Tanmay Nilesh Pendbhaje</strong></p>
       <p><i class="fas fa-envelope"></i> tanmay.pendbhaje@sanjivani.edu.in</p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank" style="color: #60A5FA;">linkedin.com/in/tanmay-pendbhaje</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/tanmay-np" target="_blank" style="color: #60A5FA;">github.com/tanmay-np</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="#" style="color:#60A5FA;">linkedin.com/in/tanmay-pendbhaje</a></p>
+      <p><i class="fab fa-github"></i> <a href="#" style="color:#60A5FA;">github.com/tanmay-np</a></p>
       <p><i class="fas fa-university"></i> Sanjivani University, Kopargaon | Tinkerers' Lab</p>
       <div class="social-icons">
-        <a href="https://github.com/tanmay-np" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/tanmay-pendbhaje-968a78403" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
   </div>
@@ -335,7 +452,6 @@
 </footer>
 
 <script>
-  // Particles background
   const canvas = document.getElementById('particlesCanvas');
   const ctx = canvas.getContext('2d');
   let particles = [];
@@ -347,7 +463,7 @@
   
   function createParticles() {
     particles = [];
-    for(let i = 0; i < 60; i++) {
+    for(let i = 0; i < 70; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
