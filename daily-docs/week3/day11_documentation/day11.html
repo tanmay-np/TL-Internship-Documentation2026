@@ -2,372 +2,220 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Day 11 | Physical AI & Embedded Systems | Tanmay Pendbhaje</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 11 – Physical AI & Embedded Systems | Tanmay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #050816; color: #F8FAFC; line-height: 1.5; scroll-behavior: smooth; }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #0B1120; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb { background: #3B82F6; border-radius: 10px; }
-
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
     .glass-card {
-      background: rgba(11, 17, 32, 0.55);
+      background: rgba(12, 20, 35, 0.6);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(59, 130, 246, 0.25);
-      border-radius: 28px;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
     }
-    .glass-card:hover {
-      border-color: rgba(59, 130, 246, 0.6);
-      box-shadow: 0 0 24px rgba(59, 130, 246, 0.15);
-      transform: translateY(-4px);
+    h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #fff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
     }
-
-    .container { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
-
-    .navbar {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(5, 8, 22, 0.85); backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 1rem 0;
+    h2 {
+      color: #60a5fa;
+      margin: 1.5rem 0 1rem;
+      font-size: 1.5rem;
     }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .nav-links { display: flex; gap: 2rem; }
-    .nav-links a { color: #94A3B8; text-decoration: none; font-weight: 500; transition: 0.2s; }
-    .nav-links a:hover { color: #3B82F6; text-shadow: 0 0 4px #3B82F6; }
-
-    .hero { padding: 4rem 0 2rem; text-align: center; }
-    .hero-badge {
-      display: inline-block; background: rgba(59,130,246,0.15);
-      border-left: 3px solid #3B82F6; padding: 0.3rem 1.2rem;
-      border-radius: 40px; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 1.5rem;
+    h3 {
+      color: #3b82f6;
+      margin: 1rem 0 0.5rem;
     }
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 800; background: linear-gradient(135deg, #FFFFFF, #60A5FA);
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      margin-bottom: 0.5rem;
+    ul, p { color: #cbd5e1; }
+    li { margin: 0.5rem 0; margin-left: 1.2rem; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
     }
-    .hero-sub { font-size: 1.2rem; color: #94A3B8; }
-
-    section { padding: 4rem 0; border-bottom: 1px solid rgba(59,130,246,0.12); }
-    .section-title {
-      font-size: 2rem; font-weight: 700; margin-bottom: 2rem;
-      position: relative; display: inline-block;
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1rem 0;
     }
-    .section-title:after {
-      content: ''; position: absolute; bottom: -10px; left: 0;
-      width: 65%; height: 3px; background: #3B82F6;
-      border-radius: 4px; box-shadow: 0 0 6px #3B82F6;
-    }
-
-    .grid-2, .grid-3, .grid-4 {
-      display: grid; gap: 1.8rem; margin-top: 1.5rem;
-    }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-
-    .comp-table {
-      background: rgba(11,17,32,0.6); border-radius: 28px;
-      padding: 1.5rem; border: 1px solid rgba(59,130,246,0.25);
-      overflow-x: auto;
-    }
-    .comp-table table {
-      width: 100%; border-collapse: collapse; text-align: left;
-    }
-    .comp-table th, .comp-table td {
-      padding: 12px; border-bottom: 1px solid rgba(59,130,246,0.2);
-    }
-    .comp-table th { color: #60A5FA; font-weight: 600; }
-
-    .timeline-learn {
-      display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;
-    }
-    .learn-card {
-      background: rgba(59,130,246,0.1); border-left: 4px solid #3B82F6;
-      padding: 1rem 1.2rem; border-radius: 20px; flex: 1 1 200px;
-    }
-
-    .btn-ghost {
-      background: transparent; border: 1px solid #3B82F6;
-      padding: 6px 16px; border-radius: 40px; color: #60A5FA;
-      text-decoration: none; display: inline-block;
-    }
-    footer { text-align: center; padding: 2rem; color: #64748B; }
-    i.icon-glow { margin-right: 6px; color: #3B82F6; }
-
-    @media (max-width: 800px) {
-      .container { padding: 0 1.2rem; }
-      .hero h1 { font-size: 1.8rem; }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      .two-columns { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+<div class="container">
+  <!-- Back button (adjust path: daily-docs/week3/day11_documentation/ -> root) -->
+  <a href="../../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
-<nav class="navbar">
-  <div class="container nav-container">
-    <div class="logo-area" style="display: flex; gap: 8px; align-items: center;">
-      <i class="fas fa-microchip" style="color:#3B82F6; font-size: 1.5rem;"></i>
-      <span style="font-weight: 700;">Tanmay Pendbhaje</span>
-    </div>
-    <div class="nav-links">
-      <a href="#hero">Day 11</a>
-      <a href="#topics">Topics</a>
-      <a href="#datasheets">Specs</a>
-    </div>
-  </div>
-</nav>
-
-<main>
-  <!-- Hero Section -->
-  <div class="container" id="hero">
-    <div class="hero">
-      <div class="hero-badge"><i class="fas fa-robot"></i> Tinkerers' Lab • Sanjivani University</div>
-      <h1>Week 3 – Day 11</h1>
-      <p class="hero-sub">Sensors, Actuators, Physical AI & Embedded Systems</p>
-      <p style="margin-top: 1rem; max-width: 700px; margin-inline: auto; color: #94A3B8;">
-        Internship documentation: advanced concepts in robotics, edge computing, microcontrollers and control theory.
-      </p>
-    </div>
+  <div class="glass-card">
+    <h1>📅 Day 11: Physical AI, Sensors, Actuators & Embedded Systems</h1>
+    <p><strong>Date:</strong> 1 June 2026</p>
   </div>
 
-  <!-- Objective -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">📌 Objective</h2>
-      <div class="glass-card" style="padding: 2rem;">
-        <p>To understand the integration of Physical AI where artificial intelligence meets hardware: sensors, actuators, microcontrollers, and real‑time control. This session covered edge computing architectures, PID fundamentals, microcontroller ecosystems (Arduino, ESP32), and industrial actuation – building a strong foundation for robotics and automation projects at Tinkerers' Lab.</p>
+  <!-- 1. Physical AI -->
+  <div class="glass-card">
+    <h2>🧠 1. What is Physical AI?</h2>
+    <p>Physical AI = <strong>AI Models + Sensors + Actuators + Control Systems</strong>. It’s what makes robots, self-driving cars, and smart factories possible.</p>
+    <div class="two-columns">
+      <div>
+        <h3>🔁 Simple Flow</h3>
+        <p>Sensors → Processor (AI) → Decision → Actuator → Physical Action</p>
+      </div>
+      <div>
+        <h3>📸 Diagram</h3>
+        <img src="physical-ai-flow.png" alt="Physical AI flow diagram" onerror="this.style.display='none'">
+        <p><em>(Place image: physical-ai-flow.png)</em></p>
       </div>
     </div>
-  </section>
+    <h3>🚀 Applications</h3>
+    <ul>
+      <li>Robotics (e.g., robotic arms, humanoids)</li>
+      <li>Autonomous vehicles (self-driving cars)</li>
+      <li>Smart manufacturing (predictive maintenance)</li>
+    </ul>
+  </div>
 
-  <!-- Core Topics (without the wrong Physical AI flow) -->
-  <section id="topics">
-    <div class="container">
-      <h2 class="section-title">⚙️ Core Topics</h2>
-
-      <!-- Edge Computing (corrected) -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fas fa-edge"></i> Edge Computing</h3>
-        <p>Processing data near the source device (sensors, cameras, etc.) instead of sending everything to the cloud. This enables real‑time decision making in robotics and autonomous systems.</p>
-        <div style="background: rgba(5,8,22,0.5); border-radius: 40px; padding: 1rem; margin-top: 1rem; text-align: center;">
-          <strong>Sensors → Edge Device (local processing) → Decision → Actuator</strong>
-        </div>
-        <p class="spec-item" style="margin-top: 1rem;">✔ Low latency &nbsp;|&nbsp; ✔ Faster response &nbsp;|&nbsp; ✔ Better privacy &nbsp;|&nbsp; ✔ Reduced bandwidth</p>
+  <!-- 2. Sensors -->
+  <div class="glass-card">
+    <h2>📡 2. Sensors – The “Eyes & Ears” of a System</h2>
+    <p>Sensors convert physical quantities (light, distance, temperature) into electrical signals.</p>
+    <div class="two-columns">
+      <div>
+        <h3>🔵 Active Sensors</h3>
+        <p>Require external power & emit energy. Examples: Ultrasonic (distance), Radar, IR, LiDAR.</p>
+        <img src="Ultrasonic_Sensor.webp" alt="Ultrasonic Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+        <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #94a3b8;">Ultrasonic Sensor</p>
+        <img src="IR_Sensor.webp" alt="IR Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+        <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #94a3b8;">IR Sensor</p>
       </div>
-
-      <!-- Microcontroller vs Microprocessor -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fas fa-microchip"></i> Microcontroller vs Microprocessor</h3>
-        <div class="grid-2" style="margin-bottom: 1.5rem;">
-          <div><strong>Microcontroller</strong><br>Built-in RAM, I/O, low power, embedded applications (Arduino, ESP32)</div>
-          <div><strong>Microprocessor (MPU)</strong><br>High computing power, external RAM/ROM, runs OS (computers, smartphones)</div>
-        </div>
-        <div class="comp-table">
-          <table>
-            <thead><tr><th>Feature</th><th>Microcontroller</th><th>Microprocessor</th></tr></thead>
-            <tbody>
-              <tr><td>Architecture</td><td>Built-in RAM, ROM, I/O</td><td>External RAM, ROM, I/O</td></tr>
-              <tr><td>Power Consumption</td><td>Low (mW)</td><td>High (W)</td></tr>
-              <tr><td>Cost</td><td>Low</td><td>High</td></tr>
-              <tr><td>Applications</td><td>Embedded systems, IoT, Arduino, ESP32</td><td>Computers, Laptops, Smartphones</td></tr>
-              <tr><td>Examples</td><td>Arduino Uno, Arduino Nano, ESP32, ATmega328P</td><td>Intel Core i7, AMD Ryzen, ARM Cortex-A</td></tr>
-              <tr><td>Operating System</td><td>No OS (bare metal)</td><td>Runs OS (Linux, Windows, macOS)</td></tr>
-              <tr><td>Clock Speed</td><td>8 MHz to 240 MHz</td><td>1 GHz to 5 GHz</td></tr>
-              <tr><td>Bit Size</td><td>8‑bit, 16‑bit, 32‑bit</td><td>32‑bit, 64‑bit</td></tr>
-            </tbody>
-          </table>
-        </div>
+      <div>
+        <h3>🟢 Passive Sensors</h3>
+        <p>Detect natural energy without emitting. Examples: LDR (light), Thermistor (temperature), Photodiode.</p>
+        <img src="LDR_Sensor.jpg" alt="LDR Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+        <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #94a3b8;">LDR Sensor (Light Dependent Resistor)</p>
       </div>
+    </div>
+  </div>
 
-      <!-- Sensors (Expanded) -->
-      <div class="grid-2" style="margin-bottom: 2rem;">
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h3>🔵 Active Sensors</h3>
-          <p>Require external power, emit energy. <strong>Examples:</strong> Ultrasonic (distance), Radar (object detection), IR (proximity), LiDAR (3D mapping).<br>
-          <strong>Applications:</strong> Robotics navigation, autonomous vehicles, obstacle avoidance.</p>
-        </div>
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h3>🟢 Passive Sensors</h3>
-          <p>No external excitation, detect natural energy. <strong>Examples:</strong> LDR (light), Thermistor (temperature), Photodiode (light sensing), Piezoelectric (vibration).<br>
-          <strong>Applications:</strong> Environmental monitoring, energy harvesting, safety systems.</p>
-        </div>
-      </div>
-
-      <!-- Control Systems (unchanged) -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fas fa-chart-line"></i> Control Systems (P, PI, PID)</h3>
-        <div class="grid-3">
-          <div><strong>P</strong> – Proportional (reduces error)</div>
-          <div><strong>PI</strong> – Proportional + Integral (steady‑state accuracy)</div>
-          <div><strong>PID</strong> – Adds Derivative (predictive, smooth response)</div>
-        </div>
-        <p class="spec-item" style="margin-top: 1rem;">Widely used in robotics, drones, industrial automation.</p>
-      </div>
-
-      <!-- Actuators (with usage descriptions) -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fas fa-cogs"></i> Actuators (Electrical → Motion)</h3>
-        <div class="grid-2">
-          <span><strong>DC Motor</strong> – Simple speed control; used in robots, fans, drills.</span>
-          <span><strong>AC Motor</strong> – High power industrial; conveyors, pumps.</span>
-          <span><strong>Servo Motor</strong> – Precise position control; robotic arms, RC vehicles.</span>
-          <span><strong>Stepper Motor</strong> – Accurate step‑by‑step rotation; 3D printers, CNC.</span>
-          <span><strong>BLDC Motor</strong> – Efficient, long life; drones, electric vehicles.</span>
-          <span><strong>Harmonic Drive</strong> – High torque, zero backlash; space robotics, medical devices.</span>
-        </div>
-        <p class="spec-item" style="margin-top: 1rem;">Servo motors give precise position control — essential for robotic arms.</p>
-      </div>
-
-      <!-- Microcontrollers: Arduino vs ESP32 (with 4‑point comparison) -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fab fa-arduino"></i> Arduino vs ESP32</h3>
-        <div class="grid-2">
-          <div>
-            <strong>Arduino Uno/Nano/Mega</strong><br>
-            ATmega328P, beginner‑friendly, huge community. Ideal for sensor interfacing.<br>
-            <ul style="margin-top: 8px; margin-left: 20px;">
-              <li>5V logic, 16 MHz clock</li>
-              <li>Limited RAM (2KB) and Flash (32KB)</li>
-              <li>No built‑in wireless</li>
-              <li>Perfect for basic embedded projects</li>
-            </ul>
-          </div>
-          <div>
-            <strong>ESP32</strong><br>
-            Dual core, Wi‑Fi, BLE, high processing power — perfect for IoT and edge AI.<br>
-            <ul style="margin-top: 8px; margin-left: 20px;">
-              <li>3.3V logic, up to 240 MHz</li>
-              <li>520KB RAM, 4MB Flash</li>
-              <li>Integrated Wi‑Fi + Bluetooth Low Energy</li>
-              <li>Great for real‑time cloud/edge applications</li>
-            </ul>
-          </div>
-        </div>
-        <p class="spec-item" style="margin-top: 1rem;"><i class="fas fa-image"></i> Images will be added later</p>
-      </div>
-
-      <!-- MOSFET -->
-      <div class="glass-card" style="padding: 1.5rem; margin-bottom: 2rem;">
-        <h3><i class="fas fa-bolt"></i> MOSFET</h3>
-        <p><strong>Metal Oxide Semiconductor Field Effect Transistor</strong> — high‑speed switching device used in motor drivers, power supplies, and embedded electronics. Essential for PWM control of actuators.</p>
-      </div>
-
-      <!-- Cisco Systems as key points -->
-      <div class="glass-card" style="padding: 1.5rem;">
-        <h3><i class="fas fa-network-wired"></i> Cisco Systems – Key Points</h3>
-        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-          <li>Global leader in networking hardware (routers, switches)</li>
-          <li>Provides cybersecurity solutions and industrial IoT infrastructure</li>
-          <li>Enables robust edge computing and industrial communication</li>
-          <li>Powers modern data centers and cloud connectivity</li>
+  <!-- 3. Actuators -->
+  <div class="glass-card">
+    <h2>⚙️ 3. Actuators – Making Things Move</h2>
+    <p>Actuators convert electrical signals into physical motion (rotation, linear movement).</p>
+    <div class="two-columns">
+      <div>
+        <ul>
+          <li><strong>DC Motor</strong> – simple speed control (fans, robots)
+            <img src="DC_motor.webp" alt="DC Motor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+          </li>
+          <li><strong>Servo Motor</strong> – precise position (robotic arms, RC cars)
+            <img src="Servo_Motor.jpg" alt="Servo Motor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+          </li>
+          <li><strong>Stepper Motor</strong> – step-by-step rotation (3D printers, CNC)
+            <img src="Stepper_Motor.jpg" alt="Stepper Motor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+          </li>
+          <li><strong>BLDC Motor</strong> – efficient, long life (drones, EVs)
+            <img src="BLDC_Motor.png" alt="BLDC Motor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+            <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #94a3b8;">BLDC Motor (Brushless DC)</p>
+          </li>
         </ul>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Datasheets (Arduino Uno + ESP32) -->
-  <section id="datasheets">
-    <div class="container">
-      <h2 class="section-title">📄 Microcontroller Datasheets</h2>
-      <div class="grid-2">
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h4><i class="fab fa-arduino"></i> Arduino Uno (ATmega328P)</h4>
-          <div class="spec-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 0.5rem;">
-            <div class="spec-item">Microcontroller: ATmega328P</div>
-            <div class="spec-item">Operating Voltage: 5V</div>
-            <div class="spec-item">Input Voltage: 7-12V</div>
-            <div class="spec-item">Digital I/O Pins: 14 (6 PWM)</div>
-            <div class="spec-item">Analog Inputs: 6</div>
-            <div class="spec-item">Clock Speed: 16 MHz</div>
-            <div class="spec-item">Flash: 32 KB, SRAM: 2 KB, EEPROM: 1 KB</div>
-            <div class="spec-item">Protocols: UART, I2C, SPI</div>
-          </div>
-          <div style="margin-top: 1rem;"><img src="images/arduino-uno.jpg" alt="Arduino Uno" style="width:100%; border-radius: 20px;" onerror="this.src='https://placehold.co/400x250/0B1120/3B82F6?text=Arduino+Uno'"></div>
-        </div>
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h4><i class="fas fa-wifi"></i> ESP32</h4>
-          <div class="spec-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 0.5rem;">
-            <div class="spec-item">CPU: Xtensa LX6 dual core</div>
-            <div class="spec-item">Clock Speed: up to 240 MHz</div>
-            <div class="spec-item">Wi-Fi: 802.11 b/g/n</div>
-            <div class="spec-item">Bluetooth: BLE + Classic</div>
-            <div class="spec-item">GPIO Pins: 34 (multipurpose)</div>
-            <div class="spec-item">ADC: 12‑bit, 18 channels</div>
-            <div class="spec-item">RAM: 520 KB SRAM, Flash: 4 MB</div>
-            <div class="spec-item">Protocols: I2C, SPI, UART, CAN</div>
-          </div>
-          <div style="margin-top: 1rem;"><img src="images/esp32.jpg" alt="ESP32" style="width:100%; border-radius: 20px;" onerror="this.src='https://placehold.co/400x250/0B1120/3B82F6?text=ESP32'"></div>
-        </div>
+  <!-- 4. Control Systems (PID) -->
+  <div class="glass-card">
+    <h2>🎛️ 4. Control Systems – P, PI, PID</h2>
+    <p>Controllers keep a system stable and accurate.</p>
+    <ul>
+      <li><strong>P (Proportional)</strong> – reduces error proportionally.</li>
+      <li><strong>PI (Proportional + Integral)</strong> – removes steady-state error.</li>
+      <li><strong>PID (Proportional + Integral + Derivative)</strong> – smoothest response, used in drones, robots, temperature control.</li>
+    </ul>
+    <img src="P_Curve.jpeg" alt="PID response curve" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+  </div>
+
+  <!-- 5. Microcontrollers: Arduino vs ESP32 -->
+  <div class="glass-card">
+    <h2>📟 5. Microcontrollers – The “Brain”</h2>
+    <div class="two-columns">
+      <div>
+        <h3>Arduino Uno/Nano/Mega</h3>
+        <p>ATmega328P, 16MHz, 2KB RAM, 32KB Flash. Great for beginners, sensor interfacing.</p>
+        <img src="arduino_uno.png" alt="Arduino Uno" style="max-height: 200px; object-fit: contain;">
+      </div>
+      <div>
+        <h3>ESP32</h3>
+        <p>Dual core, 240MHz, Wi-Fi + BLE, 520KB RAM. Perfect for IoT and edge AI.</p>
+        <img src="ESP_32.webp" alt="ESP32" style="max-height: 200px; object-fit: contain;">
       </div>
     </div>
-  </section>
+    <h3>Comparison</h3>
+    <ul>
+      <li><strong>Arduino</strong> – simple, low power, no wireless.</li>
+      <li><strong>ESP32</strong> – faster, has Wi-Fi/BLE, more memory.</li>
+    </ul>
+  </div>
 
-  <!-- Key Learnings (removed the paragraph, kept the list, changed heading) -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">📌 Key Takeaways</h2>
-      <div class="timeline-learn">
-        <div class="learn-card">🧠 Physical AI architecture</div>
-        <div class="learn-card">📡 Sensors & actuators ecosystem</div>
-        <div class="learn-card">⚡ Edge computing vs cloud</div>
-        <div class="learn-card">🎛️ PID control fundamentals</div>
-        <div class="learn-card">🔧 Motor technologies (servo, stepper)</div>
-        <div class="learn-card">📟 Arduino & ESP32 ecosystem</div>
-        <div class="learn-card">📶 BLE & wireless communication</div>
-        <div class="learn-card">🔌 MOSFET switching & power electronics</div>
-      </div>
-    </div>
-  </section>
+  <!-- 6. Edge Computing -->
+  <div class="glass-card">
+    <h2>☁️ 6. Edge Computing</h2>
+    <p>Processing data near the source instead of sending everything to the cloud → low latency, privacy, faster decisions.</p>
+    <img src="Cloud_Computing.png" alt="Edge vs Cloud Computing" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+    <p style="margin-top: 0.3rem; font-size: 0.85rem; color: #94a3b8;">Edge Computing vs Cloud Computing</p>
+  </div>
 
-  <!-- Industry Applications -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">🏭 Industry Applications</h2>
-      <div class="grid-3">
-        <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-robot fa-2x"></i><h3>Robotics</h3><p>Autonomous navigation, manipulators</p></div>
-        <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-car-side fa-2x"></i><h3>Autonomous Vehicles</h3><p>Sensor fusion, edge control</p></div>
-        <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-microchip fa-2x"></i><h3>Smart Manufacturing</h3><p>Predictive maintenance, actuators</p></div>
-        <div class="glass-card" style="padding: 1.2rem;"><i class="fas fa-cloud-upload-alt fa-2x"></i><h3>IoT Devices</h3><p>ESP32, BLE, remote monitoring</p></div>
-      </div>
-    </div>
-  </section>
+  <!-- 7. MOSFET -->
+  <div class="glass-card">
+    <h2>🔌 7. MOSFET – High‑Speed Switch</h2>
+    <p><strong>Metal Oxide Semiconductor Field Effect Transistor</strong> – used to control motors, LEDs, and power electronics with PWM signals.</p>
+    <img src="MOSFET_Switch.webp" alt="MOSFET circuit" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;">
+  </div>
 
-  <footer>
-    <p>© 2026 Tanmay Nilesh Pendbhaje | Tinkerers' Lab Internship | Week 3 – Day 11 Documentation</p>
-    <p style="margin-top: 4px;">Physical AI · Sensors · Actuators · Edge Computing · Embedded Systems</p>
-  </footer>
-</main>
-
-<script>
-  // Simple reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.glass-card, .learn-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.4s ease';
-    observer.observe(el);
-  });
-  setTimeout(() => {
-    document.querySelectorAll('.glass-card, .learn-card').forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight) {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }
-    });
-  }, 200);
-</script>
+  <!-- 8. Summary / Key Takeaways -->
+  <div class="glass-card">
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>Physical AI = sensors + processing + actuators + control.</li>
+      <li>Active sensors emit energy; passive sensors detect natural energy.</li>
+      <li>Actuators turn electrical signals into motion (servo, stepper, DC).</li>
+      <li>PID controllers make systems accurate and stable.</li>
+      <li>Arduino is beginner‑friendly; ESP32 adds wireless and power.</li>
+      <li>Edge computing enables real‑time AI in robots and IoT.</li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
