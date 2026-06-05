@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 13 – Firebase Setup for LED Control | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
+    }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+
+  <div class="glass-card">
+    <h1>📘 Firebase Setup for LED Control</h1>
+    <p><strong>Documentation of Firebase on LED</strong></p>
+    <p>Firebase is a platform by Google that helps developers build, run, and grow web and mobile applications without managing much backend infrastructure.</p>
+
+    <h2>How to Create and Use Firebase?</h2>
+    <ol>
+      <li><strong>Step 1:</strong> Search <em>Firebase</em> on Google Chrome or Microsoft Edge. <img src="img1.png" alt="Step 1" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+1+Not+Found'"></li>
+      <li><strong>Step 2:</strong> Click on the link. <img src="img2.png" alt="Step 2" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+2+Not+Found'"></li>
+      <li><strong>Step 3:</strong> Open console in another tab. <img src="img3.png" alt="Step 3" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+3+Not+Found'"></li>
+      <li><strong>Step 4:</strong> Click <em>Get started</em> to set up a Firebase project. <img src="img4.png" alt="Step 4" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+4+Not+Found'"></li>
+      <li><strong>Step 5:</strong> Name your project. Allow AI assistance if desired. <img src="img5.png" alt="Step 5" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+5+Not+Found'"></li>
+      <li><strong>Step 6:</strong> Go to <strong>Authentication</strong> under Security. <img src="img6.png" alt="Step 6" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+6+Not+Found'"></li>
+      <li><strong>Step 7:</strong> Click <em>Get started</em>. <img src="img7.png" alt="Step 7" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+7+Not+Found'"></li>
+      <li><strong>Step 8:</strong> Add first sign-in method. <img src="img8.png" alt="Step 8" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+8+Not+Found'"></li>
+      <li><strong>Step 9:</strong> Enable permission, enter email and save. <img src="img9.png" alt="Step 9" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+9+Not+Found'"></li>
+      <li><strong>Step 10:</strong> Select <strong>Realtime Database</strong>. <img src="img10.png" alt="Step 10" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+10+Not+Found'"></li>
+      <li><strong>Step 11:</strong> Click <em>Create database</em>. <img src="img11.png" alt="Step 11" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+11+Not+Found'"></li>
+      <li><strong>Step 12:</strong> Choose region (e.g., Singapore). <img src="img12.png" alt="Step 12" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+12+Not+Found'"></li>
+      <li><strong>Step 13:</strong> Select <em>Start in test mode</em> and enable. <img src="img13.png" alt="Step 13" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+13+Not+Found'"></li>
+      <li><strong>Step 14:</strong> Database created. <img src="img14.png" alt="Step 14" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+14+Not+Found'"></li>
+      <li><strong>Step 15:</strong> Go to <strong>Settings → General</strong>. <img src="img15.png" alt="Step 15" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+15+Not+Found'"></li>
+      <li><strong>Step 16:</strong> Select <strong>Service accounts</strong>. <img src="img16.png" alt="Step 16" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+16+Not+Found'"></li>
+      <li><strong>Step 17:</strong> Generate new private key. <img src="img17.png" alt="Step 17" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+17+Not+Found'"></li>
+      <li><strong>Step 18:</strong> Click <strong>Database secrets</strong>. <img src="img18.png" alt="Step 18" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+18+Not+Found'"></li>
+      <li><strong>Step 19:</strong> Copy the key. <img src="img19.png" alt="Step 19" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+19+Not+Found'"></li>
+      <li><strong>Step 20:</strong> Back to <strong>General</strong>. <img src="img20.png" alt="Step 20" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+20+Not+Found'"></li>
+      <li><strong>Step 21:</strong> Scroll down and select <strong>Web</strong>. <img src="img21.png" alt="Step 21" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+21+Not+Found'"></li>
+      <li><strong>Step 22:</strong> Add app nickname and register. <img src="img22.png" alt="Step 22" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+22+Not+Found'"></li>
+      <li><strong>Step 23:</strong> Copy the API key. <img src="img23.png" alt="Step 23" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+23+Not+Found'"></li>
+      <li><strong>Step 24:</strong> Open <strong>Arduino IDE</strong>. <img src="img24.png" alt="Step 24" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+24+Not+Found'"></li>
+      <li><strong>Step 25:</strong> Select the correct <strong>Board</strong>. <img src="img25.png" alt="Step 25" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+25+Not+Found'"></li>
+      <li><strong>Step 26:</strong> Select the correct COM port. <img src="img26.png" alt="Step 26" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+26+Not+Found'"></li>
+      <li><strong>Step 27:</strong> Install ESP32 board support if needed. <img src="img27.png" alt="Step 27" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+27+Not+Found'"></li>
+      <li><strong>Step 28:</strong> Write the code in Arduino IDE. <img src="img28.png" alt="Step 28" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+28+Not+Found'"></li>
+      <li><strong>Step 29:</strong> Modify placeholders: WiFi_SSID, password, Database URL, secret, LED_PIN. <img src="img29.png" alt="Step 29" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+29+Not+Found'"></li>
+    </ol>
+
+    <!-- Additional images (img30 to img32) -->
+    <h2>📸 Additional Screenshots</h2>
+    <img src="img30.png" alt="Additional screenshot 1" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+30+Not+Found'">
+    <img src="img31.png" alt="Additional screenshot 2" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+31+Not+Found'">
+    <img src="img32.png" alt="Additional screenshot 3" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+32+Not+Found'">
+
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>Firebase provides backend services without managing servers.</li>
+      <li>Create project → enable Authentication → Realtime Database → get API keys.</li>
+      <li>ESP32 connects to Firebase over Wi‑Fi to control an LED remotely.</li>
+      <li>Keep secrets and keys secure.</li>
+    </ul>
+  </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  </div>
+</div>
+</body>
+</html>
