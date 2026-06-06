@@ -1,212 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Day 4 | Tanmay's TL Internship</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 4 – Inkscape: Logo Design | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
     }
-
-    body{
-      font-family:'Segoe UI',sans-serif;
-      background:#0f172a;
-      color:#f8fafc;
-      line-height:1.6;
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
     }
-
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:2rem;
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
     }
-
-    .back-btn{
-      display:inline-block;
-      text-decoration:none;
-      background:#2563eb;
-      color:white;
-      padding:10px 18px;
-      border-radius:10px;
-      margin-bottom:2rem;
-      transition:0.3s;
-      font-weight:600;
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
     }
-
-    .back-btn:hover{
-      background:#1d4ed8;
-      transform:translateY(-2px);
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
     }
-
-    h1{
-      color:#60a5fa;
-      margin-bottom:1.5rem;
-      font-size:2.2rem;
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
     }
-
-    h2{
-      color:#3b82f6;
-      margin-top:2rem;
-      margin-bottom:1rem;
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
     }
-
-    h3{
-      color:#60a5fa;
-      margin-bottom:1rem;
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
     }
-
-    .content{
-      background:#1e293b;
-      padding:2rem;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    }
-
-    .task-list{
-      margin-left:1.5rem;
-      margin-top:1rem;
-    }
-
-    .task-list li{
-      margin:10px 0;
-      color:#e2e8f0;
-    }
-
-    .highlight{
-      color:#60a5fa;
-      font-weight:bold;
-    }
-
-    .screenshot-section{
-      margin-top:3rem;
-    }
-
-    .screenshot-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:1.5rem;
-      margin-top:1rem;
-    }
-
-    .screenshot-card{
-      background:#0f172a;
-      border:1px solid #334155;
-      border-radius:16px;
-      overflow:hidden;
-      transition:0.3s;
-    }
-
-    .screenshot-card:hover{
-      transform:translateY(-5px);
-      border-color:#3b82f6;
-    }
-
-    .screenshot-card img{
-      width:100%;
-      display:block;
-    }
-
-    .screenshot-card p{
-      padding:1rem;
-      color:#cbd5e1;
-      font-size:0.95rem;
-      text-align:center;
-    }
-
-    .footer-note{
-      margin-top:2rem;
-      color:#94a3b8;
-      text-align:center;
-      font-size:0.9rem;
-    }
-
-    @media(max-width:768px){
-      h1{
-        font-size:1.8rem;
-      }
-      .container{
-        padding:1rem;
-      }
-      .content{
-        padding:1.5rem;
-      }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
     }
   </style>
 </head>
-
 <body>
+<div class="container">
+  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
-  <div class="container">
+  <div class="glass-card">
+    <h1>🎨 Day 4: Inkscape – Vector Graphics & Logo Design</h1>
 
-    <a href="../../index.html#weeks" class="back-btn">← Back to Calendar</a>
+    <h2>📌 Introduction to Inkscape</h2>
+    <p>Inkscape is a free, open‑source vector graphics editor, similar to Adobe Illustrator. It is widely used for creating logos, icons, illustrations, diagrams, and scalable graphics. Vector images made in Inkscape can be resized infinitely without losing quality – essential for branding, printing, and web design.</p>
 
-    <h1>🎨 Day 4: Logo Design using Inkscape</h1>
+    <h2>✨ Uses of Inkscape (Especially for Logos)</h2>
+    <ul>
+      <li>Create professional vector logos</li>
+      <li>Design custom shapes and icons</li>
+      <li>Add and edit text styles, gradients, and effects</li>
+      <li>Export logos in PNG, SVG, PDF, and other formats</li>
+      <li>Create scalable designs for banners, business cards, and websites</li>
+    </ul>
 
-    <div class="content">
+    <h2>🎯 Purpose of Inkscape for Logo Design</h2>
+    <p>The main purpose is to help users create high‑quality, scalable, and professional logos freely – a powerful alternative to paid software like Adobe Illustrator.</p>
 
-      <h2>✅ Today's Focus:</h2>
+    <h2>🛠️ Installation Process (Step‑by‑Step)</h2>
 
-      <ul class="task-list">
-        <li>Installed and set up <span class="highlight">Inkscape</span> (vector graphics software)</li>
-        <li>Learned basic Inkscape tools: Shapes, Paths, Text, Fill, and Stroke</li>
-        <li>Designed a custom <span class="highlight">Tinkerers' Lab logo</span> for my portfolio</li>
-        <li>Exported the logo in PNG format for web use</li>
-        <li>Added the new logo to my main website</li>
-      </ul>
+    <h3>Step 1 – Search Inkscape</h3>
+    <p>Open your browser, go to Google, and search for “Inkscape”.</p>
+    <img src="img1.png" alt="Search Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
 
-      <h2>🎯 Logo Design Process:</h2>
+    <h3>Step 2 – Open Official Website</h3>
+    <p>Click on the official Inkscape website (inkscape.org).</p>
+    <img src="img2.png" alt="Inkscape official website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
 
-      <ul class="task-list">
-        <li><strong>Research:</strong> Looked at TL branding and modern tech logos</li>
-        <li><strong>Sketch:</strong> Created rough concept on paper first</li>
-        <li><strong>Vector Creation:</strong> Used Inkscape's shape and path tools</li>
-        <li><strong>Color Palette:</strong> Chosen blue/cyan gradient matching TL theme</li>
-        <li><strong>Typography:</strong> Added "Tinkerers' Lab" text with clean font</li>
-        <li><strong>Export:</strong> Saved as PNG and SVG formats</li>
-      </ul>
+    <h3>Step 3 – Download Inkscape</h3>
+    <p>Click the Download button and choose your operating system (Windows, Mac, or Linux).</p>
+    <img src="img3.png" alt="Download Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
 
-      <h2>📝 Key Learnings:</h2>
+    <h3>Step 4 – Run the Installer</h3>
+    <p>Open the downloaded setup file and click “Next” or “Install”.</p>
+    <img src="img4.png" alt="Inkscape installer" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
 
-      <ul class="task-list">
-        <li>Understanding <strong>vector graphics</strong> vs raster images</li>
-        <li>Using <strong>Bezier curves and paths</strong> for custom shapes</li>
-        <li>Working with <strong>layers</strong> to organize design elements</li>
-        <li>Applying <strong>gradients and transparency</strong> effects</li>
-        <li>Exporting graphics for <strong>web optimization</strong></li>
-        <li>Importance of <strong>branding and visual identity</strong></li>
-      </ul>
+    <h3>Step 5 – Complete Installation</h3>
+    <p>Wait for the installation to finish (this may take a minute or two).</p>
+    <img src="img5.png" alt="Installation progress" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
 
-      <h2>📝 Notes:</h2>
-      <p>
-        Today I learned Inkscape and designed my first professional logo for the 
-        Tinkerers' Lab portfolio. Vector graphics are scalable without losing quality,
-        which is perfect for logos. I exported the logo and added it to my website's
-        header and hero section. This logo now represents my internship branding!
-      </p>
+    <h3>Step 6 – Launch Inkscape</h3>
+    <p>Click “Finish” and open Inkscape from the desktop or start menu.</p>
+    <img src="img6.png" alt="Launch Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
 
-      <!-- Screenshots Section -->
-      <div class="screenshot-section">
-        <h2>📸 Logo Design Screenshots</h2>
-        <div class="screenshot-grid">
-          <div class="screenshot-card">
-            <img src="../screenshots/inkscape-logo-design.png" alt="Inkscape Logo Design Process" onerror="this.src='https://placehold.co/400x250/334155/60a5fa?text=Inkscape+Design+Screenshot'">
-            <p>Designing the TL Logo in Inkscape</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../screenshots/final-logo.png" alt="Final Tinkerers Lab Logo" onerror="this.src='https://placehold.co/400x250/3b82f6/ffffff?text=TL+Final+Logo'">
-            <p>Final Tinkerers' Lab Logo</p>
-          </div>
-        </div>
-        <p class="footer-note">
-          Logo created with Inkscape | TL Internship Documentation
-        </p>
-      </div>
+    <h2>🖌️ How to Make a Logo in Inkscape (Step‑by‑Step with Tools)</h2>
 
-    </div>
+    <h3>Step 1 – Open Inkscape</h3>
+    <p>Launch the application – you’ll see a blank canvas ready for design.</p>
+    <img src="img7.png" alt="Inkscape workspace" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+
+    <h3>Step 2 – Create Basic Shapes</h3>
+    <p>Use the shape tools (circle, rectangle, etc.) to create the foundation of your logo. Adjust coordinates and size using the toolbar.</p>
+    <img src="img8.png" alt="Draw circle and adjust coordinates" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
+
+    <h3>Step 3 – Create Another Circle & Prepare Text</h3>
+    <p>Make a second circle (to be used as a text path). Also write the text you want to appear on the logo (e.g., “Tinkerers’ Lab”).</p>
+    <img src="img9.png" alt="Second circle and text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
+
+    <h3>Step 4 – Write the Text (or import)</h3>
+    <p>Use the Text tool to type your desired text. Position it near the circle.</p>
+    <img src="img10.png" alt="Enter logo text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
+
+    <h3>Step 5 – Put Text on a Path</h3>
+    <p>Select both the text and the circle (black outline), then go to <strong>Text → Put on Path</strong>. The text will wrap around the circle.</p>
+    <img src="img11.png" alt="Put on Path" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
+
+    <h3>Step 6 – Adjust Text and Duplicate</h3>
+    <p>Select only the text, drag it to another circle, and change its color to white (or a contrasting color).</p>
+    <img src="img12.png" alt="Text on second circle, color change" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
+
+    <h3>Step 7 – Create Another Circle with Different Text & Flip</h3>
+    <p>Add another circle and a different text (e.g., a tagline). After applying “Put on Path”, select the text and use <strong>Object → Flip Vertical</strong> to orient it correctly.</p>
+    <img src="img13.png" alt="Flip vertical text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
+
+    <h3>Step 8 – Create Inner Shape and Use Exclusion</h3>
+    <p>Make a new circle and place it inside the green (or main) circle. Select both and apply <strong>Path → Exclusion</strong> to create a cut‑out effect (like a ring).</p>
+    <img src="img14.png" alt="Exclusion effect" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
+
+    <h3>Step 9 – Import an Image (Optional)</h3>
+    <p>You can import external images (e.g., a symbol or mascot) from your documents using <strong>File → Import</strong>.</p>
+    <img src="img15.png" alt="Import image" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
+
+    <h3>Step 10 – Save Your Logo</h3>
+    <p>Go to <strong>File → Save As</strong>. Choose SVG (for editable source) or PNG (for raster). Name your file and save.</p>
+    <img src="img16.png" alt="Save logo" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
+
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>Inkscape is a free, professional vector graphics editor – perfect for logo design.</li>
+      <li>Vector graphics are resolution‑independent (can be scaled infinitely).</li>
+      <li>The “Put on Path” feature allows text to follow any curve or circle – essential for circular logos.</li>
+      <li>Using “Exclusion” (Path menu) creates hollow shapes (like rings).</li>
+      <li>Inkscape supports layers, gradients, Bézier curves, and many tools for advanced design.</li>
+      <li>Final logos can be exported to PNG, SVG, PDF, and other formats suitable for web, print, and branding.</li>
+    </ul>
+
+    <h2>🎯 Conclusion</h2>
+    <p>Inkscape is a powerful free tool for creating scalable vector graphics, especially logos. In this session we installed Inkscape, learned the interface, and created a complete circular logo with text paths, color adjustments, and exclusion effects. Mastering Inkscape is a valuable skill for any engineer or designer working on branding, UI/UX, or technical illustrations.</p>
   </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  </div>
+</div>
 </body>
 </html>
