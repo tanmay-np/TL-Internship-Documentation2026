@@ -1,251 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Day 5 | Tanmay's TL Internship</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 5 – Bambu Studio: 3D Printing Slicer | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
     }
-
-    body{
-      font-family:'Segoe UI',sans-serif;
-      background:#0f172a;
-      color:#f8fafc;
-      line-height:1.6;
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
     }
-
-    .container{
-      max-width:1100px;
-      margin:auto;
-      padding:2rem;
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
     }
-
-    .back-btn{
-      display:inline-block;
-      text-decoration:none;
-      background:#2563eb;
-      color:white;
-      padding:10px 18px;
-      border-radius:10px;
-      margin-bottom:2rem;
-      transition:0.3s;
-      font-weight:600;
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
     }
-
-    .back-btn:hover{
-      background:#1d4ed8;
-      transform:translateY(-2px);
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
     }
-
-    h1{
-      color:#60a5fa;
-      margin-bottom:1.5rem;
-      font-size:2.2rem;
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
     }
-
-    h2{
-      color:#3b82f6;
-      margin-top:2rem;
-      margin-bottom:1rem;
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
     }
-
-    .content{
-      background:#1e293b;
-      padding:2rem;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
     }
-
-    .task-list{
-      margin-left:1.5rem;
-      margin-top:1rem;
-    }
-
-    .task-list li{
-      margin:10px 0;
-      color:#e2e8f0;
-    }
-
-    .highlight{
-      color:#60a5fa;
-      font-weight:bold;
-    }
-
-    .printer-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1rem;
-      margin:1.5rem 0;
-    }
-
-    .printer-card{
-      background:#0f172a;
-      border:1px solid #334155;
-      border-radius:12px;
-      padding:1rem;
-      text-align:center;
-    }
-
-    .printer-card h4{
-      color:#60a5fa;
-      margin-bottom:0.5rem;
-    }
-
-    .screenshot-section{
-      margin-top:3rem;
-    }
-
-    .screenshot-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:1.5rem;
-      margin-top:1rem;
-    }
-
-    .screenshot-card{
-      background:#0f172a;
-      border:1px solid #334155;
-      border-radius:16px;
-      overflow:hidden;
-      transition:0.3s;
-    }
-
-    .screenshot-card:hover{
-      transform:translateY(-5px);
-      border-color:#3b82f6;
-    }
-
-    .screenshot-card img{
-      width:100%;
-      display:block;
-    }
-
-    .screenshot-card p{
-      padding:1rem;
-      color:#cbd5e1;
-      font-size:0.9rem;
-      text-align:center;
-    }
-
-    .footer-note{
-      margin-top:2rem;
-      color:#94a3b8;
-      text-align:center;
-      font-size:0.9rem;
-    }
-
-    @media(max-width:768px){
-      h1{ font-size:1.8rem; }
-      .container{ padding:1rem; }
-      .content{ padding:1.5rem; }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
     }
   </style>
 </head>
-
 <body>
+<div class="container">
+  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
-  <div class="container">
+  <div class="glass-card">
+    <h1>🖨️ Day 5: 3D Printing – Bambu Studio Slicer</h1>
 
-    <a href="../../index.html#weeks" class="back-btn">← Back to Calendar</a>
+    <h2>1. Introduction to Bambu Studio</h2>
+    <p>Bambu Studio is a slicing software used for preparing 3D models for 3D printing. It is developed for Bambu Lab printers and helps users convert 3D models into printable machine instructions. Bambu Studio is based on modern slicing technology and provides fast slicing, printer monitoring, and wireless file transfer.</p>
 
-    <h1>🖨️ Day 5: 3D Printing - Bambu Lab & Bambu Studio</h1>
+    <h2>2. Uses of Bambu Studio</h2>
+    <ul>
+      <li>Preparing 3D models for printing</li>
+      <li>Slicing STL and OBJ files</li>
+      <li>Setting print parameters</li>
+      <li>Controlling 3D printers</li>
+      <li>Monitoring print progress</li>
+      <li>Sending files wirelessly to printers</li>
+      <li>Managing supports and infill</li>
+      <li>Optimizing print quality</li>
+    </ul>
 
-    <div class="content">
+    <h2>3. Purpose of Bambu Studio</h2>
+    <p>The main purpose of Bambu Studio is to convert 3D models into G‑code instructions that a 3D printer can understand.</p>
+    <p><strong>Benefits:</strong></p>
+    <ul>
+      <li>Improves print quality</li>
+      <li>Reduces printing errors</li>
+      <li>Saves printing time</li>
+      <li>Controls temperature and speed</li>
+      <li>Makes 3D printing easier for beginners</li>
+    </ul>
 
-      <h2>✅ Today's Focus:</h2>
+    <h2>4. Installation Process of Bambu Studio (Step‑by‑Step)</h2>
 
-      <ul class="task-list">
-        <li>Explored <span class="highlight">3D Printing Technology</span> at Tinkerers' Lab</li>
-        <li>Learned about <span class="highlight">Bambu Lab</span> printers: A1, A1 mini, H2D, P1S</li>
-        <li>Installed and explored <span class="highlight">Bambu Studio</span> slicer software</li>
-        <li>Understood printer specifications, build volume, and material compatibility</li>
-        <li>Prepared a model for 3D printing</li>
-      </ul>
+    <h3>Step 1: Open Official Website</h3>
+    <p>Visit the official download page: <a href="https://bambulab.com/en/download/studio" target="_blank" style="color:#60a5fa;">bambulab.com/en/download/studio</a></p>
+    <img src="img1.png" alt="Bambu Studio website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
 
-      <h2>🖨️ Bambu Lab Printers Overview:</h2>
+    <h3>Step 2: Download Bambu Studio</h3>
+    <p>Select your operating system (Windows, macOS, or Linux) and click <strong>Download</strong>.</p>
 
-      <div class="printer-grid">
-        <div class="printer-card">
-          <h4>Bambu Lab A1</h4>
-          <p style="font-size:0.85rem;">Entry-level, fast printing, user-friendly</p>
-        </div>
-        <div class="printer-card">
-          <h4>Bambu Lab A1 Mini</h4>
-          <p style="font-size:0.85rem;">Compact size, perfect for small parts</p>
-        </div>
-        <div class="printer-card">
-          <h4>Bambu Lab H2D</h4>
-          <p style="font-size:0.85rem;">High-speed, dual extrusion</p>
-        </div>
-        <div class="printer-card">
-          <h4>Bambu Lab P1S</h4>
-          <p style="font-size:0.85rem;">Enclosed, advanced features, reliable</p>
-        </div>
-      </div>
+    <h3>Step 3: Open the Installer</h3>
+    <p>Go to the Downloads folder and double‑click the installer file.</p>
 
-      <h2>🎯 Key Learnings - 3D Printing:</h2>
+    <h3>Step 4: Start Installation</h3>
+    <p>Click <strong>Next</strong>, accept terms and conditions, and choose the installation location.</p>
 
-      <ul class="task-list">
-        <li><strong>FDM Technology:</strong> Fused Deposition Modeling - layer by layer printing</li>
-        <li><strong>Filament Types:</strong> PLA, PETG, ABS, TPU - different properties and uses</li>
-        <li><strong>Build Volume:</strong> Maximum part size each printer can produce</li>
-        <li><strong>Layer Height:</strong> Affects print quality and speed (0.1mm to 0.3mm)</li>
-        <li><strong>Infill Density:</strong> Controls part strength and material usage</li>
-        <li><strong>Support Structures:</strong> Needed for overhanging features</li>
-      </ul>
+    <h3>Step 5: Complete Installation</h3>
+    <p>Click <strong>Install</strong>, wait for the process to finish, then click <strong>Finish</strong>.</p>
 
-      <h2>🎯 Bambu Studio Learnings:</h2>
+    <h3>Step 6: Open Bambu Studio</h3>
+    <p>Launch Bambu Studio, sign in with your Bambu account, and connect your printer.</p>
+    <img src="img2.png" alt="Bambu Studio sign-in and printer connection" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
 
-      <ul class="task-list">
-        <li>Importing STL/STEP files into the slicer</li>
-        <li>Positioning and scaling models on the build plate</li>
-        <li>Adjusting print settings: layer height, infill, supports</li>
-        <li>Preview mode to see each layer before printing</li>
-        <li>Exporting G-code for the printer</li>
-        <li>Monitoring print progress via cloud interface</li>
-      </ul>
+    <h2>5. Slicing Process in Bambu Studio</h2>
 
-      <h2>📝 Notes:</h2>
-      <p>
-        Today I learned about 3D printing technology and explored the Bambu Lab printers 
-        available at Tinkerers' Lab. Bambu Studio is a powerful slicer that makes it easy 
-        to prepare models for printing. Understanding printer specifications and proper 
-        settings is crucial for successful prints. This knowledge will help me create 
-        custom parts for my future projects.
-      </p>
+    <h3>Step 1: Open Bambu Studio</h3>
+    <p>Launch the software from the desktop or start menu.</p>
 
-      <!-- Screenshots Section -->
-      <div class="screenshot-section">
-        <h2>📸 3D Printing & Bambu Studio Screenshots</h2>
-        <div class="screenshot-grid">
-          <div class="screenshot-card">
-            <img src="../screenshots/day5.1.png" alt="Bambu Lab Printers">
-            <p>Bambu Lab Printers Overview</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../screenshots/day5.2.png" alt="Bambu Studio Interface">
-            <p>Bambu Studio Slicer Software</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../screenshots/day5.3.png" alt="Print Settings">
-            <p>Adjusting Print Settings in Bambu Studio</p>
-          </div>
-          <div class="screenshot-card">
-            <img src="../screenshots/day5.4.jpg" alt="3D Printing Process">
-            <p>3D Printing in Action</p>
-          </div>
-        </div>
-        <p class="footer-note">
-          3D Printing Exploration | Bambu Lab Printers | TL Internship Documentation
-        </p>
-      </div>
+    <h3>Step 2: Add Printer</h3>
+    <p>Click <strong>Add Printer</strong>, select your Bambu printer model, and connect via Wi‑Fi or LAN.</p>
 
-    </div>
+    <h3>Step 3: Import 3D Model</h3>
+    <p>Click <strong>File → Import</strong> and select your STL, OBJ, or 3MF file.</p>
+    <img src="img3.png" alt="Import 3D model" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+
+    <h3>Step 4: Position the Model</h3>
+    <p>Use tools to move, rotate, and scale the object on the build plate.</p>
+
+    <h3>Step 5: Set Print Parameters</h3>
+    <p>Choose layer height, infill percentage, print speed, support settings, and filament type.</p>
+    <img src="img4.png" alt="Print parameters in Bambu Studio" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+
+    <h3>Step 6: Slice the Model</h3>
+    <p>Click <strong>Slice Plate</strong>. Bambu Studio converts the 3D model into printer instructions (G‑code).</p>
+    <img src="img5.png" alt="Slicing process" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h3>Step 7: Preview the Print</h3>
+    <p>Check print layers, estimated time, and material usage.</p>
+
+    <h2>6. Uploading File to the Printer</h2>
+
+    <h3>Method 1: Wi‑Fi Upload</h3>
+    <p><strong>Step 1:</strong> Connect printer and computer to the same Wi‑Fi network.</p>
+    <p><strong>Step 2:</strong> In Bambu Studio, click <strong>Send</strong>.</p>
+    <p><strong>Step 3:</strong> Select your printer.</p>
+    <img src="img6.png" alt="Select printer for Wi-Fi upload" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <p><strong>Step 4:</strong> Click <strong>Print</strong> or <strong>Upload</strong>. The file is sent directly to the printer.</p>
+    <img src="img7.png" alt="Uploading file to printer" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+
+    <h3>Method 2: SD Card / USB</h3>
+    <p><strong>Step 1:</strong> Export sliced file as G‑code or 3MF.</p>
+    <p><strong>Step 2:</strong> Copy file to SD card or USB drive.</p>
+    <p><strong>Step 3:</strong> Insert storage device into the printer.</p>
+    <p><strong>Step 4:</strong> Select file from printer screen and start printing.</p>
+
+    <h2>7. Advantages of Bambu Studio</h2>
+    <ul>
+      <li>Easy user interface</li>
+      <li>Fast slicing</li>
+      <li>Wireless printing</li>
+      <li>Real‑time monitoring</li>
+      <li>Automatic support generation</li>
+      <li>Multi‑color printing support</li>
+    </ul>
+
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>Bambu Studio is a powerful, beginner‑friendly slicer for Bambu Lab printers.</li>
+      <li>It converts STL/OBJ files into G‑code with full control over print parameters.</li>
+      <li>Wireless file transfer and real‑time monitoring greatly streamline the printing workflow.</li>
+      <li>Understanding slicer settings (layer height, infill, supports) is essential for successful prints.</li>
+    </ul>
+
+    <h2>🎯 Conclusion</h2>
+    <p>Bambu Studio is a powerful and beginner‑friendly slicing software for 3D printing. It helps users prepare models, optimize print settings, slice files, and directly send them to 3D printers efficiently. Mastering Bambu Studio is an essential skill for rapid prototyping and additive manufacturing projects.</p>
   </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  </div>
+</div>
 </body>
 </html>
