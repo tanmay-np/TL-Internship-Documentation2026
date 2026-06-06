@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 2 – TL Internship | Tanmay</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Day 2 – Video & Image Editing Tools | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,10 +15,7 @@
       line-height: 1.6;
       padding: 2rem;
     }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+    .container { max-width: 1000px; margin: 0 auto; }
     .back-btn {
       display: inline-block;
       background: rgba(59,130,246,0.2);
@@ -31,21 +28,18 @@
       margin-bottom: 2rem;
       transition: 0.2s;
     }
-    .back-btn:hover {
-      background: #3b82f6;
-      transform: translateY(-2px);
-    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
     .glass-card {
-      background: rgba(12, 20, 35, 0.6);
+      background: rgba(12,20,35,0.6);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(59,130,246,0.3);
-      border-radius: 1.5rem;
+      border-radius: 1.8rem;
       padding: 2rem;
       margin-bottom: 2rem;
     }
     h1 {
-      font-size: 2.2rem;
-      background: linear-gradient(135deg, #fff, #60a5fa);
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -53,74 +47,179 @@
     }
     h2 {
       color: #60a5fa;
+      font-size: 1.5rem;
       margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
     }
-    ul, p {
-      color: #cbd5e1;
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
     }
-    li {
-      margin: 0.5rem 0;
-      margin-left: 1.2rem;
-    }
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
     img {
       max-width: 100%;
       border-radius: 1rem;
       margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
     }
-    .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-    .software-card { background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-radius: 12px; padding: 1rem; text-align: center; }
-    .software-card h3 { color: #60a5fa; margin-bottom: 0.5rem; }
-    .software-card p { font-size: 0.85rem; color: #cbd5e1; }
+    code {
+      background: #0a0e1a;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
+      font-family: monospace;
+      color: #60a5fa;
+    }
+    pre {
+      background: #0a0e1a;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: monospace;
+      color: #e2e8f0;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(5,7,10,0.4);
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+    }
+    .comparison-table th {
+      background: rgba(59,130,246,0.2);
+      color: #60a5fa;
+    }
     @media (max-width: 700px) {
       body { padding: 1rem; }
       h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
 <div class="container">
   <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+
   <div class="glass-card">
-    <h1>📅 Day 2: Software Installation & Setup</h1>
-    
-    <h2>✅ Tasks Completed</h2>
+    <h1>📘 Day 2: Essential Media Tools – OBS, GIMP, FFmpeg</h1>
+
+    <h2>🎥 OBS Studio – Screen Recording & Live Streaming</h2>
+    <p><strong>Introduction:</strong> OBS Studio is a free, open-source software for screen recording, live streaming, video capture, and audio recording. It is widely used by YouTubers, gamers, teachers, and content creators.</p>
     <ul>
-      <li>Installed Autodesk Fusion with student license</li>
-      <li>Set up OBS Studio for screen recording</li>
-      <li>Installed GIMP, Inkscape, and FFmpeg</li>
-      <li>Configured all tools for internship workflow</li>
-      <li>Set up system PATH for command-line tools</li>
+      <li>Record computer screen</li>
+      <li>Live stream on YouTube, Twitch, Facebook</li>
+      <li>Record tutorials and lectures</li>
+      <li>Add webcam and microphone</li>
+      <li>Create professional streaming layouts</li>
     </ul>
-    
-    <h2>📝 Software Tools Setup</h2>
-    <div class="software-grid">
-      <div class="software-card">
-        <h3>🔧 Autodesk Fusion</h3>
-        <p>CAD/CAM for 3D modeling, design, and manufacturing</p>
-      </div>
-      <div class="software-card">
-        <h3>🎥 OBS Studio</h3>
-        <p>Screen recording and live streaming</p>
-      </div>
-      <div class="software-card">
-        <h3>🖌️ GIMP</h3>
-        <p>Photo editing and image manipulation</p>
-      </div>
-      <div class="software-card">
-        <h3>✏️ Inkscape</h3>
-        <p>Vector graphics and illustration</p>
-      </div>
-      <div class="software-card">
-        <h3>🎬 FFmpeg</h3>
-        <p>Multimedia framework for video/audio</p>
-      </div>
-    </div>
-    
-    <h2>📝 Learnings</h2>
-    <p>Today I learned how to properly install and configure essential professional tools for my internship workflow. Setting up these applications will help me document work better, create CAD models, edit screenshots, record tutorials, and process video efficiently. Each tool serves a specific purpose in my digital toolkit.</p>
-    
-    <h2>📸 Screenshots</h2>
-    <p>Place your images in this folder and use <code>&lt;img src="image.png"&gt;</code>.</p>
+    <p><strong>Purpose:</strong> To create high-quality video recordings and live streams without paid software.</p>
+
+    <h3>Installation Steps (OBS Studio)</h3>
+    <ol>
+      <li><strong>Open official website:</strong> <a href="https://obsproject.com/" target="_blank" style="color:#60a5fa;">obsproject.com</a></li>
+      <li><strong>Download OBS Studio:</strong> Click Windows (or your OS). Download starts automatically.</li>
+      <li><strong>Open installer:</strong> Run the .exe file, click Next.</li>
+      <li><strong>Accept license:</strong> Click I Agree.</li>
+      <li><strong>Install:</strong> Click Install and wait.</li>
+      <li><strong>Launch:</strong> Click Finish, OBS opens.</li>
+      <li><strong>Auto‑configuration wizard:</strong> Choose Optimize for Streaming or Recording, complete setup.</li>
+    </ol>
+    <img src="img1.jpg" alt="OBS Studio website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
+    <img src="img2.jpg" alt="OBS download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+    <img src="img3.jpg" alt="OBS installation" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+
+    <h2>🖌️ GIMP – Free Image Editing</h2>
+    <p><strong>Introduction:</strong> GIMP (GNU Image Manipulation Program) is a free image editing software similar to Photoshop. Used for photo editing, background removal, logo design, thumbnails, and graphic design.</p>
+    <ul>
+      <li>Photo editing & retouching</li>
+      <li>Background removal</li>
+      <li>Logo design</li>
+      <li>Thumbnail creation</li>
+    </ul>
+    <p><strong>Purpose:</strong> Provide professional image editing tools freely for students, designers, and creators.</p>
+
+    <h3>Installation Steps (GIMP)</h3>
+    <ol>
+      <li><strong>Open official website:</strong> <a href="https://www.gimp.org/" target="_blank" style="color:#60a5fa;">gimp.org</a></li>
+      <li><strong>Download:</strong> Click Download GIMP, choose your OS.</li>
+      <li><strong>Run installer:</strong> Open downloaded file, click Install.</li>
+      <li><strong>Wait:</strong> Installation takes a few minutes.</li>
+      <li><strong>Launch:</strong> Click Finish, open from desktop/start menu.</li>
+    </ol>
+    <img src="img4.jpg" alt="GIMP website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+    <img src="img5.jpg" alt="GIMP download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h2>🎬 FFmpeg – Command‑Line Multimedia Powerhouse</h2>
+    <p><strong>Introduction:</strong> FFmpeg is a powerful command‑line tool for video/audio conversion, compression, recording, streaming, and editing. It is essential for batch processing and automation.</p>
+    <ul>
+      <li>Convert video/audio formats (MP4 to MP3, etc.)</li>
+      <li>Compress large videos</li>
+      <li>Extract audio from video</li>
+      <li>Record screen/stream media</li>
+    </ul>
+    <p><strong>Purpose:</strong> Process multimedia files efficiently using simple commands – ideal for developers and power users.</p>
+
+    <h3>Installation Steps (Windows)</h3>
+    <ol>
+      <li><strong>Open official website:</strong> <a href="https://ffmpeg.org/" target="_blank" style="color:#60a5fa;">ffmpeg.org</a></li>
+      <li><strong>Download Windows build:</strong> Click Download → choose Windows build from recommended providers.</li>
+      <li><strong>Extract ZIP:</strong> Use WinRAR or 7‑Zip.</li>
+      <li><strong>Move folder:</strong> Place extracted folder to <code>C:\ffmpeg</code></li>
+      <li><strong>Add to PATH:</strong> Search “Environment Variables” → Edit system environment variables → Environment Variables → Path → Edit → Add <code>C:\ffmpeg\bin</code>.</li>
+      <li><strong>Verify installation:</strong> Open Command Prompt and type <code>ffmpeg -version</code>. Version info appears if successful.</li>
+    </ol>
+    <img src="img6.jpg" alt="FFmpeg website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <img src="img7.jpg" alt="FFmpeg download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+    <img src="img8.jpg" alt="FFmpeg PATH setup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
+    <img src="img9.jpg" alt="FFmpeg verification" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
+
+    <h2>📊 Tool Comparison</h2>
+    <table class="comparison-table">
+      <thead><tr><th>Feature</th><th>OBS Studio</th><th>GIMP</th><th>FFmpeg</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Primary Use</td><td>Screen recording / streaming</td><td>Image editing</td><td>Video/audio conversion & processing</td></tr>
+        <tr><td>Interface</td><td>Graphical</td><td>Graphical</td><td>Command‑line</td></tr>
+        <tr><td>Learning Curve</td><td>Low</td><td>Medium</td><td>Steep (requires terminal)</td></tr>
+        <tr><td>Key Strength</td><td>Real‑time streaming & layouts</td><td>Free Photoshop alternative</td><td>Batch processing, automation</td></tr>
+        <tr><td>Best For</td><td>Creators, streamers, teachers</td><td>Designers, photographers</td><td>Developers, advanced users</td></tr>
+      </tbody>
+    </table>
+
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>OBS Studio enables free, high‑quality screen recording and live streaming.</li>
+      <li>GIMP provides professional image editing capabilities at zero cost.</li>
+      <li>FFmpeg is an indispensable command‑line tool for video/audio manipulation and automation.</li>
+      <li>Mastering these tools enhances productivity in content creation, documentation, and project work.</li>
+      <li>Knowing how to install and configure PATH (for FFmpeg) is a valuable system administration skill.</li>
+    </ul>
+
+    <h2>🎯 Conclusion</h2>
+    <p>In this session, we explored three essential free media tools: OBS Studio for recording, GIMP for image editing, and FFmpeg for command‑line media processing. Understanding their installation workflows and practical uses will greatly assist in creating internship documentation, tutorials, and project content. These skills are directly applicable to technical roles that require media production and automation.</p>
+  </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
   </div>
 </div>
 </body>
