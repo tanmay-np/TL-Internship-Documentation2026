@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 6 – Autodesk Fusion: Phone Stand & Cylindrical Engraving | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
+    }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Back button (correct path for week2/day6_documentation/) -->
+  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+
+  <div class="glass-card">
+    <h1>📐 Week 2 – Day 6: Autodesk Fusion – Phone Stand & Cylindrical Engraving</h1>
+
+    <h2>📌 Introduction</h2>
+    <p>Autodesk Fusion is a powerful CAD/CAM/CAE tool. Today we practised two practical projects: designing a custom phone stand and engraving text on a cylindrical object. These exercises teach essential skills like sketching, extruding, shelling, and using the revolve tool for text placement.</p>
+
+    <!-- ========== PROJECT 1: PHONE STAND ========== -->
+    <h2>📱 Project 1: Creating a Phone Stand</h2>
+
+    <h3>Step 1 – Create a New Part Design</h3>
+    <p>Open Autodesk Fusion, click <strong>Create</strong> and select <strong>Part Design</strong>.</p>
+
+    <h3>Step 2 – Select a Plane</h3>
+    <p>Choose a plane (e.g., XY plane) to start your sketch.</p>
+
+    <h3>Step 3 – Create a Sketch</h3>
+    <p>Click on <strong>Sketch</strong> to enter sketch mode.</p>
+
+    <h3>Step 4 – Draw a Rectangle</h3>
+    <p>Use the rectangle tool to draw a shape matching your smartphone dimensions (e.g., width 80 mm, height 10 mm for the base). You can add fillets later for comfort.</p>
+
+    <h3>Step 5 – Extrude the Base</h3>
+    <p>Select the rectangle and press <strong>E</strong> (extrude shortcut). Set the extrusion distance to your desired thickness (e.g., 5–10 mm). This forms the main body of the stand.</p>
+
+    <h3>Step 6 – Add Text (Logo or Name)</h3>
+    <p>From the <strong>Create</strong> menu, select <strong>Text</strong>. Type your desired text (e.g., “Tinkerers’ Lab” or your name). Place it on the front face of the stand.</p>
+
+    <h3>Step 7 – Revolve the Text</h3>
+    <p>Go to the <strong>Surface</strong> tab and select <strong>Revolve</strong>. Choose the bottom axis of the stand as the revolve axis. Set the angle to <strong>45°</strong> to give the text a slight tilt, making it more readable from a normal viewing angle.</p>
+    <p><strong>Why revolve?</strong> Revolving the text around a horizontal axis can create a subtle embossed effect that looks professional and is easier to see when the phone is placed.</p>
+
+    <p><em>💡 Tip: After revolving, you may also add a small lip or groove to hold the phone securely. Use the <strong>Shell</strong> command to hollow out unnecessary weight.</em></p>
+
+    <h3>Final Touches for the Phone Stand</h3>
+    <p>Add fillets to sharp edges for safety and aesthetics. Save the file as <strong>PhoneStand_v1.f3d</strong>.</p>
+
+    <!-- ========== PROJECT 2: CYLINDRICAL ENGRAVING ========== -->
+    <h2>🥫 Project 2: Engraving Text on a Cylindrical Object</h2>
+
+    <h3>Step 1 – Create a New Part Design</h3>
+    <p>Start a new design and choose <strong>Part Design</strong>.</p>
+
+    <h3>Step 2 – Select a Plane</h3>
+    <p>Choose the XY plane or any suitable plane.</p>
+
+    <h3>Step 3 – Create a Sketch</h3>
+    <p>Enter sketch mode and draw a <strong>circle</strong> of diameter <strong>100 mm</strong>.</p>
+    <img src="img1.png" alt="Circle sketch diameter 100mm" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
+
+    <h3>Step 4 – Extrude the Cylinder</h3>
+    <p>Select the circle and press <strong>E</strong>. Set the extrusion height to <strong>40 mm</strong> to form a solid cylinder.</p>
+    <img src="img2.png" alt="Extruded cylinder 40mm height" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+
+    <h3>Step 5 – Hollow the Cylinder (Shell)</h3>
+    <p>Select the top face of the cylinder, then use the <strong>Shell</strong> command. Set the wall thickness to <strong>1 mm</strong>. This creates a hollow container (like a cup).</p>
+    <img src="img3.png" alt="Shell command with 1mm thickness" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+
+    <h3>Step 6 – Create a Sketch on the Front Plane</h3>
+    <p>Select the front plane (or any plane parallel to the cylinder axis) and create a new sketch. Use the <strong>Text</strong> tool to write your desired text (e.g., “TL Internship 2026”).</p>
+    <img src="img4.png" alt="Text on front plane" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+    <img src="img5.png" alt="Text positioned" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h3>Step 7 – Extrude the Text (Engrave)</h3>
+    <p>Select the text profile and press <strong>E</strong>. In the extrusion dialog:</p>
+    <ul>
+      <li>Set the distance to <strong>-1 mm</strong> (negative value cuts into the cylinder).</li>
+      <li>For the start option, choose <strong>Object</strong> and select the outer face of the cylinder. This ensures the extrusion starts exactly at the cylinder surface.</li>
+    </ul>
+    <p>Click OK. The text is now engraved (cut into) the cylinder surface.</p>
+    <img src="img6.png" alt="Extrude settings for engraving" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <img src="img7.png" alt="Final engraved cylinder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+
+    <h3>Additional Tips for Cylindrical Engraving</h3>
+    <ul>
+      <li>To make the text stand out, you can later apply a different colour or material to the engraved faces.</li>
+      <li>If you want raised (embossed) text instead of engraved, use a positive extrusion distance and choose “New Body” or “Join”.</li>
+      <li>For curved text that wraps around the cylinder, use the <strong>Text on Path</strong> tool (available in the Sketch environment).</li>
+    </ul>
+
+    <!-- ========== CONCLUSION & KEY TAKEAWAYS ========== -->
+    <h2>🎯 Conclusion</h2>
+    <p>Using Autodesk Fusion for designing a phone stand and engraving text on a cylindrical object helps learn important 3D modelling skills such as sketching, extruding, modifying shapes, and adding custom text. Fusion 360 provides an easy and accurate way to create both simple and complex models with professional results.</p>
+    <p>The phone stand project improves understanding of product design and measurements, while the cylindrical text engraving process demonstrates how to customize objects using sketch and extrude tools. Overall, Fusion 360 is a powerful and user‑friendly software for creating creative, precise, and practical 3D designs.</p>
+
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li><strong>Sketch + Extrude</strong> – The foundation of most 3D models.</li>
+      <li><strong>Shell</strong> – Creates hollow objects, saving material and weight.</li>
+      <li><strong>Revolve</strong> – Useful for rotating text or profiles around an axis.</li>
+      <li><strong>Negative Extrusion (Emboss/Engrave)</strong> – Cuts text or shapes into a surface.</li>
+      <li><strong>Object start option</strong> – Allows extrusions to begin exactly at a curved surface.</li>
+      <li>These skills are directly applicable to designing custom enclosures, personalised gifts, and mechanical parts.</li>
+    </ul>
+
+    <h2>📸 Image Reference</h2>
+    <p>This documentation uses screenshots (<strong>img1.png</strong> to <strong>img7.png</strong>). Place your corresponding images in the same folder as this HTML file.</p>
+  </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  </div>
+</div>
+</body>
+</html>
