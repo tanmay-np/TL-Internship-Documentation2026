@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 – ESP32 LED Blink using Wokwi Simulator | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    h3 {
+      color: #3b82f6;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
+    }
+    .highlight {
+      color: #60a5fa;
+      font-weight: bold;
+    }
+    .code-block {
+      background: #0a0e1a;
+      border-left: 4px solid #3b82f6;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      margin: 1rem 0;
+    }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+
+  <div class="glass-card">
+    <h1>⚡ Day 10: ESP32 LED Blink using Wokwi Simulator</h1>
+
+    <h2>📌 Objective</h2>
+    <p>Learn ESP32 simulation using Wokwi, build and test an LED Blink project, understand virtual circuit design, and manage project documentation using VS Code and GitHub.</p>
+
+    <h2>🛠️ Phase 1: Environment Setup</h2>
+
+    <h3>1. Discovering Wokwi</h3>
+    <p>Researched ESP32 simulators and identified <strong>Wokwi</strong> as a browser‑based simulation platform for Arduino, ESP32, STM32, and Raspberry Pi Pico projects.</p>
+    <img src="img1.png" alt="Discovering Wokwi" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
+
+    <h3>2. Exploring the Wokwi Platform</h3>
+    <p>Opened the Wokwi homepage and reviewed available templates, examples, and supported hardware boards.</p>
+    <img src="img2.png" alt="Wokwi platform" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+
+    <h3>3. User Authentication</h3>
+    <p>Signed in using Google or GitHub to enable project saving, cloud access, and collaboration features.</p>
+    <img src="img3.png" alt="Sign in using Google/GitHub" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+    <img src="img4.png" alt="Authentication options" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+
+    <h3>4. Choosing the ESP32 Board</h3>
+    <p>Selected an ESP32 development board template to create a new simulation project.</p>
+    <img src="img5.png" alt="Selecting ESP32 board" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h2>💻 Phase 2: Coding & Circuit Design</h2>
+
+    <h3>5. Verifying the Simulator</h3>
+    <p>Created a basic ESP32 program with serial output to confirm that the simulation environment was functioning correctly.</p>
+    <img src="img6.png" alt="Basic ESP32 serial output" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+
+    <h3>6. Building the Circuit</h3>
+    <p>Click on <strong>'+' sign</strong> to add components.</p>
+    <img src="img7.png" alt="Add components in Wokwi" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+
+    <ol>
+      <li>A red LED</li>
+      <img src="img8.png" alt="Adding red LED" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
+      <li>A current‑limiting resistor</li>
+      <img src="img9.png" alt="Adding resistor" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
+    </ol>
+    <p>Connected the LED to the ESP32 GPIO pin (project target: <strong>GPIO 4</strong>).</p>
+    <div class="highlight"><strong>Important:</strong> Pin mismatch noticed. The objective mentions GPIO 4, but the code below uses pin 14. To truly blink an LED on GPIO 4, replace every 14 with 4.</div>
+
+    <h3>7. Programming the LED Blink</h3>
+    <p>Wrote the following code to toggle the LED every second. The program repeatedly turns the LED ON for one second and OFF for one second.</p>
+    <div class="code-block">
+      <pre>
+// ESP32 LED Blink on GPIO 14 (or change to 4)
+#define LED_PIN 14
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_PIN, LOW);
+  delay(1000);
+}
+      </pre>
+    </div>
+    <img src="img10.png" alt="LED Blink code" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
+
+    <h2>🧪 Phase 3: Testing & Verification</h2>
+
+    <h3>8. Running the Simulation</h3>
+    <p>Started the Wokwi simulator and observed the LED blinking continuously.</p>
+    <p>This confirmed that:</p>
+    <ol>
+      <li>The circuit wiring was correct.</li>
+      <li>The ESP32 GPIO pin was configured properly.</li>
+      <li>The software logic was functioning as expected.</li>
+    </ol>
+    <p>This step demonstrated how ESP32 digital output pins can control external components such as LEDs.</p>
+    <img src="img11.png" alt="LED blinking in simulation" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
+
+    <h2>📊 Learning Outcomes</h2>
+    <table style="width:100%; border-collapse: collapse; background: rgba(5,7,10,0.4); border-radius: 1rem; overflow: hidden;">
+      <thead>
+        <tr style="background: rgba(59,130,246,0.2);">
+          <th style="padding: 0.8rem; text-align: left;">Activity</th>
+          <th style="padding: 0.8rem; text-align: left;">Learning</th>
+          <th style="padding: 0.8rem; text-align: left;">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Wokwi setup</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Simulator navigation</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">ESP32 environment ready</td></tr>
+        <tr><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Board selection</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Virtual hardware configuration</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">ESP32 project created</td></tr>
+        <tr><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Circuit design</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">GPIO and component connections</td><td style="padding: 0.8rem; border-bottom: 1px solid rgba(59,130,246,0.2);">Functional LED circuit</td></tr>
+        <tr><td style="padding: 0.8rem;">LED Blink code</td><td style="padding: 0.8rem;">Digital output programming</td><td style="padding: 0.8rem;">LED blinking achieved</td></tr>
+      </tbody>
+    </table>
+
+    <h2>🎯 Overall Outcome</h2>
+    <ol>
+      <li>Successfully explored and configured the Wokwi ESP32 simulator.</li>
+      <li>Built an ESP32 LED circuit using a GPIO output pin.</li>
+      <li>Verified LED blinking through virtual simulation.</li>
+    </ol>
+
+    <h2>📌 Conclusion</h2>
+    <p>This exercise covered the complete development cycle: simulation, circuit design, coding, testing, documentation, and version control. Using Wokwi, an ESP32 LED Blink project was created and validated in a virtual environment, making the project organized, reproducible, and easy to share with others. The screen recording serves as final verification of successful implementation.</p>
+  </div>
+
+  <div class="site-footer">
+    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  </div>
+</div>
+</body>
+</html>
