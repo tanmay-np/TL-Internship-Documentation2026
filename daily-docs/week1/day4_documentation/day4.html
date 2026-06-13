@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 4 – Inkscape: Logo Design | Tanmay Pendbhaje</title>
+  <title>Day 1 – GitHub Setup & First Commit | Tanmay Pendbhaje</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -67,6 +67,22 @@
       border: 1px solid rgba(59,130,246,0.3);
       display: block;
     }
+    code {
+      background: #0a0e1a;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
+      font-family: monospace;
+      color: #60a5fa;
+    }
+    pre {
+      background: #0a0e1a;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+      font-family: monospace;
+      color: #e2e8f0;
+    }
     .site-footer {
       text-align: center;
       padding: 1.5rem;
@@ -87,103 +103,100 @@
   <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
   <div class="glass-card">
-    <h1>🎨 Day 4: Inkscape – Vector Graphics & Logo Design</h1>
+    <h1>📘 Day 1: GitHub – Introduction, Setup & First Commit</h1>
 
-    <h2>📌 Introduction to Inkscape</h2>
-    <p>Inkscape is a free, open‑source vector graphics editor, similar to Adobe Illustrator. It is widely used for creating logos, icons, illustrations, diagrams, and scalable graphics. Vector images made in Inkscape can be resized infinitely without losing quality – essential for branding, printing, and web design.</p>
+    <h2>1. Introduction to GitHub</h2>
+    <p>GitHub is a web-based platform used for version control and software development. It helps developers store, manage, track, and collaborate on coding projects.</p>
 
-    <h2>✨ Uses of Inkscape (Especially for Logos)</h2>
+    <h2>2. Uses of GitHub</h2>
     <ul>
-      <li>Create professional vector logos</li>
-      <li>Design custom shapes and icons</li>
-      <li>Add and edit text styles, gradients, and effects</li>
-      <li>Export logos in PNG, SVG, PDF, and other formats</li>
-      <li>Create scalable designs for banners, business cards, and websites</li>
+      <li>Store source code online</li>
+      <li>Track project changes</li>
+      <li>Collaborate with teams</li>
+      <li>Manage open-source projects</li>
+      <li>Backup important files</li>
     </ul>
 
-    <h2>🎯 Purpose of Inkscape for Logo Design</h2>
-    <p>The main purpose is to help users create high‑quality, scalable, and professional logos freely – a powerful alternative to paid software like Adobe Illustrator.</p>
+    <h2>3. Purpose of GitHub</h2>
+    <p>The main purpose of GitHub is to improve teamwork and project management in software development.</p>
 
-    <h2>🛠️ Installation Process (Step‑by‑Step)</h2>
+    <h2>4. Installation & Usage Steps (with Screenshots)</h2>
 
-    <h3>Step 1 – Search Inkscape</h3>
-    <p>Open your browser, go to Google, and search for “Inkscape”.</p>
-    <img src="img1.png" alt="Search Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
+    <h3>Step 1 – Sign Up</h3>
+    <p>Open GitHub website and click <strong>Sign Up</strong>.</p>
+    <img src="img1.png" alt="GitHub signup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
 
-    <h3>Step 2 – Open Official Website</h3>
-    <p>Click on the official Inkscape website (inkscape.org).</p>
-    <img src="img2.png" alt="Inkscape official website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+    <h3>Step 2 – Fill details & verify email</h3>
+    <img src="img2.png" alt="GitHub signup form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
 
-    <h3>Step 3 – Download Inkscape</h3>
-    <p>Click the Download button and choose your operating system (Windows, Mac, or Linux).</p>
-    <img src="img3.png" alt="Download Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+    <h3>Step 3 – Download and install Git</h3>
+    <img src="img3.png" alt="Git download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
 
-    <h3>Step 4 – Run the Installer</h3>
-    <p>Open the downloaded setup file and click “Next” or “Install”.</p>
-    <img src="img4.png" alt="Inkscape installer" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+    <h3>Step 4 – GitHub Dashboard</h3>
+    <img src="img4.png" alt="GitHub dashboard" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
 
-    <h3>Step 5 – Complete Installation</h3>
-    <p>Wait for the installation to finish (this may take a minute or two).</p>
-    <img src="img5.png" alt="Installation progress" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+    <h3>Configure Git with Your Name & Email</h3>
+    <p>Git needs to know who you are. Run these commands in Terminal / Command Prompt:</p>
+    <pre><code>git config --global user.name "Your Full Name"
+git config --global user.email "youremail@example.com"
+git config --list</code></pre>
+    <img src="img5.png" alt="Git config" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
 
-    <h3>Step 6 – Launch Inkscape</h3>
-    <p>Click “Finish” and open Inkscape from the desktop or start menu.</p>
-    <img src="img6.png" alt="Launch Inkscape" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <h3>Create a Repository on GitHub</h3>
+    <p><strong>Step 1:</strong> Log in → Click your profile picture → <strong>Your repositories</strong> → <strong>New</strong> (green button).</p>
+    <img src="img6.png" alt="Profile menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <img src="img7.png" alt="Your repositories" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+    <img src="img8.png" alt="New repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
 
-    <h2>🖌️ How to Make a Logo in Inkscape (Step‑by‑Step with Tools)</h2>
-
-    <h3>Step 1 – Open Inkscape</h3>
-    <p>Launch the application – you’ll see a blank canvas ready for design.</p>
-    <img src="img7.png" alt="Inkscape workspace" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
-
-    <h3>Step 2 – Create Basic Shapes</h3>
-    <p>Use the shape tools (circle, rectangle, etc.) to create the foundation of your logo. Adjust coordinates and size using the toolbar.</p>
-    <img src="img8.png" alt="Draw circle and adjust coordinates" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
-
-    <h3>Step 3 – Create Another Circle & Prepare Text</h3>
-    <p>Make a second circle (to be used as a text path). Also write the text you want to appear on the logo (e.g., “Tinkerers’ Lab”).</p>
-    <img src="img9.png" alt="Second circle and text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
-
-    <h3>Step 4 – Write the Text (or import)</h3>
-    <p>Use the Text tool to type your desired text. Position it near the circle.</p>
-    <img src="img10.png" alt="Enter logo text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
-
-    <h3>Step 5 – Put Text on a Path</h3>
-    <p>Select both the text and the circle (black outline), then go to <strong>Text → Put on Path</strong>. The text will wrap around the circle.</p>
-    <img src="img11.png" alt="Put on Path" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
-
-    <h3>Step 6 – Adjust Text and Duplicate</h3>
-    <p>Select only the text, drag it to another circle, and change its color to white (or a contrasting color).</p>
-    <img src="img12.png" alt="Text on second circle, color change" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
-
-    <h3>Step 7 – Create Another Circle with Different Text & Flip</h3>
-    <p>Add another circle and a different text (e.g., a tagline). After applying “Put on Path”, select the text and use <strong>Object → Flip Vertical</strong> to orient it correctly.</p>
-    <img src="img13.png" alt="Flip vertical text" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
-
-    <h3>Step 8 – Create Inner Shape and Use Exclusion</h3>
-    <p>Make a new circle and place it inside the green (or main) circle. Select both and apply <strong>Path → Exclusion</strong> to create a cut‑out effect (like a ring).</p>
-    <img src="img14.png" alt="Exclusion effect" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
-
-    <h3>Step 9 – Import an Image (Optional)</h3>
-    <p>You can import external images (e.g., a symbol or mascot) from your documents using <strong>File → Import</strong>.</p>
-    <img src="img15.png" alt="Import image" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
-
-    <h3>Step 10 – Save Your Logo</h3>
-    <p>Go to <strong>File → Save As</strong>. Choose SVG (for editable source) or PNG (for raster). Name your file and save.</p>
-    <img src="img16.png" alt="Save logo" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
-
-    <h2>📌 Key Takeaways</h2>
+    <p><strong>Step 2:</strong> Fill in the repository form:</p>
     <ul>
-      <li>Inkscape is a free, professional vector graphics editor – perfect for logo design.</li>
-      <li>Vector graphics are resolution‑independent (can be scaled infinitely).</li>
-      <li>The “Put on Path” feature allows text to follow any curve or circle – essential for circular logos.</li>
-      <li>Using “Exclusion” (Path menu) creates hollow shapes (like rings).</li>
-      <li>Inkscape supports layers, gradients, Bézier curves, and many tools for advanced design.</li>
-      <li>Final logos can be exported to PNG, SVG, PDF, and other formats suitable for web, print, and branding.</li>
+      <li>Repository name: <code>my-first-project</code></li>
+      <li>Description (optional)</li>
+      <li>Select <strong>Public</strong></li>
+      <li>Tick <strong>Add a README file</strong></li>
     </ul>
+    <img src="img9.png" alt="Create repository form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
 
-    <h2>🎯 Conclusion</h2>
-    <p>Inkscape is a powerful free tool for creating scalable vector graphics, especially logos. In this session we installed Inkscape, learned the interface, and created a complete circular logo with text paths, color adjustments, and exclusion effects. Mastering Inkscape is a valuable skill for any engineer or designer working on branding, UI/UX, or technical illustrations.</p>
+    <p><strong>Step 3:</strong> Click <strong>Create repository</strong></p>
+    <img src="img10.png" alt="Create repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
+
+    <h2>5. Open the Project in VS Code</h2>
+    <p><strong>Step 1:</strong> Open VS Code</p>
+    <img src="img11.png" alt="VS Code start" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
+
+    <p><strong>Step 2:</strong> Click <strong>File → Open Folder</strong></p>
+    <img src="img12.png" alt="File menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
+    <img src="img13.png" alt="Open folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
+
+    <p><strong>Step 3:</strong> Select a folder and open it</p>
+    <img src="img14.png" alt="Select folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
+
+    <h2>6. Push Files using VS Code Terminal</h2>
+    <p><strong>Step 1:</strong> Click on <strong>Terminal → New Terminal</strong></p>
+    <img src="img15.png" alt="Terminal menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
+    <img src="img16.png" alt="New terminal" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
+
+    <p>Run the following Git commands in order:</p>
+    <pre><code>git init
+git status
+git branch -M main
+git commit -m "Initial commit"
+git add .
+git remote add origin https://github.com/your-username/your-repo-name.git
+git push origin main --force</code></pre>
+    <img src="img17.png" alt="git init" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
+    <img src="img18.png" alt="git status" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
+    <img src="img19.png" alt="git branch -M main" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
+    <img src="img20.png" alt="git commit" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
+    <img src="img21.png" alt="git add" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
+    <img src="img22.png" alt="git remote add origin" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
+    <img src="img23.png" alt="git push" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
+
+    <h2>7. Check the Pushed Files</h2>
+    <p>The files are successfully pushed to GitHub. Refresh your repository page to see them.</p>
+
+    <h2>Conclusion</h2>
+    <p>GitHub is an essential platform for developers to manage, share, and collaborate on projects.</p>
   </div>
 
   <div class="site-footer">
