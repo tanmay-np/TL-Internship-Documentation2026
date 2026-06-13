@@ -16,19 +16,6 @@
       padding: 2rem;
     }
     .container { max-width: 1300px; margin: 0 auto; }
-    .back-btn {
-      display: inline-block;
-      background: rgba(59,130,246,0.2);
-      border: 1px solid #3b82f6;
-      padding: 0.6rem 1.2rem;
-      border-radius: 2rem;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      margin-bottom: 2rem;
-      transition: 0.2s;
-    }
-    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
     .glass-card {
       background: rgba(12,20,35,0.6);
       backdrop-filter: blur(12px);
@@ -100,13 +87,11 @@
 </head>
 <body>
 <div class="container">
-  <a href="../../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
-  <!-- Hero -->
+  <!-- Simplified hero (only title and subtitle) -->
   <div class="glass-card">
-    <h1>Week 3 – Day 11: Physical AI & Embedded Systems</h1>
+    <h1>Physical AI & Embedded Systems</h1>
     <p style="color: #94a3b8; font-size: 1.1rem;">From Sensors to Actuators – How Machines Perceive and Act</p>
-    <p><strong>Date:</strong> 1 June 2026</p>
   </div>
 
   <!-- 1. Physical AI -->
@@ -152,12 +137,12 @@
       <table>
         <thead><tr><th>Criteria</th><th>Active Sensors</th><th>Passive Sensors</th></tr></thead>
         <tbody>
-          <tr><td>Energy Source</td><td>Emit their own energy</td><td>Detect existing energy only</td></tr>
-          <tr><td>Examples</td><td>Ultrasonic, LiDAR, Radar, Active IR</td><td>LDR, Thermistor, Photodiode</td></tr>
-          <tr><td>Power Need</td><td>Higher</td><td>Lower</td></tr>
-          <tr><td>Works in Dark?</td><td>Yes</td><td>Depends (LDR needs light)</td></tr>
-          <tr><td>Cost</td><td>Generally higher</td><td>Very low</td></tr>
-          <tr><td>Range</td><td>Very long (LiDAR 100m+)</td><td>Short range</td></tr>
+          <tr><td>Energy Source</td><td>Emit their own energy</td><td>Detect existing energy only</td> </tr>
+          <tr><td>Examples</td><td>Ultrasonic, LiDAR, Radar, Active IR</td><td>LDR, Thermistor, Photodiode</td> </tr>
+          <tr><td>Power Need</td><td>Higher</td><td>Lower</td> </tr>
+          <tr><td>Works in Dark?</td><td>Yes</td><td>Depends (LDR needs light)</td> </tr>
+          <tr><td>Cost</td><td>Generally higher</td><td>Very low</td> </tr>
+          <tr><td>Range</td><td>Very long (LiDAR 100m+)</td><td>Short range</td> </tr>
         </tbody>
       </table>
     </div>
@@ -177,11 +162,11 @@
       <table>
         <thead><tr><th>Criteria</th><th>DC Motor</th><th>Servo</th><th>Stepper</th><th>BLDC</th></tr></thead>
         <tbody>
-          <tr><td>Torque</td><td>Medium</td><td>Medium</td><td>High (low speed)</td><td>High</td></tr>
-          <tr><td>Position Control</td><td>No</td><td>Yes (0-180°)</td><td>Yes (steps)</td><td>With ESC</td></tr>
-          <tr><td>Precision</td><td>Low</td><td>High</td><td>Very High</td><td>Medium</td></tr>
-          <tr><td>Ease of Control</td><td>Easy</td><td>Very Easy</td><td>Moderate</td><td>Complex</td></tr>
-          <tr><td>Best Use Case</td><td>Wheels, fans</td><td>Robot arms, RC cars</td><td>3D printers, CNC</td><td>Drones, EVs</td></tr>
+          <tr><td>Torque</td><td>Medium</td><td>Medium</td><td>High (low speed)</td><td>High</td> </tr>
+          <tr><td>Position Control</td><td>No</td><td>Yes (0-180°)</td><td>Yes (steps)</td><td>With ESC</td> </tr>
+          <tr><td>Precision</td><td>Low</td><td>High</td><td>Very High</td><td>Medium</td> </tr>
+          <tr><td>Ease of Control</td><td>Easy</td><td>Very Easy</td><td>Moderate</td><td>Complex</td> </tr>
+          <tr><td>Best Use Case</td><td>Wheels, fans</td><td>Robot arms, RC cars</td><td>3D printers, CNC</td><td>Drones, EVs</td> </tr>
         </tbody>
       </table>
     </div>
@@ -217,14 +202,14 @@
       <table>
         <thead><tr><th>Feature</th><th>Arduino Uno</th><th>ESP32</th></tr></thead>
         <tbody>
-          <tr><td>Processor</td><td>ATmega328P (8‑bit)</td><td>Xtensa LX6 Dual‑Core (32‑bit)</td></tr>
-          <tr><td>Clock Speed</td><td>16 MHz</td><td>240 MHz</td></tr>
-          <tr><td>RAM</td><td>2 KB</td><td>520 KB</td></tr>
-          <tr><td>Flash</td><td>32 KB</td><td>4 MB</td></tr>
-          <tr><td>Wi‑Fi / Bluetooth</td><td>No</td><td>Yes (Wi‑Fi + BLE)</td></tr>
-          <tr><td>ADC Resolution</td><td>10‑bit (0-1023)</td><td>12‑bit (0-4095)</td></tr>
-          <tr><td>Price (approx.)</td><td>₹400-600</td><td>₹300-500</td></tr>
-          <tr><td>Best For</td><td>Learning, simple robotics</td><td>IoT, edge AI, connected devices</td></tr>
+          <tr><td>Processor</td><td>ATmega328P (8‑bit)</td><td>Xtensa LX6 Dual‑Core (32‑bit)</td> </tr>
+          <tr><td>Clock Speed</td><td>16 MHz</td><td>240 MHz</td> </tr>
+          <tr><td>RAM</td><td>2 KB</td><td>520 KB</td> </tr>
+          <tr><td>Flash</td><td>32 KB</td><td>4 MB</td> </tr>
+          <tr><td>Wi‑Fi / Bluetooth</td><td>No</td><td>Yes (Wi‑Fi + BLE)</td> </tr>
+          <tr><td>ADC Resolution</td><td>10‑bit (0-1023)</td><td>12‑bit (0-4095)</td> </tr>
+          <tr><td>Price (approx.)</td><td>₹400-600</td><td>₹300-500</td> </tr>
+          <tr><td>Best For</td><td>Learning, simple robotics</td><td>IoT, edge AI, connected devices</td> </tr>
         </tbody>
       </table>
     </div>
