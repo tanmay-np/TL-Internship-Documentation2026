@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 1 – GitHub Setup & First Commit | Tanmay Pendbhaje</title>
+  <title>Day 5 – Bambu Studio: 3D Printing Slicer | Tanmay Pendbhaje</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -67,22 +67,6 @@
       border: 1px solid rgba(59,130,246,0.3);
       display: block;
     }
-    code {
-      background: #0a0e1a;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.4rem;
-      font-family: monospace;
-      color: #60a5fa;
-    }
-    pre {
-      background: #0a0e1a;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      overflow-x: auto;
-      margin: 1rem 0;
-      font-family: monospace;
-      color: #e2e8f0;
-    }
     .site-footer {
       text-align: center;
       padding: 1.5rem;
@@ -103,100 +87,108 @@
   <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
   <div class="glass-card">
-    <h1>📘 Day 1: GitHub – Introduction, Setup & First Commit</h1>
+    <h1>🖨️ Day 5: Bambu Studio – 3D Printing Slicer</h1>
 
-    <h2>1. Introduction to GitHub</h2>
-    <p>GitHub is a web-based platform used for version control and software development. It helps developers store, manage, track, and collaborate on coding projects.</p>
+    <h2>1. Introduction to Bambu Studio</h2>
+    <p>Bambu Studio is a slicing software used for preparing 3D models for 3D printing. It is developed for Bambu Lab printers and helps users convert 3D models into printable machine instructions. Bambu Studio is based on modern slicing technology and provides fast slicing, printer monitoring, and wireless file transfer.</p>
 
-    <h2>2. Uses of GitHub</h2>
+    <h2>2. Uses of Bambu Studio</h2>
     <ul>
-      <li>Store source code online</li>
-      <li>Track project changes</li>
-      <li>Collaborate with teams</li>
-      <li>Manage open-source projects</li>
-      <li>Backup important files</li>
+      <li>Preparing 3D models for printing</li>
+      <li>Slicing STL and OBJ files</li>
+      <li>Setting print parameters</li>
+      <li>Controlling 3D printers</li>
+      <li>Monitoring print progress</li>
+      <li>Sending files wirelessly to printers</li>
+      <li>Managing supports and infill</li>
+      <li>Optimizing print quality</li>
     </ul>
 
-    <h2>3. Purpose of GitHub</h2>
-    <p>The main purpose of GitHub is to improve teamwork and project management in software development.</p>
+    <h2>3. Purpose of Bambu Studio</h2>
+    <p>The main purpose of Bambu Studio is to convert 3D models into G‑code instructions that a 3D printer can understand.</p>
+    <p><strong>Benefits:</strong> Improves print quality, reduces printing errors, saves printing time, controls temperature and speed, makes 3D printing easier for beginners.</p>
 
-    <h2>4. Installation & Usage Steps (with Screenshots)</h2>
+    <h2>4. Installation Process (Step‑by‑Step)</h2>
 
-    <h3>Step 1 – Sign Up</h3>
-    <p>Open GitHub website and click <strong>Sign Up</strong>.</p>
-    <img src="img1.png" alt="GitHub signup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
+    <h3>Step 1: Open Official Website</h3>
+    <p>Visit <a href="https://bambulab.com/en/download/studio" target="_blank" style="color:#60a5fa;">bambulab.com/en/download/studio</a></p>
+    <img src="img1.png" alt="Bambu Studio website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
 
-    <h3>Step 2 – Fill details & verify email</h3>
-    <img src="img2.png" alt="GitHub signup form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+    <h3>Step 2: Download Bambu Studio</h3>
+    <p>Select your operating system (Windows, macOS, or Linux) and click <strong>Download</strong>.</p>
 
-    <h3>Step 3 – Download and install Git</h3>
-    <img src="img3.png" alt="Git download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+    <h3>Step 3: Open the Installer</h3>
+    <p>Go to Downloads folder and double‑click the installer file.</p>
 
-    <h3>Step 4 – GitHub Dashboard</h3>
-    <img src="img4.png" alt="GitHub dashboard" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+    <h3>Step 4: Start Installation</h3>
+    <p>Click <strong>Next</strong>, accept terms, choose installation location.</p>
 
-    <h3>Configure Git with Your Name & Email</h3>
-    <p>Git needs to know who you are. Run these commands in Terminal / Command Prompt:</p>
-    <pre><code>git config --global user.name "Your Full Name"
-git config --global user.email "youremail@example.com"
-git config --list</code></pre>
-    <img src="img5.png" alt="Git config" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+    <h3>Step 5: Complete Installation</h3>
+    <p>Click <strong>Install</strong>, wait, then click <strong>Finish</strong>.</p>
 
-    <h3>Create a Repository on GitHub</h3>
-    <p><strong>Step 1:</strong> Log in → Click your profile picture → <strong>Your repositories</strong> → <strong>New</strong> (green button).</p>
-    <img src="img6.png" alt="Profile menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
-    <img src="img7.png" alt="Your repositories" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
-    <img src="img8.png" alt="New repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
+    <h3>Step 6: Open Bambu Studio</h3>
+    <p>Launch Bambu Studio, sign in with your Bambu account, and connect your printer.</p>
+    <img src="img2.png" alt="Bambu Studio sign-in" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
 
-    <p><strong>Step 2:</strong> Fill in the repository form:</p>
+    <h2>5. Slicing Process in Bambu Studio</h2>
+
+    <h3>Step 1: Open Bambu Studio</h3>
+    <p>Launch the software from desktop or start menu.</p>
+
+    <h3>Step 2: Add Printer</h3>
+    <p>Click <strong>Add Printer</strong>, select your Bambu printer model, connect via Wi‑Fi or LAN.</p>
+
+    <h3>Step 3: Import 3D Model</h3>
+    <p>Click <strong>File → Import</strong> and select STL, OBJ, or 3MF file.</p>
+    <img src="img3.png" alt="Import model" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+
+    <h3>Step 4: Position the Model</h3>
+    <p>Use move, rotate, and scale tools to place the model on the build plate.</p>
+
+    <h3>Step 5: Set Print Parameters</h3>
+    <p>Choose layer height, infill percentage, print speed, support settings, and filament type.</p>
+    <img src="img4.png" alt="Print parameters" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+
+    <h3>Step 6: Slice the Model</h3>
+    <p>Click <strong>Slice Plate</strong> – Bambu Studio converts the model into G‑code.</p>
+    <img src="img5.png" alt="Slicing preview" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h3>Step 7: Preview the Print</h3>
+    <p>Check print layers, estimated time, and material usage.</p>
+
+    <h2>6. Uploading File to the Printer</h2>
+
+    <h3>Method 1: Wi‑Fi Upload</h3>
+    <p><strong>Step 1:</strong> Connect printer and computer to the same Wi‑Fi network.</p>
+    <p><strong>Step 2:</strong> In Bambu Studio, click <strong>Send</strong>.</p>
+    <p><strong>Step 3:</strong> Select your printer.</p>
+    <img src="img6.png" alt="Select printer for Wi-Fi upload" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+    <p><strong>Step 4:</strong> Click <strong>Print</strong> or <strong>Upload</strong>. The file is sent directly to the printer.</p>
+    <img src="img7.png" alt="Uploading file" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+
+    <h3>Method 2: SD Card / USB</h3>
+    <p>Export sliced file as G‑code or 3MF → copy to SD card → insert into printer → start from printer screen.</p>
+
+    <h2>7. Advantages of Bambu Studio</h2>
     <ul>
-      <li>Repository name: <code>my-first-project</code></li>
-      <li>Description (optional)</li>
-      <li>Select <strong>Public</strong></li>
-      <li>Tick <strong>Add a README file</strong></li>
+      <li>Easy user interface</li>
+      <li>Fast slicing</li>
+      <li>Wireless printing</li>
+      <li>Real‑time monitoring</li>
+      <li>Automatic support generation</li>
+      <li>Multi‑colour printing support</li>
     </ul>
-    <img src="img9.png" alt="Create repository form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
 
-    <p><strong>Step 3:</strong> Click <strong>Create repository</strong></p>
-    <img src="img10.png" alt="Create repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
+    <h2>📌 Key Takeaways</h2>
+    <ul>
+      <li>Bambu Studio is a powerful, beginner‑friendly slicer for Bambu Lab printers.</li>
+      <li>It converts STL/OBJ files into G‑code with full control over print parameters.</li>
+      <li>Wireless file transfer and real‑time monitoring greatly streamline the printing workflow.</li>
+      <li>Understanding slicer settings (layer height, infill, supports) is essential for successful prints.</li>
+    </ul>
 
-    <h2>5. Open the Project in VS Code</h2>
-    <p><strong>Step 1:</strong> Open VS Code</p>
-    <img src="img11.png" alt="VS Code start" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
-
-    <p><strong>Step 2:</strong> Click <strong>File → Open Folder</strong></p>
-    <img src="img12.png" alt="File menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
-    <img src="img13.png" alt="Open folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
-
-    <p><strong>Step 3:</strong> Select a folder and open it</p>
-    <img src="img14.png" alt="Select folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
-
-    <h2>6. Push Files using VS Code Terminal</h2>
-    <p><strong>Step 1:</strong> Click on <strong>Terminal → New Terminal</strong></p>
-    <img src="img15.png" alt="Terminal menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
-    <img src="img16.png" alt="New terminal" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
-
-    <p>Run the following Git commands in order:</p>
-    <pre><code>git init
-git status
-git branch -M main
-git commit -m "Initial commit"
-git add .
-git remote add origin https://github.com/your-username/your-repo-name.git
-git push origin main --force</code></pre>
-    <img src="img17.png" alt="git init" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
-    <img src="img18.png" alt="git status" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
-    <img src="img19.png" alt="git branch -M main" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
-    <img src="img20.png" alt="git commit" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
-    <img src="img21.png" alt="git add" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
-    <img src="img22.png" alt="git remote add origin" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
-    <img src="img23.png" alt="git push" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
-
-    <h2>7. Check the Pushed Files</h2>
-    <p>The files are successfully pushed to GitHub. Refresh your repository page to see them.</p>
-
-    <h2>Conclusion</h2>
-    <p>GitHub is an essential platform for developers to manage, share, and collaborate on projects.</p>
+    <h2>🎯 Conclusion</h2>
+    <p>Bambu Studio is powerful and beginner‑friendly slicing software for 3D printing. It helps users prepare models, optimize print settings, slice files, and directly send them to 3D printers efficiently. Mastering Bambu Studio is an essential skill for rapid prototyping and additive manufacturing projects.</p>
   </div>
 
   <div class="site-footer">
