@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 1 – GitHub Setup & First Commit | Tanmay Pendbhaje</title>
+  <title>Day 13 – Firebase Setup for LED Control | Tanmay Pendbhaje</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -55,7 +54,7 @@
     h3 {
       color: #3b82f6;
       font-size: 1.2rem;
-      margin: 1rem 0 0.5rem;
+      margin-top: 1rem;
     }
     p, li { color: #cbd5e1; }
     ul, ol { margin: 1rem 0 1rem 1.5rem; }
@@ -66,22 +65,6 @@
       margin: 1rem 0;
       border: 1px solid rgba(59,130,246,0.3);
       display: block;
-    }
-    code {
-      background: #0a0e1a;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.4rem;
-      font-family: monospace;
-      color: #60a5fa;
-    }
-    pre {
-      background: #0a0e1a;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      overflow-x: auto;
-      margin: 1rem 0;
-      font-family: monospace;
-      color: #e2e8f0;
     }
     .site-footer {
       text-align: center;
@@ -103,100 +86,56 @@
   <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
   <div class="glass-card">
-    <h1>📘 Day 1: GitHub – Introduction, Setup & First Commit</h1>
+    <h1>📘 Firebase Setup for LED Control</h1>
+    <p><strong>Documentation of Firebase on LED</strong></p>
+    <p>Firebase is a platform by Google that helps developers build, run, and grow web and mobile applications without managing much backend infrastructure.</p>
 
-    <h2>1. Introduction to GitHub</h2>
-    <p>GitHub is a web-based platform used for version control and software development. It helps developers store, manage, track, and collaborate on coding projects.</p>
+    <h2>How to Create and Use Firebase?</h2>
+    <ol>
+      <li><strong>Step 1:</strong> Search <em>Firebase</em> on Google Chrome or Microsoft Edge. <img src="img1.png" alt="Step 1" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+1+Not+Found'"></li>
+      <li><strong>Step 2:</strong> Click on the link. <img src="img2.png" alt="Step 2" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+2+Not+Found'"></li>
+      <li><strong>Step 3:</strong> Open console in another tab. <img src="img3.png" alt="Step 3" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+3+Not+Found'"></li>
+      <li><strong>Step 4:</strong> Click <em>Get started</em> to set up a Firebase project. <img src="img4.png" alt="Step 4" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+4+Not+Found'"></li>
+      <li><strong>Step 5:</strong> Name your project. Allow AI assistance if desired. <img src="img5.png" alt="Step 5" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+5+Not+Found'"></li>
+      <li><strong>Step 6:</strong> Go to <strong>Authentication</strong> under Security. <img src="img6.png" alt="Step 6" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+6+Not+Found'"></li>
+      <li><strong>Step 7:</strong> Click <em>Get started</em>. <img src="img7.png" alt="Step 7" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+7+Not+Found'"></li>
+      <li><strong>Step 8:</strong> Add first sign-in method. <img src="img8.png" alt="Step 8" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+8+Not+Found'"></li>
+      <li><strong>Step 9:</strong> Enable permission, enter email and save. <img src="img9.png" alt="Step 9" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+9+Not+Found'"></li>
+      <li><strong>Step 10:</strong> Select <strong>Realtime Database</strong>. <img src="img10.png" alt="Step 10" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+10+Not+Found'"></li>
+      <li><strong>Step 11:</strong> Click <em>Create database</em>. <img src="img11.png" alt="Step 11" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+11+Not+Found'"></li>
+      <li><strong>Step 12:</strong> Choose region (e.g., Singapore). <img src="img12.png" alt="Step 12" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+12+Not+Found'"></li>
+      <li><strong>Step 13:</strong> Select <em>Start in test mode</em> and enable. <img src="img13.png" alt="Step 13" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+13+Not+Found'"></li>
+      <li><strong>Step 14:</strong> Database created. <img src="img14.png" alt="Step 14" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+14+Not+Found'"></li>
+      <li><strong>Step 15:</strong> Go to <strong>Settings → General</strong>. <img src="img15.png" alt="Step 15" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+15+Not+Found'"></li>
+      <li><strong>Step 16:</strong> Select <strong>Service accounts</strong>. <img src="img16.png" alt="Step 16" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+16+Not+Found'"></li>
+      <li><strong>Step 17:</strong> Generate new private key. <img src="img17.png" alt="Step 17" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+17+Not+Found'"></li>
+      <li><strong>Step 18:</strong> Click <strong>Database secrets</strong>. <img src="img18.png" alt="Step 18" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+18+Not+Found'"></li>
+      <li><strong>Step 19:</strong> Copy the key. <img src="img19.png" alt="Step 19" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+19+Not+Found'"></li>
+      <li><strong>Step 20:</strong> Back to <strong>General</strong>. <img src="img20.png" alt="Step 20" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+20+Not+Found'"></li>
+      <li><strong>Step 21:</strong> Scroll down and select <strong>Web</strong>. <img src="img21.png" alt="Step 21" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+21+Not+Found'"></li>
+      <li><strong>Step 22:</strong> Add app nickname and register. <img src="img22.png" alt="Step 22" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+22+Not+Found'"></li>
+      <li><strong>Step 23:</strong> Copy the API key. <img src="img23.png" alt="Step 23" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+23+Not+Found'"></li>
+      <li><strong>Step 24:</strong> Open <strong>Arduino IDE</strong>. <img src="img24.png" alt="Step 24" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+24+Not+Found'"></li>
+      <li><strong>Step 25:</strong> Select the correct <strong>Board</strong>. <img src="img25.png" alt="Step 25" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+25+Not+Found'"></li>
+      <li><strong>Step 26:</strong> Select the correct COM port. <img src="img26.png" alt="Step 26" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+26+Not+Found'"></li>
+      <li><strong>Step 27:</strong> Install ESP32 board support if needed. <img src="img27.png" alt="Step 27" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+27+Not+Found'"></li>
+      <li><strong>Step 28:</strong> Write the code in Arduino IDE. <img src="img28.png" alt="Step 28" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+28+Not+Found'"></li>
+      <li><strong>Step 29:</strong> Modify placeholders: WiFi_SSID, password, Database URL, secret, LED_PIN. <img src="img29.png" alt="Step 29" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+29+Not+Found'"></li>
+    </ol>
 
-    <h2>2. Uses of GitHub</h2>
+    <!-- Additional images (img30 to img32) -->
+    <h2>📸 Additional Screenshots</h2>
+    <img src="img30.png" alt="Additional screenshot 1" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+30+Not+Found'">
+    <img src="img31.png" alt="Additional screenshot 2" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+31+Not+Found'">
+    <img src="img32.png" alt="Additional screenshot 3" onerror="this.src='https://placehold.co/800x200/1e293b/3b82f6?text=Image+32+Not+Found'">
+
+    <h2>📌 Key Takeaways</h2>
     <ul>
-      <li>Store source code online</li>
-      <li>Track project changes</li>
-      <li>Collaborate with teams</li>
-      <li>Manage open-source projects</li>
-      <li>Backup important files</li>
+      <li>Firebase provides backend services without managing servers.</li>
+      <li>Create project → enable Authentication → Realtime Database → get API keys.</li>
+      <li>ESP32 connects to Firebase over Wi‑Fi to control an LED remotely.</li>
+      <li>Keep secrets and keys secure.</li>
     </ul>
-
-    <h2>3. Purpose of GitHub</h2>
-    <p>The main purpose of GitHub is to improve teamwork and project management in software development.</p>
-
-    <h2>4. Installation & Usage Steps (with Screenshots)</h2>
-
-    <h3>Step 1 – Sign Up</h3>
-    <p>Open GitHub website and click <strong>Sign Up</strong>.</p>
-    <img src="img1.png" alt="GitHub signup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
-
-    <h3>Step 2 – Fill details & verify email</h3>
-    <img src="img2.png" alt="GitHub signup form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
-
-    <h3>Step 3 – Download and install Git</h3>
-    <img src="img3.png" alt="Git download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
-
-    <h3>Step 4 – GitHub Dashboard</h3>
-    <img src="img4.png" alt="GitHub dashboard" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
-
-    <h3>Configure Git with Your Name & Email</h3>
-    <p>Git needs to know who you are. Run these commands in Terminal / Command Prompt:</p>
-    <pre><code>git config --global user.name "Your Full Name"
-git config --global user.email "youremail@example.com"
-git config --list</code></pre>
-    <img src="img5.png" alt="Git config" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
-
-    <h3>Create a Repository on GitHub</h3>
-    <p><strong>Step 1:</strong> Log in → Click your profile picture → <strong>Your repositories</strong> → <strong>New</strong> (green button).</p>
-    <img src="img6.png" alt="Profile menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
-    <img src="img7.png" alt="Your repositories" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
-    <img src="img8.png" alt="New repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
-
-    <p><strong>Step 2:</strong> Fill in the repository form:</p>
-    <ul>
-      <li>Repository name: <code>my-first-project</code></li>
-      <li>Description (optional)</li>
-      <li>Select <strong>Public</strong></li>
-      <li>Tick <strong>Add a README file</strong></li>
-    </ul>
-    <img src="img9.png" alt="Create repository form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
-
-    <p><strong>Step 3:</strong> Click <strong>Create repository</strong></p>
-    <img src="img10.png" alt="Create repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
-
-    <h2>5. Open the Project in VS Code</h2>
-    <p><strong>Step 1:</strong> Open VS Code</p>
-    <img src="img11.png" alt="VS Code start" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
-
-    <p><strong>Step 2:</strong> Click <strong>File → Open Folder</strong></p>
-    <img src="img12.png" alt="File menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
-    <img src="img13.png" alt="Open folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
-
-    <p><strong>Step 3:</strong> Select a folder and open it</p>
-    <img src="img14.png" alt="Select folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
-
-    <h2>6. Push Files using VS Code Terminal</h2>
-    <p><strong>Step 1:</strong> Click on <strong>Terminal → New Terminal</strong></p>
-    <img src="img15.png" alt="Terminal menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
-    <img src="img16.png" alt="New terminal" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
-
-    <p>Run the following Git commands in order:</p>
-    <pre><code>git init
-git status
-git branch -M main
-git commit -m "Initial commit"
-git add .
-git remote add origin https://github.com/your-username/your-repo-name.git
-git push origin main --force</code></pre>
-    <img src="img17.png" alt="git init" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
-    <img src="img18.png" alt="git status" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
-    <img src="img19.png" alt="git branch -M main" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
-    <img src="img20.png" alt="git commit" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
-    <img src="img21.png" alt="git add" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
-    <img src="img22.png" alt="git remote add origin" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
-    <img src="img23.png" alt="git push" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
-
-    <h2>7. Check the Pushed Files</h2>
-    <p>The files are successfully pushed to GitHub. Refresh your repository page to see them.</p>
-
-    <h2>Conclusion</h2>
-    <p>GitHub is an essential platform for developers to manage, share, and collaborate on projects.</p>
   </div>
 
   <div class="site-footer">

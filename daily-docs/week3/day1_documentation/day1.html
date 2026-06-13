@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 1 – GitHub Setup & First Commit | Tanmay Pendbhaje</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Day 11 – Physical AI & Embedded Systems | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,7 +15,7 @@
       line-height: 1.6;
       padding: 2rem;
     }
-    .container { max-width: 1000px; margin: 0 auto; }
+    .container { max-width: 1300px; margin: 0 auto; }
     .back-btn {
       display: inline-block;
       background: rgba(59,130,246,0.2);
@@ -36,171 +36,283 @@
       border-radius: 1.8rem;
       padding: 2rem;
       margin-bottom: 2rem;
+      transition: all 0.3s ease;
     }
+    .glass-card:hover { border-color: #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.2); }
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       background: linear-gradient(135deg, #ffffff, #60a5fa);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
     h2 {
       color: #60a5fa;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin: 1.5rem 0 1rem;
       border-left: 4px solid #3b82f6;
       padding-left: 1rem;
     }
-    h3 {
-      color: #3b82f6;
-      font-size: 1.2rem;
-      margin: 1rem 0 0.5rem;
-    }
+    h3 { color: #3b82f6; font-size: 1.3rem; margin-top: 1rem; margin-bottom: 0.5rem; }
     p, li { color: #cbd5e1; }
-    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    ul, ol { margin: 1rem 0 1rem 1.8rem; }
     li { margin: 0.5rem 0; }
+    .table-wrapper { overflow-x: auto; margin: 1.5rem 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(5,7,10,0.6);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+    }
+    th { background: rgba(59,130,246,0.2); color: #60a5fa; font-weight: 600; }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    .info-card {
+      background: rgba(5,7,10,0.4);
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    .info-card h4 { color: #60a5fa; margin-bottom: 0.5rem; }
     img {
       max-width: 100%;
       border-radius: 1rem;
       margin: 1rem 0;
       border: 1px solid rgba(59,130,246,0.3);
-      display: block;
-    }
-    code {
-      background: #0a0e1a;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.4rem;
-      font-family: monospace;
-      color: #60a5fa;
-    }
-    pre {
-      background: #0a0e1a;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      overflow-x: auto;
-      margin: 1rem 0;
-      font-family: monospace;
-      color: #e2e8f0;
-    }
-    .site-footer {
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      border-top: 1px solid rgba(59,130,246,0.2);
     }
     @media (max-width: 700px) {
       body { padding: 1rem; }
-      h1 { font-size: 1.6rem; }
-      h2 { font-size: 1.3rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+  <a href="../../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
+  <!-- Hero -->
   <div class="glass-card">
-    <h1>📘 Day 1: GitHub – Introduction, Setup & First Commit</h1>
-
-    <h2>1. Introduction to GitHub</h2>
-    <p>GitHub is a web-based platform used for version control and software development. It helps developers store, manage, track, and collaborate on coding projects.</p>
-
-    <h2>2. Uses of GitHub</h2>
-    <ul>
-      <li>Store source code online</li>
-      <li>Track project changes</li>
-      <li>Collaborate with teams</li>
-      <li>Manage open-source projects</li>
-      <li>Backup important files</li>
-    </ul>
-
-    <h2>3. Purpose of GitHub</h2>
-    <p>The main purpose of GitHub is to improve teamwork and project management in software development.</p>
-
-    <h2>4. Installation & Usage Steps (with Screenshots)</h2>
-
-    <h3>Step 1 – Sign Up</h3>
-    <p>Open GitHub website and click <strong>Sign Up</strong>.</p>
-    <img src="img1.png" alt="GitHub signup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
-
-    <h3>Step 2 – Fill details & verify email</h3>
-    <img src="img2.png" alt="GitHub signup form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
-
-    <h3>Step 3 – Download and install Git</h3>
-    <img src="img3.png" alt="Git download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
-
-    <h3>Step 4 – GitHub Dashboard</h3>
-    <img src="img4.png" alt="GitHub dashboard" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
-
-    <h3>Configure Git with Your Name & Email</h3>
-    <p>Git needs to know who you are. Run these commands in Terminal / Command Prompt:</p>
-    <pre><code>git config --global user.name "Your Full Name"
-git config --global user.email "youremail@example.com"
-git config --list</code></pre>
-    <img src="img5.png" alt="Git config" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
-
-    <h3>Create a Repository on GitHub</h3>
-    <p><strong>Step 1:</strong> Log in → Click your profile picture → <strong>Your repositories</strong> → <strong>New</strong> (green button).</p>
-    <img src="img6.png" alt="Profile menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
-    <img src="img7.png" alt="Your repositories" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
-    <img src="img8.png" alt="New repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
-
-    <p><strong>Step 2:</strong> Fill in the repository form:</p>
-    <ul>
-      <li>Repository name: <code>my-first-project</code></li>
-      <li>Description (optional)</li>
-      <li>Select <strong>Public</strong></li>
-      <li>Tick <strong>Add a README file</strong></li>
-    </ul>
-    <img src="img9.png" alt="Create repository form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
-
-    <p><strong>Step 3:</strong> Click <strong>Create repository</strong></p>
-    <img src="img10.png" alt="Create repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
-
-    <h2>5. Open the Project in VS Code</h2>
-    <p><strong>Step 1:</strong> Open VS Code</p>
-    <img src="img11.png" alt="VS Code start" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
-
-    <p><strong>Step 2:</strong> Click <strong>File → Open Folder</strong></p>
-    <img src="img12.png" alt="File menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
-    <img src="img13.png" alt="Open folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
-
-    <p><strong>Step 3:</strong> Select a folder and open it</p>
-    <img src="img14.png" alt="Select folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
-
-    <h2>6. Push Files using VS Code Terminal</h2>
-    <p><strong>Step 1:</strong> Click on <strong>Terminal → New Terminal</strong></p>
-    <img src="img15.png" alt="Terminal menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
-    <img src="img16.png" alt="New terminal" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
-
-    <p>Run the following Git commands in order:</p>
-    <pre><code>git init
-git status
-git branch -M main
-git commit -m "Initial commit"
-git add .
-git remote add origin https://github.com/your-username/your-repo-name.git
-git push origin main --force</code></pre>
-    <img src="img17.png" alt="git init" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
-    <img src="img18.png" alt="git status" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
-    <img src="img19.png" alt="git branch -M main" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
-    <img src="img20.png" alt="git commit" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
-    <img src="img21.png" alt="git add" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
-    <img src="img22.png" alt="git remote add origin" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
-    <img src="img23.png" alt="git push" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
-
-    <h2>7. Check the Pushed Files</h2>
-    <p>The files are successfully pushed to GitHub. Refresh your repository page to see them.</p>
-
-    <h2>Conclusion</h2>
-    <p>GitHub is an essential platform for developers to manage, share, and collaborate on projects.</p>
+    <h1>Week 3 – Day 11: Physical AI & Embedded Systems</h1>
+    <p style="color: #94a3b8; font-size: 1.1rem;">From Sensors to Actuators – How Machines Perceive and Act</p>
+    <p><strong>Date:</strong> 1 June 2026</p>
   </div>
 
-  <div class="site-footer">
-    Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.
+  <!-- 1. Physical AI -->
+  <div class="glass-card">
+    <h2><i class="fas fa-brain"></i> 1. What is Physical AI?</h2>
+    <p>Physical AI is the combination of Artificial Intelligence with physical systems that can sense the real world, make decisions, and take physical actions — all in real time. It is the foundation of modern robotics, autonomous vehicles, and smart factories.</p>
+    <p><strong>Analogy:</strong> A normal computer program takes data in and gives data out (digital world). A Physical AI system takes real‑world information (temperature, distance, images) and produces real‑world actions (move a motor, turn on a fan, steer a car).</p>
+    <h3>The Four Pillars of Physical AI</h3>
+    <div class="two-col">
+      <div class="info-card"><i class="fas fa-microchip"></i> <strong>AI / Intelligence (The Brain)</strong><br>Decision‑making algorithms, ML models, or rule‑based logic that decides what to do.</div>
+      <div class="info-card"><i class="fas fa-eye"></i> <strong>Sensors (The Eyes and Ears)</strong><br>Devices that read the physical world and convert it into electrical signals.</div>
+      <div class="info-card"><i class="fas fa-cogs"></i> <strong>Actuators (The Muscles)</strong><br>Convert electrical signals into physical motion or action.</div>
+      <div class="info-card"><i class="fas fa-chart-line"></i> <strong>Control Systems (The Nervous System)</strong><br>Connects sensing to action, processes data, and uses feedback.</div>
+    </div>
+    <h3>Real‑World Examples</h3>
+    <ul>
+      <li><strong>Self‑Driving Cars (Tesla, Waymo):</strong> Cameras + LiDAR → AI → brake/steer/accelerate.</li>
+      <li><strong>Robot Arms in Factories (KUKA, ABB):</strong> Vision → AI → servo motors pick and place.</li>
+      <li><strong>Smart Factories (Industry 4.0):</strong> Sensors + AI predictive maintenance.</li>
+      <li><strong>Drone Delivery:</strong> GPS + accelerometer + barometer → AI flight controller adjusts 4 motors.</li>
+      <li><strong>Medical Robots (da Vinci System):</strong> Surgeon's movements translated to precise robotic actions.</li>
+    </ul>
+  </div>
+
+  <!-- 2. Sensors -->
+  <div class="glass-card">
+    <h2><i class="fas fa-satellite-dish"></i> 2. Sensors – The Eyes and Ears</h2>
+    <p>A sensor detects a physical quantity (light, heat, distance) and converts it into an electrical signal that a microcontroller can read.</p>
+    <h3>🔵 Active Sensors (emit energy)</h3>
+    <div class="two-col">
+      <div class="info-card"><h4>Ultrasonic Sensor (HC-SR04)</h4><p>Emits ultrasonic sound, measures echo return time → distance. Used for obstacle detection, parking sensors.</p><img src="Ultrasonic_Sensor.webp" alt="Ultrasonic Sensor" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>LiDAR (Light Detection and Ranging)</h4><p>Laser pulses create 3D point clouds. Used in self‑driving cars, 3D mapping.</p><img src="Lidar_Sensor.jpg" alt="LiDAR Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;"></div>
+      <div class="info-card"><h4>Radar</h4><p>Radio waves + Doppler effect measure distance and speed. Adaptive cruise control, blind spot detection.</p><img src="Radar_Sensor.jpeg" alt="Radar Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;"></div>
+      <div class="info-card"><h4>IR Sensor (Active)</h4><p>IR LED emits light; detects reflection. Line‑following robots, proximity sensors.</p><img src="IR_Sensor.webp" alt="IR Sensor" onerror="this.style.display='none'"></div>
+    </div>
+    <h3>🟢 Passive Sensors (detect existing energy)</h3>
+    <div class="two-col">
+      <div class="info-card"><h4>LDR (Light Dependent Resistor)</h4><p>Resistance changes with light intensity. Automatic street lights, camera exposure.</p><img src="LDR_Sensor.jpg" alt="LDR Sensor" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>Thermistor</h4><p>Resistance changes with temperature. 3D printer hotend control, battery temperature monitoring.</p><img src="Thermistor_Sensorr.jpeg" alt="Thermistor Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;"></div>
+      <div class="info-card"><h4>Photodiode</h4><p>Generates current proportional to light. Optical fiber comm, pulse oximeters.</p><img src="Photodiode_Sensor.jpeg" alt="Photodiode Sensor" style="max-width:100%; border-radius:1rem; margin-top:0.5rem;"></div>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Criteria</th><th>Active Sensors</th><th>Passive Sensors</th></tr></thead>
+        <tbody>
+          <tr><td>Energy Source</td><td>Emit their own energy</td><td>Detect existing energy only</td></tr>
+          <tr><td>Examples</td><td>Ultrasonic, LiDAR, Radar, Active IR</td><td>LDR, Thermistor, Photodiode</td></tr>
+          <tr><td>Power Need</td><td>Higher</td><td>Lower</td></tr>
+          <tr><td>Works in Dark?</td><td>Yes</td><td>Depends (LDR needs light)</td></tr>
+          <tr><td>Cost</td><td>Generally higher</td><td>Very low</td></tr>
+          <tr><td>Range</td><td>Very long (LiDAR 100m+)</td><td>Short range</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. Actuators -->
+  <div class="glass-card">
+    <h2><i class="fas fa-cogs"></i> 3. Actuators – The Muscles</h2>
+    <p>Actuators convert electrical signals into physical motion. They are the “output” side of a Physical AI system.</p>
+    <div class="two-col">
+      <div class="info-card"><h4>DC Motor</h4><p>Simple speed control, used in robot wheels, fans, drills. Cheap and easy.</p><img src="DC_motor.webp" alt="DC Motor" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>Servo Motor</h4><p>Precise position control (0‑180°). Robot arms, RC cars. Built‑in feedback.</p><img src="Servo_Motor.jpg" alt="Servo Motor" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>Stepper Motor</h4><p>Moves in discrete steps (1.8° per step). 3D printers, CNC machines, camera sliders.</p><img src="Stepper_Motor.jpg" alt="Stepper Motor" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>BLDC Motor (Brushless DC)</h4><p>High efficiency, long life, high speed. Drones, EVs, computer fans.</p><img src="BLDC_Motor.png" alt="BLDC Motor" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Criteria</th><th>DC Motor</th><th>Servo</th><th>Stepper</th><th>BLDC</th></tr></thead>
+        <tbody>
+          <tr><td>Torque</td><td>Medium</td><td>Medium</td><td>High (low speed)</td><td>High</td></tr>
+          <tr><td>Position Control</td><td>No</td><td>Yes (0-180°)</td><td>Yes (steps)</td><td>With ESC</td></tr>
+          <tr><td>Precision</td><td>Low</td><td>High</td><td>Very High</td><td>Medium</td></tr>
+          <tr><td>Ease of Control</td><td>Easy</td><td>Very Easy</td><td>Moderate</td><td>Complex</td></tr>
+          <tr><td>Best Use Case</td><td>Wheels, fans</td><td>Robot arms, RC cars</td><td>3D printers, CNC</td><td>Drones, EVs</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Selection guide:</strong> Need continuous spin? DC motor. Need precise angle? Servo. Need exact steps? Stepper. Need high efficiency & speed? BLDC.</p>
+  </div>
+
+  <!-- 4. Control Systems + PID -->
+  <div class="glass-card">
+    <h2><i class="fas fa-chart-line"></i> 4. Control Systems & PID</h2>
+    <p>A control system reads sensor data, compares it to a desired value (setpoint), and commands actuators to reduce the error.</p>
+    <h3>Open‑loop vs Closed‑loop</h3>
+    <ul><li><strong>Open‑loop:</strong> No feedback. Example: washing machine timer (runs 30 min regardless).</li><li><strong>Closed‑loop:</strong> Uses feedback to correct errors. Example: cruise control (keeps exact speed).</li></ul>
+    <h3>PID Control (The King of Controllers)</h3>
+    <div class="two-col">
+      <div class="info-card"><strong>P (Proportional)</strong><br>Reacts to current error. Big error → big correction. Leaves steady‑state error.</div>
+      <div class="info-card"><strong>I (Integral)</strong><br>Accumulates past error over time. Eliminates steady‑state error.</div>
+      <div class="info-card"><strong>D (Derivative)</strong><br>Anticipates future error based on rate of change. Prevents overshoot.</div>
+    </div>
+    <p><strong>Analogy (Shower temperature):</strong> P turns the knob proportional to how cold it is. I keeps turning if you've been cold for a while. D slows down as you approach the target to avoid overshooting.</p>
+    <img src="P_Curve.jpeg" alt="PID response curve" onerror="this.style.display='none'">
+    <p>PID is used in drones, robot arms, CNC machines, temperature controllers, and almost any industrial automation.</p>
+  </div>
+
+  <!-- 5. Microcontrollers -->
+  <div class="glass-card">
+    <h2><i class="fas fa-microchip"></i> 5. Microcontrollers – The Brain</h2>
+    <p>A microcontroller (MCU) is a tiny computer on a single chip: CPU + RAM + Flash + I/O pins + peripherals. It’s designed for real‑time hardware control without an operating system.</p>
+    <div class="two-col">
+      <div class="info-card"><h4>Arduino Uno/Nano/Mega</h4><p>ATmega328P (Uno) – 16 MHz, 2 KB RAM, 32 KB Flash. Beginner‑friendly, huge community. Ideal for sensor interfacing and learning.</p><img src="arduino_uno.png" alt="Arduino Uno" onerror="this.style.display='none'"></div>
+      <div class="info-card"><h4>ESP32</h4><p>Dual core, 240 MHz, 520 KB RAM, 4 MB Flash, Wi‑Fi + BLE. Perfect for IoT, edge AI, and connected robots.</p><img src="ESP_32.webp" alt="ESP32" onerror="this.style.display='none'"></div>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead><tr><th>Feature</th><th>Arduino Uno</th><th>ESP32</th></tr></thead>
+        <tbody>
+          <tr><td>Processor</td><td>ATmega328P (8‑bit)</td><td>Xtensa LX6 Dual‑Core (32‑bit)</td></tr>
+          <tr><td>Clock Speed</td><td>16 MHz</td><td>240 MHz</td></tr>
+          <tr><td>RAM</td><td>2 KB</td><td>520 KB</td></tr>
+          <tr><td>Flash</td><td>32 KB</td><td>4 MB</td></tr>
+          <tr><td>Wi‑Fi / Bluetooth</td><td>No</td><td>Yes (Wi‑Fi + BLE)</td></tr>
+          <tr><td>ADC Resolution</td><td>10‑bit (0-1023)</td><td>12‑bit (0-4095)</td></tr>
+          <tr><td>Price (approx.)</td><td>₹400-600</td><td>₹300-500</td></tr>
+          <tr><td>Best For</td><td>Learning, simple robotics</td><td>IoT, edge AI, connected devices</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 6. Edge Computing -->
+  <div class="glass-card">
+    <h2><i class="fas fa-cloud-upload-alt"></i> 6. Edge Computing – Why Robots Can’t Wait for the Cloud</h2>
+    <p>Cloud computing has high latency (50‑500 ms), limited bandwidth, and reliability issues. Edge computing processes data right on the device (or a local gateway), enabling real‑time decisions.</p>
+    <p><strong>Example:</strong> An obstacle‑avoiding robot using the cloud would crash because of the delay. With edge computing, the microcontroller reacts in milliseconds.</p>
+    <img src="Cloud_Computing.png" alt="Edge vs Cloud Computing" onerror="this.style.display='none'">
+    <p>ESP32, Raspberry Pi, NVIDIA Jetson are common edge devices. Use cloud only for logging, updates, and non‑critical tasks.</p>
+  </div>
+
+  <!-- 7. MOSFET -->
+  <div class="glass-card">
+    <h2><i class="fas fa-bolt"></i> 7. MOSFET – The Power Switch</h2>
+    <p>A MOSFET (Metal Oxide Semiconductor Field Effect Transistor) is an electronic switch that allows a microcontroller to control high‑power loads (motors, heaters, LEDs) without damaging itself. A small voltage on the Gate (3‑5V) turns on the high‑current path between Drain and Source.</p>
+    <p><strong>Why needed:</strong> An Arduino pin can only supply 40 mA. A DC motor may need 1‑2 A. MOSFET bridges the gap.</p>
+    <p>Combine MOSFET with PWM (Pulse Width Modulation) to control motor speed efficiently.</p>
+    <img src="MOSFET_Switch.webp" alt="MOSFET circuit" onerror="this.style.display='none'">
+    <p>Common models: IRFZ44N, IRL540N (logic‑level). Always use a flyback diode across inductive loads (motors).</p>
+  </div>
+
+  <!-- 8. Industry Applications -->
+  <div class="glass-card">
+    <h2><i class="fas fa-industry"></i> 8. Industry Applications</h2>
+    <ul>
+      <li><strong>Industrial Robotics:</strong> KUKA / ABB arms – welding, painting, assembly.</li>
+      <li><strong>Autonomous Vehicles:</strong> Sensor fusion (LiDAR + radar + cameras) + edge AI.</li>
+      <li><strong>Smart Manufacturing (Industry 4.0):</strong> Predictive maintenance, digital twins, AGVs.</li>
+      <li><strong>Internet of Things (IoT):</strong> ESP32 sensors, smart agriculture, smart cities.</li>
+      <li><strong>Medical Robotics:</strong> da Vinci surgical robot, rehabilitation exoskeletons, capsule endoscopy.</li>
+    </ul>
+  </div>
+
+  <!-- 9. Key Takeaways -->
+  <div class="glass-card">
+    <h2><i class="fas fa-list-check"></i> 9. Key Takeaways</h2>
+    <ul>
+      <li>Physical AI = AI + Sensors + Actuators + Control Systems acting together.</li>
+      <li>Active sensors emit energy; passive sensors detect existing energy.</li>
+      <li>DC motors for continuous spin, servos for angle, steppers for position, BLDC for efficiency.</li>
+      <li>Closed‑loop control with PID gives smooth, accurate, stable motion.</li>
+      <li>Microcontrollers (Arduino, ESP32) are self‑contained computers for real‑time hardware control.</li>
+      <li>ESP32 adds Wi‑Fi, BLE, and much more power – great for IoT and edge AI.</li>
+      <li>Edge computing processes data locally – essential for real‑time robotics.</li>
+      <li>MOSFETs allow microcontrollers to switch high‑power loads safely.</li>
+      <li>Physical AI is already everywhere – from your car's ABS to drone delivery.</li>
+      <li>Learning this stack opens doors to robotics, automation, and cutting‑edge embedded systems.</li>
+    </ul>
+  </div>
+
+  <!-- 10. Further Learning (Curated) -->
+  <div class="glass-card">
+    <h2><i class="fas fa-chalkboard-user"></i> 10. Further Learning – Recommended Resources</h2>
+    <p>Here are some of the best free and accessible resources to continue learning Physical AI, embedded systems, and robotics:</p>
+    <h3>📺 YouTube Channels</h3>
+    <ul>
+      <li><strong>Andreas Spiess</strong> – Deep dives into ESP32, LoRa, IoT sensors.</li>
+      <li><strong>Paul McWhorter</strong> – Thorough Arduino tutorial series for absolute beginners.</li>
+      <li><strong>The Engineering Guy (Bill Hammack)</strong> – Brilliant explanations of sensors, motors, circuits.</li>
+      <li><strong>GreatScott!</strong> – Electronics projects and component explanations.</li>
+      <li><strong>Robotics Back-End</strong> – Clear tutorials on ROS2, Arduino, Raspberry Pi.</li>
+    </ul>
+    <h3>🌐 Free Courses & Interactive Platforms</h3>
+    <ul>
+      <li><strong>Arduino Project Hub</strong> – Thousands of open‑source projects with code.</li>
+      <li><strong>Random Nerd Tutorials</strong> – Best practical ESP32/Arduino tutorials.</li>
+      <li><strong>edX – “Introduction to Embedded Systems”</strong> (free audit).</li>
+      <li><strong>Coursera – IoT Specialization (UC Irvine).</strong></li>
+      <li><strong>Wokwi</strong> – Online Arduino/ESP32 simulator (no hardware needed).</li>
+    </ul>
+    <h3>📖 Beginner‑Friendly Books</h3>
+    <ul>
+      <li>“Programming Arduino” – Simon Monk</li>
+      <li>“Make: Electronics” – Charles Platt</li>
+      <li>“Exploring Arduino” – Jeremy Blum</li>
+      <li>“ESP32 Development using the Arduino IDE” (free PDF searchable)</li>
+    </ul>
+    <h3>📄 Official Documentation</h3>
+    <ul>
+      <li>Arduino Reference (arduino.cc/reference)</li>
+      <li>ESP32 Datasheet & Tech Reference (Espressif)</li>
+      <li>TensorFlow Lite for Microcontrollers</li>
+    </ul>
+    <p style="margin-top: 1rem; color: #94a3b8; font-style: italic;">These resources are widely recommended by the embedded systems community. Start with YouTube tutorials and the Arduino Project Hub, then move to courses and books as you progress.</p>
+    <p><em>Documentation prepared at Tinkerers' Lab, Sanjivani University — for educational and internship reference.</em></p>
   </div>
 </div>
 </body>
