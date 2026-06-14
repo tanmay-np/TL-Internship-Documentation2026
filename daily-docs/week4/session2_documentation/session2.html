@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Day 1 – GitHub Setup & First Commit | Tanmay Pendbhaje</title>
+  <title>Week 4 – Session 2: Edge Impulse | Tanmay Pendbhaje</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -67,22 +67,6 @@
       border: 1px solid rgba(59,130,246,0.3);
       display: block;
     }
-    code {
-      background: #0a0e1a;
-      padding: 0.2rem 0.4rem;
-      border-radius: 0.4rem;
-      font-family: monospace;
-      color: #60a5fa;
-    }
-    pre {
-      background: #0a0e1a;
-      padding: 1rem;
-      border-radius: 0.8rem;
-      overflow-x: auto;
-      margin: 1rem 0;
-      font-family: monospace;
-      color: #e2e8f0;
-    }
     .site-footer {
       text-align: center;
       padding: 1.5rem;
@@ -100,103 +84,108 @@
 </head>
 <body>
 <div class="container">
-  <a href="../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
+  <a href="../../../../index.html#weeks" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Calendar</a>
 
   <div class="glass-card">
-    <h1>📘 Day 1: GitHub – Introduction, Setup & First Commit</h1>
+    <h1>🧠 Week 4 – Session 2: Edge Impulse – TinyML on Edge Devices</h1>
+    <p><strong>By Jaydeep Ashtekar Sir</strong></p>
 
-    <h2>1. Introduction to GitHub</h2>
-    <p>GitHub is a web-based platform used for version control and software development. It helps developers store, manage, track, and collaborate on coding projects.</p>
+    <h2>📌 Introduction to Edge Impulse</h2>
+    <p>Edge Impulse is a development platform used to create, train, and deploy <strong>Machine Learning (ML)</strong> models on edge devices such as microcontrollers, sensors, and embedded systems. It enables developers to collect sensor data, build AI models, and run them directly on devices like the <strong>ESP32</strong>, <strong>Arduino</strong>, and other IoT hardware without requiring continuous internet connectivity.</p>
+    <p>The platform simplifies the entire TinyML workflow, including data acquisition, data labelling, feature extraction, model training, testing, and deployment. Edge Impulse supports data from various sensors such as accelerometers, microphones, cameras, and environmental sensors.</p>
+    <p>By processing data locally on the device, Edge Impulse reduces latency, improves privacy, and minimizes power consumption. It is widely used in applications such as smart attendance systems, predictive maintenance, gesture recognition, environmental monitoring, and smart agriculture.</p>
+    <p>Overall, Edge Impulse makes it easier for students, researchers, and engineers to integrate Artificial Intelligence into embedded and IoT projects.</p>
+    <img src="img1.png" alt="Edge Impulse overview" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
 
-    <h2>2. Uses of GitHub</h2>
+    <h2>🔧 How to Use Edge Impulse</h2>
+
+    <h3>Step 1 – Search Edge Impulse</h3>
+    <p>Open your browser and search for “Edge Impulse”.</p>
+    <img src="img2.png" alt="Search Edge Impulse" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
+
+    <h3>Step 2 – Click on the link</h3>
+    <p>Open the official Edge Impulse website.</p>
+    <img src="img3.png" alt="Edge Impulse website" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
+
+    <h3>Step 3 – Sign in or Create an account</h3>
+    <p>Click on <strong>Sign in</strong> if you already have an account, or click <strong>Get started</strong> to create a new account.</p>
+    <img src="img4.png" alt="Sign in or Get started" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
+
+    <h3>Step 4 – Click on Devices</h3>
+    <p>From the dashboard, click on the <strong>Devices</strong> tab.</p>
+    <img src="img5.png" alt="Devices tab" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
+
+    <h3>Step 5 – Connect a new device</h3>
+    <p>Click on <strong>Connect a new device</strong> to add your hardware (e.g., smartphone or ESP32).</p>
+    <img src="img6.png" alt="Connect new device" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
+
+    <h3>Step 6 – Scan QR code</h3>
+    <p>Scan the QR code on your smartphone to connect a device.</p>
+    <img src="img7.png" alt="QR code" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
+    <img src="img8.png" alt="Smartphone QR scan" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
+
+    <h3>Step 7 – Get started</h3>
+    <p>After connecting the device, click <strong>Get started</strong>. You will see your connected devices listed.</p>
+    <img src="img9.png" alt="Get started" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
+    <img src="img10.png" alt="Connected devices" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
+
+    <h3>Step 8 – Data acquisition</h3>
+    <p>Click on <strong>Data acquisition</strong> to start collecting samples.</p>
+    <img src="img11.png" alt="Data acquisition" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
+
+    <h3>Step 9 – Select Camera sensor</h3>
+    <p>From the sensor option, select <strong>Camera</strong>.</p>
+    <img src="img12.png" alt="Select Camera" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
+
+    <h3>Step 10 – Collect samples</h3>
+    <p>Collect samples of Alphabets (A, B, C, etc.) from your phone camera. The system will learn to recognise alphabets from images.</p>
+    <img src="img13.png" alt="Collect samples phone" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
+    <img src="img14.png" alt="Samples collected" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
+
+    <h3>Step 11 – Create impulse</h3>
+    <p>Click on <strong>Create impulse</strong> to define the machine learning pipeline.</p>
+    <img src="img15.png" alt="Create impulse" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
+
+    <h3>Step 12 – Add processing block</h3>
+    <p>Click on <strong>Add processing block</strong> and select <strong>Image</strong> (or appropriate block).</p>
+    <img src="img16.png" alt="Add processing block" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
+    <img src="img17.png" alt="Select Image" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
+
+    <h3>Step 13 – Add learning block</h3>
+    <p>Click on <strong>Add a learning block</strong> and select <strong>Classification</strong>.</p>
+    <img src="img18.png" alt="Add learning block" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
+    <img src="img19.png" alt="Select Classification" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
+
+    <h3>Step 14 – Configure Image block & generate features</h3>
+    <p>Click on <strong>Image</strong> (or the processing block) and then <strong>Save parameters</strong>.</p>
+    <img src="img20.png" alt="Image block" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
+    <img src="img21.png" alt="Save parameters" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
+    <p>Click on <strong>Generate Features</strong> to process the data.</p>
+    <img src="img22.png" alt="Generate features" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
+    <img src="img23.png" alt="Features generated" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
+
+    <h3>Step 15 – Train the classifier</h3>
+    <p>Click on <strong>Classifier</strong> (learning block).</p>
+    <img src="img24.png" alt="Classifier" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img24+Not+Found'">
+    <p>Scroll down and click on <strong>Save and train</strong>. Wait for the training to complete.</p>
+    <img src="img25.png" alt="Save and train" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img25+Not+Found'">
+
+    <h3>Final Results</h3>
+    <p>After training, you will see the model performance metrics and accuracy.</p>
+    <img src="img26.png" alt="Model results 1" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img26+Not+Found'">
+    <img src="img27.png" alt="Model results 2" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img27+Not+Found'">
+
+    <h2>📌 Key Takeaways</h2>
     <ul>
-      <li>Store source code online</li>
-      <li>Track project changes</li>
-      <li>Collaborate with teams</li>
-      <li>Manage open-source projects</li>
-      <li>Backup important files</li>
+      <li>Edge Impulse simplifies the entire TinyML workflow – from data collection to deployment.</li>
+      <li>It supports various sensors (camera, accelerometer, microphone, etc.) and edge devices (ESP32, Arduino, mobile phones).</li>
+      <li>Processing data locally reduces latency, saves bandwidth, and enhances privacy.</li>
+      <li>The platform is beginner‑friendly and does not require deep ML expertise.</li>
+      <li>Applications include smart attendance (alphabet recognition), gesture control, predictive maintenance, and environmental monitoring.</li>
     </ul>
 
-    <h2>3. Purpose of GitHub</h2>
-    <p>The main purpose of GitHub is to improve teamwork and project management in software development.</p>
-
-    <h2>4. Installation & Usage Steps (with Screenshots)</h2>
-
-    <h3>Step 1 – Sign Up</h3>
-    <p>Open GitHub website and click <strong>Sign Up</strong>.</p>
-    <img src="img1.png" alt="GitHub signup" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img1+Not+Found'">
-
-    <h3>Step 2 – Fill details & verify email</h3>
-    <img src="img2.png" alt="GitHub signup form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img2+Not+Found'">
-
-    <h3>Step 3 – Download and install Git</h3>
-    <img src="img3.png" alt="Git download" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img3+Not+Found'">
-
-    <h3>Step 4 – GitHub Dashboard</h3>
-    <img src="img4.png" alt="GitHub dashboard" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img4+Not+Found'">
-
-    <h3>Configure Git with Your Name & Email</h3>
-    <p>Git needs to know who you are. Run these commands in Terminal / Command Prompt:</p>
-    <pre><code>git config --global user.name "Your Full Name"
-git config --global user.email "youremail@example.com"
-git config --list</code></pre>
-    <img src="img5.png" alt="Git config" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img5+Not+Found'">
-
-    <h3>Create a Repository on GitHub</h3>
-    <p><strong>Step 1:</strong> Log in → Click your profile picture → <strong>Your repositories</strong> → <strong>New</strong> (green button).</p>
-    <img src="img6.png" alt="Profile menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img6+Not+Found'">
-    <img src="img7.png" alt="Your repositories" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img7+Not+Found'">
-    <img src="img8.png" alt="New repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img8+Not+Found'">
-
-    <p><strong>Step 2:</strong> Fill in the repository form:</p>
-    <ul>
-      <li>Repository name: <code>my-first-project</code></li>
-      <li>Description (optional)</li>
-      <li>Select <strong>Public</strong></li>
-      <li>Tick <strong>Add a README file</strong></li>
-    </ul>
-    <img src="img9.png" alt="Create repository form" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img9+Not+Found'">
-
-    <p><strong>Step 3:</strong> Click <strong>Create repository</strong></p>
-    <img src="img10.png" alt="Create repository button" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img10+Not+Found'">
-
-    <h2>5. Open the Project in VS Code</h2>
-    <p><strong>Step 1:</strong> Open VS Code</p>
-    <img src="img11.png" alt="VS Code start" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img11+Not+Found'">
-
-    <p><strong>Step 2:</strong> Click <strong>File → Open Folder</strong></p>
-    <img src="img12.png" alt="File menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img12+Not+Found'">
-    <img src="img13.png" alt="Open folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img13+Not+Found'">
-
-    <p><strong>Step 3:</strong> Select a folder and open it</p>
-    <img src="img14.png" alt="Select folder" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img14+Not+Found'">
-
-    <h2>6. Push Files using VS Code Terminal</h2>
-    <p><strong>Step 1:</strong> Click on <strong>Terminal → New Terminal</strong></p>
-    <img src="img15.png" alt="Terminal menu" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img15+Not+Found'">
-    <img src="img16.png" alt="New terminal" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img16+Not+Found'">
-
-    <p>Run the following Git commands in order:</p>
-    <pre><code>git init
-git status
-git branch -M main
-git commit -m "Initial commit"
-git add .
-git remote add origin https://github.com/your-username/your-repo-name.git
-git push origin main --force</code></pre>
-    <img src="img17.png" alt="git init" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img17+Not+Found'">
-    <img src="img18.png" alt="git status" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img18+Not+Found'">
-    <img src="img19.png" alt="git branch -M main" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img19+Not+Found'">
-    <img src="img20.png" alt="git commit" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img20+Not+Found'">
-    <img src="img21.png" alt="git add" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img21+Not+Found'">
-    <img src="img22.png" alt="git remote add origin" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img22+Not+Found'">
-    <img src="img23.png" alt="git push" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=img23+Not+Found'">
-
-    <h2>7. Check the Pushed Files</h2>
-    <p>The files are successfully pushed to GitHub. Refresh your repository page to see them.</p>
-
-    <h2>Conclusion</h2>
-    <p>GitHub is an essential platform for developers to manage, share, and collaborate on projects.</p>
+    <h2>🎯 Conclusion</h2>
+    <p>Edge Impulse is a powerful and user-friendly platform for developing and deploying Machine Learning (ML) models on embedded and edge devices. It simplifies the complete workflow, including data collection, data processing, model training, testing, and deployment. By providing an intuitive interface and support for various microcontrollers and sensors, Edge Impulse enables developers to create intelligent IoT and AI-based applications without requiring extensive expertise in machine learning. It helps reduce development time, improves efficiency, and allows real-time data processing directly on devices, minimizing cloud dependency. Overall, Edge Impulse is an effective tool for building smart, low-power, and real-time AI solutions for applications such as predictive maintenance, activity recognition, environmental monitoring, and smart attendance systems.</p>
   </div>
 
   <div class="site-footer">
