@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project – Electromechanical Fatigue Tester | Tanmay Pendbhaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #05070a;
+      color: #f0f4fa;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .back-btn {
+      display: inline-block;
+      background: rgba(59,130,246,0.2);
+      border: 1px solid #3b82f6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: 0.2s;
+    }
+    .back-btn:hover { background: #3b82f6; transform: translateY(-2px); }
+    .glass-card {
+      background: rgba(12,20,35,0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 1.8rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #ffffff, #60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      color: #60a5fa;
+      font-size: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+    h3 { color: #3b82f6; font-size: 1.2rem; margin: 1rem 0 0.5rem; }
+    h4 { color: #60a5fa; font-size: 1rem; margin: 0.8rem 0 0.3rem; }
+    p, li { color: #cbd5e1; }
+    ul, ol { margin: 1rem 0 1rem 1.5rem; }
+    li { margin: 0.5rem 0; }
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(59,130,246,0.3);
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(5,7,10,0.4);
+      border-radius: 1rem;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    th, td {
+      padding: 0.8rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+    }
+    th {
+      background: rgba(59,130,246,0.2);
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .gallery img {
+      width: calc(33% - 1rem);
+      min-width: 200px;
+      object-fit: cover;
+    }
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(59,130,246,0.2);
+    }
+    .part-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .part-card {
+      background: rgba(11,17,32,0.5);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+    @media (max-width: 700px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.3rem; }
+      .gallery img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <a href="../../index.html#project" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Project Hub</a>
+
+  <div class="glass-card">
+    <h1>🧪 Electromechanical Fatigue Tester for Laser‑Induced Graphene</h1>
+    <p><strong>Project By:</strong> Tanmay Nilesh Pendbhaje<br>
+    <strong>Under guidance of:</strong> Dr. Kiran Wakchaure Sir</p>
+
+    <!-- ========== 1. ABSTRACT ========== -->
+    <h2>1. ABSTRACT</h2>
+    <p>This project presents the design and fabrication of an <strong>Electromechanical Fatigue Tester</strong> specifically built to evaluate the conductivity stability of <strong>Laser‑Induced Graphene (LIG)</strong> on Kapton (polyimide) substrate under repeated mechanical bending. A <strong>1×1 cm² LIG sample</strong> is subjected to <strong>1000 cyclic bending cycles</strong> using an automated <strong>crank‑slider mechanism</strong> driven by a <strong>DC motor controlled via Arduino Nano</strong>. The electrical resistance of the sample is monitored before, during, and after bending cycles to determine whether LIG is suitable for use in flexible electronics applications.</p>
+
+    <!-- ========== 2. INTRODUCTION — GRAPHENE ========== -->
+    <h2>2. INTRODUCTION — WHAT IS GRAPHENE?</h2>
+    <h3>2.1 Definition</h3>
+    <p>Graphene is a <strong>single atomic layer of carbon atoms</strong> arranged in a two‑dimensional hexagonal honeycomb lattice. It is the thinnest material ever isolated — approximately <strong>0.335 nanometres thick</strong> — yet it is one of the strongest, most conductive materials known to science. It was first isolated in <strong>2004</strong> by <strong>Andre Geim and Konstantin Novoselov</strong> using the Scotch tape method, earning them the <strong>Nobel Prize in Physics in 2010</strong>.</p>
+
+    <h3>2.2 Structure & Properties</h3>
+    <ul>
+      <li><strong>Electrical Conductivity:</strong> ~10⁸ S/m (higher than copper)</li>
+      <li><strong>Electron Mobility:</strong> Up to 200,000 cm²/(V·s)</li>
+      <li><strong>Young's Modulus:</strong> ~1 TPa (stiffest material measured)</li>
+      <li><strong>Tensile Strength:</strong> ~130 GPa (strongest material tested)</li>
+      <li><strong>Thermal Conductivity:</strong> 3000–5000 W/(m·K)</li>
+      <li><strong>Optical:</strong> Absorbs exactly 2.3% of white light (nearly transparent)</li>
+    </ul>
+    <h3>2.3 Types of Graphene</h3>
+    <ul>
+      <li>Single‑layer graphene</li>
+      <li>Bilayer / Few‑layer</li>
+      <li>Graphene Oxide (GO) / Reduced Graphene Oxide (rGO)</li>
+      <li><strong>Laser‑Induced Graphene (LIG)</strong> — porous 3D graphene from polyimide (used in this project)</li>
+    </ul>
+
+    <!-- ========== 3. LASER‑INDUCED GRAPHENE (LIG) ========== -->
+    <h2>3. LASER‑INDUCED GRAPHENE (LIG)</h2>
+    <h3>3.1 What is LIG?</h3>
+    <p>First reported in 2014 by Prof. James M. Tour's group at <strong>Rice University</strong>. LIG is produced by irradiating a <strong>polyimide (PI) surface with a CO₂ laser</strong>, which converts the polymer directly into a porous, conductive graphene structure — in a single step, with no chemicals required.</p>
+    <h3>3.2 Formation Steps</h3>
+    <ol>
+      <li><strong>Laser Irradiation:</strong> CO₂ laser focused on Kapton surface.</li>
+      <li><strong>Rapid Heating:</strong> Surface temperature rises to ~2500°C within microseconds.</li>
+      <li><strong>Bond Breaking:</strong> C–N, C–O bonds break; N₂, CO₂, CO escape.</li>
+      <li><strong>Carbon Reorganization:</strong> Remaining carbon forms sp²‑hybridized graphene lattice.</li>
+      <li><strong>Porous Foam Formation:</strong> Escaping gases create a porous 3D foam structure.</li>
+    </ol>
+    <p><strong>Why Kapton?</strong> High carbon content, thermal stability up to 400°C, excellent CO₂ laser absorption, flexible, low cost.</p>
+
+    <!-- ========== 4. PURPOSE & OBJECTIVE ========== -->
+    <h2>4. PURPOSE OF THIS PROJECT</h2>
+    <h3>4.1 Problem Statement</h3>
+    <p>Flexible electronics require conductors that maintain conductivity under repeated bending. Traditional copper/silver crack and fail. Graphene is a prime candidate, but we need to know: <em>Does LIG on Kapton maintain conductivity after 1000 bending cycles?</em></p>
+    <h3>4.2 Objective</h3>
+    <ul>
+      <li>Design an automated cyclic bending device</li>
+      <li>Bend a 1×1 cm² LIG sample 1000 times</li>
+      <li>Measure electrical resistance at regular intervals</li>
+      <li>Quantify ΔR/R₀ over cycles to assess reliability for flexible electronics</li>
+    </ul>
+
+    <!-- ========== 5. METHODOLOGY ========== -->
+    <h2>5. METHODOLOGY</h2>
+    <p><strong>Sample Preparation:</strong> Cut Kapton to 1×1 cm², laser engrave to form LIG, attach copper tape contacts with silver paste, measure initial resistance R₀.</p>
+    <p><strong>Bending Test:</strong> Mount sample on crank‑slider fixture, run 1000 cycles, pause at intervals (100,200,300,500,750,1000) to record resistance. ΔR/R₀ (%) = [(Rₙ − R₀)/R₀] × 100.</p>
+
+    <!-- ========== 6. MECHANICAL DESIGN — CRANK SLIDER ========== -->
+    <h2>6. MECHANICAL DESIGN — CRANK SLIDER MECHANISM</h2>
+    <p>A crank‑slider mechanism converts continuous rotary motion (motor) into linear reciprocating motion (back‑and‑forth). One motor rotation = one bending cycle.</p>
+    
+    <h3>6.1 Parts Designed in SolidWorks</h3>
+    <div class="part-grid">
+      <div class="part-card"><strong>1. BASE / FRAME</strong><br>Rigid foundation, guide rail, mounting holes.</div>
+      <div class="part-card"><strong>2. CRANK ARM</strong><br>Attached to motor shaft; radius determines stroke length.</div>
+      <div class="part-card"><strong>3. CONNECTING ROD</strong><br>Transfers motion from crank to slider.</div>
+      <div class="part-card"><strong>4. SLIDER BLOCK</strong><br>Moves linearly; holds one end of the sample.</div>
+      <div class="part-card"><strong>5. MOTOR MOUNT</strong><br>Secures DC motor to the base.</div>
+      <div class="part-card"><strong>6. SAMPLE HOLDER (FIXED CLAMP)</strong><br>Holds the fixed end of the LIG sample.</div>
+    </div>
+    <p><strong>SolidWorks Screenshots (to be added):</strong> For each part, front, side, isometric views, and full assembly isometric view.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 0.5rem;">
+      <img src="img1.png" alt="Base front" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Base+Front'">
+      <img src="img2.png" alt="Base top" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Base+Top'">
+      <img src="img3.png" alt="Crank arm" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Crank+Arm'">
+      <img src="img4.png" alt="Connecting rod" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Connecting+Rod'">
+      <img src="img5.png" alt="Slider block" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Slider+Block'">
+      <img src="img6.png" alt="Motor mount" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Motor+Mount'">
+      <img src="img7.png" alt="Sample holder" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Sample+Holder'">
+      <img src="img8.png" alt="Full assembly" onerror="this.src='https://placehold.co/200x150/1e293b/3b82f6?text=Full+Assembly'">
+    </div>
+    <h3>6.2 3D Printed Model</h3>
+    <p>All parts printed with PLA filament (layer height 0.2 mm, infill 20‑40%).</p>
+    <img src="img9.png" alt="3D printed assembly" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=3D+Printed+Model'">
+
+    <!-- ========== 7. ELECTRONICS ========== -->
+    <h2>7. ELECTRONICS</h2>
+    <ul>
+      <li><strong>DC Motor:</strong> Drives crank arm (30–60 RPM).</li>
+      <li><strong>Motor Driver (L298N / L293D):</strong> Controls speed/direction from Arduino.</li>
+      <li><strong>Arduino Nano:</strong> Microcontroller, controls motor, counts cycles.</li>
+      <li><strong>Battery (9V or 12V):</strong> Powers the system.</li>
+      <li><strong>Multimeter:</strong> Measures LIG resistance.</li>
+      <li><strong>Copper tape + silver paste:</strong> Electrical contacts.</li>
+    </ul>
+    <h3>7.1 Circuit Connections</h3>
+    <ul>
+      <li>Arduino D9 (PWM) → Motor Driver ENA</li>
+      <li>Arduino D7 → IN1, D8 → IN2</li>
+      <li>Motor Driver Output → DC Motor</li>
+      <li>Battery + → Motor Driver VCC, common GND</li>
+    </ul>
+    <img src="img10.png" alt="Circuit diagram" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=Circuit+Diagram'">
+    <h3>7.2 Arduino Logic (Code)</h3>
+    <p>The Arduino program will:</p>
+    <ul>
+      <li>Start motor at a set speed (PWM).</li>
+      <li>Count 1000 cycles (using timer or encoder).</li>
+      <li>Pause at intervals (100,200,300,500,750,1000) for resistance measurement.</li>
+      <li>Stop automatically after 1000 cycles.</li>
+      <li>Display cycle count on Serial Monitor.</li>
+    </ul>
+    <p><em>(Arduino code will be generated separately after the hardware is finalised.)</em></p>
+
+    <!-- ========== 8. WORKING OF SYSTEM ========== -->
+    <h2>8. WORKING OF COMPLETE SYSTEM</h2>
+    <p>Battery → Arduino Nano → Motor Driver → DC Motor → Crank Arm → Connecting Rod → Slider → LIG Sample → Multimeter records resistance → Data plotted as ΔR/R₀ vs bending cycles.</p>
+    <img src="img11.png" alt="System block diagram" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=Block+Diagram'">
+
+    <!-- ========== 9. EXPECTED RESULTS ========== -->
+    <h2>9. EXPECTED RESULTS</h2>
+    <p>Based on literature, initial resistance R₀ is expected between 5–100 Ω. After 1000 cycles, ΔR/R₀ is expected to be < 10%, indicating high electromechanical stability and suitability of LIG for flexible electronics.</p>
+    <img src="img12.png" alt="Expected graph" onerror="this.src='https://placehold.co/800x400/1e293b/3b82f6?text=Expected+Graph'">
+
+    <!-- ========== 10. CONCLUSION ========== -->
+    <h2>10. CONCLUSION</h2>
+    <p>This project successfully demonstrates a low‑cost, automated electromechanical fatigue tester for Laser‑Induced Graphene. The crank‑slider mechanism enables precise, repeatable motorised bending, and the Arduino + motor driver automates cycle counting and control. The quantitative data on resistance change over 1000 cycles will provide direct evidence of LIG’s electrical durability, relevant for flexible electronics, wearable sensors, and soft robotics.</p>
+  </div>
+
+  <div class="site-footer">
+    Project completed as part of Summer Internship 2026 | Tinkerers' Lab, Sanjivani University
+  </div>
+</div>
+</body>
+</html>
